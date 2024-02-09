@@ -30,7 +30,7 @@ def main():
 
   elapsed_time = end_time - start_time
   print(output)
-  print(f"Elapsed time: {elapsed_time} seconds")
+  print(f"Elapsed time : {elapsed_time} seconds")
   
 
 if __name__ == "__main__":
