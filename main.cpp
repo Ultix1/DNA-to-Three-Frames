@@ -1,7 +1,9 @@
-#include <stdio.h>
+#include <iostream>
+#include <map>
+#include <string>
 
 int main()
 {
-  printf("Hello World");
+  std::map<std::string, char> codon_table;
   return 0;
 }
