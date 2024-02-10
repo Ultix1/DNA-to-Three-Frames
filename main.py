@@ -1,4 +1,5 @@
 import time
+import color_mapping
 
 genetic_code = {
     'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
@@ -20,16 +21,23 @@ genetic_code = {
 }
 
 def main():
+  genetic_code_v2=color_mapping.get_codon_table()
+  # print(genetic_code_v2)
   start_time = time.time()
+  DNA_length = 100000000
   with open("DNA.txt","r") as file:
     DNA = file.read().strip()
-  output = ""
-  for _ in range(0,len(DNA)-2,1):
-    output += genetic_code[DNA[_:_+3]]
+  output = []
+  # output_v2 = []
+  for _ in range(0,DNA_length-2,1):
+    output.insert(_,genetic_code[DNA[_:_+3]])
+    # output_*v2.insert(_,genetic_code_v2[DNA[_:_+3]]) 
+  # print(output_v2)
+  # "".join(output)
+  # print(output)
+  # print(len(DNA))
   end_time = time.time()
-
   elapsed_time = end_time - start_time
-  print(output)
   print(f"Elapsed time : {elapsed_time} seconds")
   
 
