@@ -4,5 +4,5 @@
 
 It is solely based on Zhang's Three Frame alignment algorithm, which incorporates the concept of 3 reading frames to detect any possible frameshifts in the DNA sequence.
 
-Performance
+Performance <br>
 ![image](https://github.com/Ultix1/DNA-to-Three-Frames/assets/92718418/8a2deddf-9441-4312-b1c3-4a03d4de0625)
