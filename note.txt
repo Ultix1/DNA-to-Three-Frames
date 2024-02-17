@@ -77,9 +77,26 @@ POSSIBLE ACTIONS:
   I     S     I     M
         *     *     
 
+CCC CCC
+ P   P 
+CCC  CCC
+ CCC  CCC
+  CCC   CCC
+  P    P
+Max alignment score based on the reading frames that are 1-3 spaces apart.
+According Zhang's 3 frame algorithm. You're constantly looking at the 3 reading frames and are attempting to pick the one with the best score.
+So hypothetically speaking, we should be comparing 3 reading frames to 1 protein character at a time. And pick the one with the best score.
+
+
 Reward Score = for agent 
     -> higher reward = closer results with 3 frame 
     -> reward agent based on how close it is to aligning with the protein sequence
     -> needs 3 frame alg
 
 Aligntment Score = for the output (blosum bullsht)
+
+
+Rules for Ins/Del:
+    - gep and gop error
+    - still lookup blosum
+
