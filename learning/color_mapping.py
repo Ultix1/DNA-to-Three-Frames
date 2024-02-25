@@ -33,7 +33,7 @@ protein_mapping = {
 }
 
 # Assign New Hex Colors to each protein character
-def assign_colors(num : int, proteins : list, protein_map: dict, verbose=True):
+def assign_colors(num : int, proteins : list, protein_map: dict, verbose=False):
     colors = cm.generate(num, cmap='rainbow')
     for i in range(num):
         x, y, z = colors[i]
@@ -41,6 +41,8 @@ def assign_colors(num : int, proteins : list, protein_map: dict, verbose=True):
 
         if verbose:
             print(f"{proteins[i]} : " + '#{:02X}{:02X}{:02X}'.format(int(x*255), int(y*255), int(z*255)))
+
+    return protein_map
 
 # Converts Hex Color to Binary
 def convert_hex(hex : str):
@@ -55,10 +57,15 @@ def convert_hex(hex : str):
 
 # Assign Converted binary colors to each codon
 def get_codon_table():
-    for key, value in genetic_code.items():
+    g = genetic_code.copy()
+    for key, value in g.items():
         binary = convert_hex(protein_mapping[value])
-        genetic_code[key] = binary
+        g[key] = binary
 
+    return g
+
+def get_protein_table():
+    return assign_colors(len(proteins), proteins, protein_mapping)
+
+def get_table():
     return genetic_code
-
-# assign_colors(len(proteins), proteins, protein_mapping)

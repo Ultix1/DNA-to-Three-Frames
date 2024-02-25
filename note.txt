@@ -42,7 +42,7 @@ Local = "best score possible" (Most matches possible):
 
 * Load from network
 
-Checker / Break Point - 
+Checker / Break Point - (Traceback)
 
 Local = Greedy Glocal?
 
@@ -79,10 +79,12 @@ POSSIBLE ACTIONS:
 
 CCC CCC
  P   P 
+
 CCC  CCC
  CCC  CCC
   CCC   CCC
   P    P
+
 Max alignment score based on the reading frames that are 1-3 spaces apart.
 According Zhang's 3 frame algorithm. You're constantly looking at the 3 reading frames and are attempting to pick the one with the best score.
 So hypothetically speaking, we should be comparing 3 reading frames to 1 protein character at a time. And pick the one with the best score.
@@ -99,4 +101,14 @@ Aligntment Score = for the output (blosum bullsht)
 Rules for Ins/Del:
     - gep and gop error
     - still lookup blosum
+
+
+
+
+
+1   XXX XXX XXX XXX
+2    XXX XXX XXX XXX
+3     XXX XXX XXX XXX
+     X  X  X  X  X  X
+
 
