@@ -154,13 +154,12 @@ class Environment:
                 reward += 2 if (condition) else -2 
                 self.dna_pointer += 2
         
-        # result = [action, reward, score, self.isDone(), [dna_colors, protein_color]]
-        # self.alignment_history.append(result)
         self.protein_pointer += 1
 
-        next_state = self.get_state()
+        done = self.isDone()
+        next_state = np.zeros(shape=(1, 12, 8)) if self.isDone() else self.get_state()
 
-        return score, reward, self.isDone(), next_state
+        return score, reward, done, next_state
 
 
     # Get Reward from Blosum 62 Matrix
@@ -173,5 +172,5 @@ class Environment:
     
 
     def isDone(self):
-        return self.dna_pointer >= len(self.dna_sequence) and self.protein_pointer >= len(self.protein_sequence)
+        return self.dna_pointer >= len(self.dna_sequence) - 5 or self.protein_pointer >= len(self.protein_sequence)
     

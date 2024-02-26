@@ -14,10 +14,11 @@ params = {
     'epsilon' : 0.99,
     'decay' : 0.05,
     'gamma' : 0.99,
-    'buffer_size' : 25000,
+    'buffer_size' : 50000,
     'pre_train' : 50,
     'max_ep' : 100,
-    'batch_size' : 32
+    'batch_size' : 32,
+    'train_freq' : 100
 }
 
 environment = Environment(dna_sequence, protein_sequence, 0)
@@ -32,18 +33,11 @@ agent = Agent(MainQN, TargetQN, environment, params, actions)
 
 # TODO Train Loop
 episodes = 1
+while episodes < params['max_ep']:
 
-score, reward = agent.play()
-print(f"Episode: {episodes}, Score: {score}, Reward: {reward}")
+    score, reward, steps = agent.play()
+    print(f"Episode: {episodes}\n\tScore: {score}, Reward: {reward}, Number of Steps: {steps}\n")
 
+    agent.reset()
 
-# while episodes < params['max_ep']:
-
-#     done = False
-    
-#     score, reward = agent.play()
-#     print(f"Episode: {episodes}, Score: {score}, Reward: {reward}")
-
-#     agent.reset()
-
-#     episodes += 1
+    episodes += 1

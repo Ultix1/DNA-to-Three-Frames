@@ -25,6 +25,7 @@ class Agent():
         self.epsilon_decay = params['decay']
         self.pre_train = params['pre_train']
         self.batchSize = params['batch_size']
+        self.train_freq = params['train_freq']
 
         self.episodeBuffer = Experience_Buffer(self.bufferSize)
         self.total_steps = 0
@@ -53,50 +54,44 @@ class Agent():
 
             # Decay Epsilon After Pretraining Steps
             if self.total_steps >= self.pre_train:
-                if(self.total_steps % 5 == 0):
+                if(self.total_steps % self.train_freq == 0):
                     self.train()
 
             # Append to Buffer
-            if self.episodeBuffer.__len__() < self.bufferSize:
-                self.episodeBuffer.add(state, action, reward, next_state, done)
-
-            # If Buffer is full, remove half
-            else:
-                self.episodeBuffer.clear_half()
-                self.episodeBuffer.add(state, action, reward, next_state, done)
+            self.episodeBuffer.add(state, action, reward, next_state, done)
 
             total_reward += reward
             total_score += score
 
-            # print(f"Step: {self.total_steps}, Total Score={total_score}, Total Reward={total_reward}, Action={action}\n")
             self.total_steps += 1
+
+            # if self.total_steps % 50 == 0:
+            #     print(f"Step: {self.total_steps}, Total Score={total_score}, Total Reward={total_reward}, Action={action}\n")
 
         return total_score, total_reward, self.total_steps
 
 
     def train(self):
-        if(self.episodeBuffer.__len__() >= self.batchSize):
+        states, actions, rewards, next_states, dones = self.episodeBuffer.sample(self.batchSize)
+
+        states = np.array(states)
+        actions = np.array(actions)
+        rewards = np.array(rewards)
+        next_states = np.array(next_states)
+        dones = np.array(dones)
+
+        for i in np.arange(self.batchSize):
+            next_q_val_main = self.mainQN.model.predict(next_states[i], verbose=0)
+
+            next_q_val_target = self.targetQN.model.predict(next_states[i], verbose=0)
+
+            action = np.argmax(next_q_val_main)
+
+            target_q = rewards[i] + self.gamma * next_q_val_target[0][action] * (1-dones[i])
             
-            states, actions, rewards, next_states, dones = self.episodeBuffer.sample(self.batchSize)
-
-            states = np.array(states)
-            actions = np.array(actions)
-            rewards = np.array(rewards)
-            next_states = np.array(next_states)
-            dones = np.array(dones)
-
-            for i in np.arange(self.batchSize):
-                next_q_val_main = self.mainQN.model.predict(next_states[i], verbose=0)
-
-                next_q_val_target = self.targetQN.model.predict(next_states[i], verbose=0)
-
-                action = np.argmax(next_q_val_main)
-
-                target_q = rewards[i] + self.gamma * next_q_val_target[0][action] * (1-dones[i])
-                
-                next_q_val_main[0][action] = target_q
-                
-                self.mainQN.model.train_on_batch(states[i], next_q_val_main)
+            next_q_val_main[0][action] = target_q
+            
+            self.mainQN.model.train_on_batch(states[i], next_q_val_main)
 
 
     def get_action(self, state : np.ndarray = None):

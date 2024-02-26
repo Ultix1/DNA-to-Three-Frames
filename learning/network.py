@@ -25,17 +25,7 @@ class DDDQN():
         ])
 
         model.compile(optimizer=self.optimizer, loss='mse')
-        # model.summary()
-        
-        return model
-    
-    # def update_target_network(self):
-    #     self.target_network.set_weights(self.main_network.get_weights())
 
-    # def Main_Predict(self, state):
-    #     return self.main_network.predict(state, verbose=0)
-    
-    # def Target_Predict(self, state):
-    #     return self.target_network.predict(state, verbose=0)
+        return model
 
 
