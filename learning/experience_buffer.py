@@ -48,8 +48,3 @@ class Experience_Buffer:
         - The number of transitions in the buffer.
         """
         return len(self.buffer)
-    
-    def clear_half(self):
-        elements_to_remove = self.buffer.__sizeof__() / 2
-        for _ in range(elements_to_remove):
-            self.buffer.popleft()
