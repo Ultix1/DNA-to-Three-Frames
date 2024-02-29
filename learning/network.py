@@ -27,19 +27,19 @@ class DDDQN():
         inputs = K_Input(shape=input_shape)
 
         # Convolutional Layer
-        conv_1 = Conv2D(32, kernel_size=(3,  3), activation='relu', padding='same')(inputs)
+        conv_1 = Conv2D(32, kernel_size=(3,  3), activation='relu', padding='same', input_shape=input_shape)(inputs)
         conv_2 = Conv2D(64, kernel_size=(3,  3), activation='relu', padding='same')(conv_1),
         conv_3 = Conv2D(128, kernel_size=(3,  3), activation='relu', padding='same')(conv_2[0]),
         flatten = Flatten()(conv_3[0])
 
         # Get State Value
-        state_value = Dense(256, activation='relu')(flatten)
-        state_value = Dense(128, activation='relu')(state_value)
+        state_value = Dense(64, activation='relu')(flatten)
+        state_value = Dense(32, activation='relu')(state_value)
         state_value = Dense(1, activation='linear')(state_value)
 
         # Get Advantage Value
-        advantage = Dense(256, activation='relu')(flatten)
-        advantage = Dense(128, activation='relu')(advantage)
+        advantage = Dense(64, activation='relu')(flatten)
+        advantage = Dense(32, activation='relu')(advantage)
         advantage = Dense(self.act_size, activation='linear')(advantage)
 
         # Combine Both
@@ -47,34 +47,3 @@ class DDDQN():
         q_vals = state_value + (advantage - advantage_mean)
 
         return Model(inputs=inputs, outputs=q_vals)
-
-    # model = Sequential([
-    #     Conv2D(32, kernel_size=(3,  3), activation='relu', padding='same', input_shape=self.input_shape),
-    #     Conv2D(64, kernel_size=(3,  3), activation='relu', padding='same'),
-    #     Conv2D(128, kernel_size=(3,  3), activation='relu', padding='same'),
-    #     Flatten()
-
-    #     Dense(128, activation='relu'),
-    #     Dense(64, activation='relu'),
-    #     Dense(self.act_size, activation='linear')
-    # ])
-    # model.compile(optimizer=self.optimizer, loss='mse')
-
-    # def dueling_predict(self, state):
-
-    #     prediction = self.model.predict(state, verbose=0)
-
-    #     # State Value
-    #     state_value = Dense(256, activation='relu')(prediction)
-    #     state_value = Dense(128, activation='relu')(state_value)
-    #     state_value = Dense(1, activation='linear')(state_value)
-
-    #     # Advantage
-    #     advantage = Dense(256, activation='relu')(prediction)
-    #     advantage = Dense(128, activation='relu')(advantage)
-    #     advantage = Dense(self.act_size, activation='linear')(advantage)
-    #     advantage_mean = reduce_mean(advantage, axis=-1, keepdims=True)
-
-    #     output = state_value + (advantage - advantage_mean)
-
-    #     return output.numpy()
