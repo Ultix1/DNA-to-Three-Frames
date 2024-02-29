@@ -75,9 +75,8 @@ class Environment:
         # Stack the colors of the protein and 3 Frames into a 12x8 matrix
         state = np.vstack(colors).astype(np.float32)
 
-        # Reshape state into (12, 8, 1)
+        # Reshape state into (1, 12, 8, 1) for 
         reshaped_state = np.expand_dims(state, axis = -1)
-        reshaped_state = np.expand_dims(state, axis = 0)
 
         return reshaped_state
     
@@ -180,7 +179,7 @@ class Environment:
 
         done = self.isDone()
 
-        next_state = np.zeros(shape=(1, 12, 8)) if done else self.get_state()
+        next_state = np.zeros(shape=(12, 8, 1)) if done else self.get_state()
 
         return score, reward, done, next_state
 
