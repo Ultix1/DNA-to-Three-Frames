@@ -64,7 +64,7 @@ class Agent():
             state = self.env.get_state()
 
             # Get predicted action
-            action = self.get_action(state)
+            action = self.get_action(tf.expand_dims(state, axis=0))
 
             # Get results of action
             score, reward, done, next_state = self.env.step(action) if (self.total_steps > 0) else self.env.first_step(action)
@@ -90,29 +90,26 @@ class Agent():
         """
         states, actions, rewards, next_states, dones = self.episodeBuffer.sample(self.batchSize)
 
-        states = np.array(states)
-        actions = np.array(actions)
-        rewards = np.array(rewards)
-        next_states = np.array(next_states)
-        dones = np.array(dones)
+        # Target_QN Predictions on next_state
+        next_q_val_target = self.targetQN.model(next_states)
+        
+        # Get Best Action
+        best_actions = tf.argmax(next_q_val_target, axis=1, output_type=tf.int32)
 
-        for i in np.arange(self.batchSize):
-            # Target_QN Prediction on next_state
-            next_q_val_target = self.targetQN.model(next_states[i])
-    
-            # Get Best Action
-            action = np.argmax(next_q_val_target)
+        # Get Target Q-Value
+        action_results = tf.gather(next_q_val_target, best_actions, axis=1, batch_dims=1)
+        target_q_values = rewards + (self.gamma * action_results * (1-dones))
 
-            # Get Target Q-Value
-            target_q = rewards[i] + (self.gamma * next_q_val_target[0][action] * (1-dones[i]))
+        indices = tf.range(self.batchSize, dtype=tf.int32)
+        action_indices = tf.stack([indices, actions], axis = 1)
 
-            # Applyt new gradients
-            self.update_mainQN(states[i], target_q)
+        # Apply new gradients
+        self.update_mainQN(states, target_q_values, action_indices)
 
     @tf.function
-    def update_mainQN(self, input, target_q):
+    def update_mainQN(self, input, target_q, action_indices):
         with tf.GradientTape() as tape:
-            prediction = self.mainQN.model(input)
+            prediction = tf.gather_nd(self.mainQN.model(input), indices=action_indices)
             loss = self.loss_fn(target_q, prediction)
     
         # Calculate New Gradients from loss
@@ -143,7 +140,7 @@ class Agent():
         Returns:
             Action: Integer value representing the action to be taken
         """
-        if (np.random.rand() < self.epsilon):
+        if (np.random.rand() < self.epsilon and self.epsilon != self.epsilon_min):
             return np.random.choice(self.actions)
         
         else:
