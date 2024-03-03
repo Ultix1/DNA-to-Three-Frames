@@ -113,7 +113,6 @@ class Environment:
 
         # Match
         if action == 0:
-            self.print_frames(action)
             # Set Pointer to 0 if at start
             p = self.dna_pointer + 1
             codon = self.dna_sequence[p : p + 3]
@@ -134,7 +133,6 @@ class Environment:
 
         # Deletion
         elif action == 1:
-            self.print_frames(action)
             codon = self.dna_sequence[self.dna_pointer : self.dna_pointer + 3]
             protein = self.protein_sequence[self.protein_pointer]
             
@@ -153,7 +151,6 @@ class Environment:
 
         # Insertion
         elif action == 2:
-            self.print_frames(action)
             codon = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
             protein = self.protein_sequence[self.protein_pointer]
             
@@ -172,7 +169,6 @@ class Environment:
 
         # None of the Codons Match
         elif action == 3:
-            self.print_frames(action)
             p = self.dna_pointer
             codon_1 = self.dna_sequence[p : p + 3]
             codon_2 = self.dna_sequence[p + 1: p + 4]
@@ -220,7 +216,6 @@ class Environment:
 
         # Match
         if action == 0:
-            self.print_frames(action)
             # Set Pointer to 0 if at start
             p = 0
             codon = self.dna_sequence[p : p + 3]
@@ -240,7 +235,6 @@ class Environment:
 
         # Deletion
         elif action == 1:
-            self.print_frames(action)
             score += 0
             reward += -10
             self.dna_pointer += 2
@@ -248,7 +242,6 @@ class Environment:
 
         # Insertion
         elif action == 2:
-            self.print_frames(action)
             protein = self.protein_sequence[self.protein_pointer]
             codon_1 = self.dna_sequence[self.dna_pointer + 1 : self.dna_pointer + 4]
             codon_2 = self.dna_sequence[self.dna_pointer + 2 : self.dna_pointer + 5]
@@ -270,7 +263,6 @@ class Environment:
 
         # None of the Codons Match
         elif action == 3:
-            self.print_frames(action)
             p = self.dna_pointer
             codon_1 = self.dna_sequence[p : p + 3]
             codon_2 = self.dna_sequence[p + 1: p + 4]
