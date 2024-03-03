@@ -1,6 +1,7 @@
 
 import tensorflow as tf
 import numpy as np
+import random
 from environment import Environment
 from experience_buffer import Experience_Buffer
 from keras import Model
@@ -38,6 +39,7 @@ class Agent():
         self.episode = 0
         self.total_steps = 0
 
+
     def reset(self):
         """
         Resets the environment and total number of steps
@@ -45,6 +47,7 @@ class Agent():
         self.env.reset()
         self.episode += 1
         self.total_steps = 0
+
 
     def play(self):
         """
@@ -82,6 +85,25 @@ class Agent():
             self.total_steps += 1
 
         return total_score, total_reward, self.total_steps
+    
+
+    def explore(self, reps : int = 1):
+        for _ in range(reps):
+            done = False
+            steps = 0
+            while not done:
+                state = self.env.get_state()
+                action = np.random.choice(self.actions)
+                __, reward, done, next_state = self.env.step(action) if steps > 0 else self.env.first_step(action)
+
+                if(self.total_steps > 0 and self.total_steps % self.train_freq == 0):
+                    self.train()
+
+                self.episodeBuffer.add(state, action, reward, next_state, done)
+                steps += 1
+
+            self.env.reset()
+            steps = 0
 
 
     def train(self):
@@ -106,6 +128,7 @@ class Agent():
         # Apply new gradients
         self.update_mainQN(states, target_q_values, action_indices)
 
+
     @tf.function
     def update_mainQN(self, input, target_q, action_indices):
         with tf.GradientTape() as tape:
@@ -120,6 +143,7 @@ class Agent():
 
         return loss
 
+
     def soft_update_model(self, tau=0.01):
         """
         Updates the target network using the weights of the main network
@@ -130,7 +154,8 @@ class Agent():
         for target_weight, local_weight in zip(self.targetQN.model.weights, self.mainQN.model.weights):
             target_weight.assign(tau * local_weight + (1 - tau) * target_weight)
 
-    def get_action(self, state : np.ndarray = None):
+
+    def get_action(self, state : np.ndarray = None, test = False):
         """
         Get action given a state
 
@@ -140,13 +165,28 @@ class Agent():
         Returns:
             Action: Integer value representing the action to be taken
         """
-        if (np.random.rand() < self.epsilon and self.epsilon != self.epsilon_min):
+        if (random.uniform(0, 1) < self.epsilon and not test):
             return np.random.choice(self.actions)
         
         else:
             q_vals = self.mainQN.model(state)
             return np.argmax(q_vals)
         
+    def test(self):
+        done = False
+        steps = 0
+        total_reward = 0
+        while not done:
+            state = self.env.get_state()
+            action = self.get_action(tf.expand_dims(state, axis=0), test=True)
+
+            _, reward, done, ____ = self.env.step(action) if steps > 0 else self.env.first_step(action)
+
+            steps += 1
+            total_reward += reward
+        
+        print(f"Total Reward: {total_reward}, Steps Taken: {steps}")
+
     def load_weights(self, path_1, path_2):
         """
         Load weights into current networks
@@ -158,8 +198,10 @@ class Agent():
         self.mainQN.model.load_weights(path_1)
         self.targetQN.model.load_weights(path_2)
 
+
     def decay_epsilon(self):
-        self.epsilon = max(self.epsilon*self.epsilon_decay, self.epsilon_min)
+        self.epsilon = max(self.epsilon * self.epsilon_decay, self.epsilon_min)
+
 
     def loss_fn(self, y_true, y_pred):
         return tf.reduce_mean(tf.square(y_true - y_pred))
