@@ -29,7 +29,7 @@ checkpoint_paths = ["./saved_weights/main/main_checkpoint.h5", "./saved_weights/
 
 actions = [0, 1, 2, 3]
 learning_rate = 0.001
-input_shape = (12, 8, 1)
+input_shape = (4, 21, 1)
 
 MainQN = DDDQN(learning_rate, len(actions), input_shape)
 TargetQN = DDDQN(learning_rate, len(actions), input_shape)
@@ -43,7 +43,12 @@ def save_params(episode):
 def record_results(episode, score, reward, duration, steps):
     file = open("./saved_weights/training_results.txt", "a")
     file.write(f"Episode: {episode}\n\tScore: {score}, Reward: {reward}, Time Taken: {duration}, Steps Taken: {steps} \n")
+    if(episode == params['max_ep']):
+        file.write("====================\n====================")
     file.close()
+
+
+
 
 
 
@@ -52,12 +57,32 @@ episodes = 1
 
 # Check if there are saved weights, load weights into networks
 resume = (os.path.isfile(checkpoint_paths[0]) and os.path.isfile(checkpoint_paths[1]))
+prev_eps = 0
+# Resume Training
 if resume:
-    print("Resuming...\n")
-    file = open("./saved_weights/params.txt", "r")
-    eps = float(file.readline().split(" ")[-1])
-    agent.epsilon = eps
+    print("\n\nResuming Training...\n")
+    file_1 = open("./saved_weights/params.txt", "r")
+    file_2 = open("./saved_weights/training_results.txt", "r")
+    
+    epsilon = float(file_1.readline().split(" ")[-1])
+    prev_episodes = int(list(file_2)[-4].split(" ")[-1])
+
+    agent.epsilon = epsilon
     agent.load_weights(checkpoint_paths[0], checkpoint_paths[1])
+
+    file_1.close()
+    file_2.close()
+
+# Let Agent Explore (Do random )
+else:
+    print("\n\nStarting Explore Step...\n")
+    agent.explore(reps=100)
+
+
+# Testing Alignment
+# agent.test()
+# exit()
+
 
 while episodes <= params['max_ep']:
         
@@ -69,7 +94,7 @@ while episodes <= params['max_ep']:
     agent.reset()
 
     # Print results of agent
-    print(f"Episode: {episodes}\n\tScore: {score}, Reward: {reward}, Time Taken: {duration}, Steps Taken: {steps} \n")
+    print(f"Episode: {episodes + prev_episodes}\n\tScore: {score}, Reward: {reward}, Time Taken: {duration}, Steps Taken: {steps} \n")
     
     # Update Target Q-Network every 20 Episodes
     if(episodes > 0 and episodes % 20 == 0):
