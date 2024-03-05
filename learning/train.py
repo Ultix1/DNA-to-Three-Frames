@@ -80,8 +80,8 @@ else:
 
 
 # Testing Alignment
-# agent.test()
-# exit()
+agent.test()
+exit()
 
 
 while episodes <= params['max_ep']:

@@ -113,15 +113,16 @@ class Environment:
 
         # Match
         if action == 0:
+            self.print_frames(action)
             # Set Pointer to 0 if at start
             p = self.dna_pointer + 1
             codon = self.dna_sequence[p : p + 3]
             protein = self.protein_sequence[self.protein_pointer]
-
+            
             # Gap Protein
             if(protein == '_'):
                 score += 0
-                reward = 3
+                reward = 2
                 self.dna_pointer += 3
 
             # If they match, set reward
@@ -133,6 +134,7 @@ class Environment:
 
         # Deletion
         elif action == 1:
+            self.print_frames(action)
             codon = self.dna_sequence[self.dna_pointer : self.dna_pointer + 3]
             protein = self.protein_sequence[self.protein_pointer]
             
@@ -140,17 +142,18 @@ class Environment:
             if(protein == '_'):
                 score += 0
                 reward = -2
-                self.dna_pointer += 4
+                self.dna_pointer += 2
 
             # Apply Deletion
             else:
                 score += self.blosum_lookup(codon, protein)
                 reward += 2 if (self.table[codon] == protein) else -2
-                self.dna_pointer += 4
+                self.dna_pointer += 2
 
 
         # Insertion
         elif action == 2:
+            self.print_frames(action)
             codon = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
             protein = self.protein_sequence[self.protein_pointer]
             
@@ -158,17 +161,18 @@ class Environment:
             if(protein == '_'):
                 score += 0
                 reward = -2
-                self.dna_pointer += 2
+                self.dna_pointer += 4
 
             # Apply Insertion
             else:
                 score += self.blosum_lookup(codon, protein)
                 reward += 2 if (self.table[codon] == protein) else -2
-                self.dna_pointer += 2
+                self.dna_pointer += 4
 
 
         # None of the Codons Match
         elif action == 3:
+            self.print_frames(action)
             p = self.dna_pointer
             codon_1 = self.dna_sequence[p : p + 3]
             codon_2 = self.dna_sequence[p + 1: p + 4]
@@ -185,14 +189,16 @@ class Environment:
             else:
                 scores = [self.blosum_lookup(codon_1, protein), self.blosum_lookup(codon_2, protein), self.blosum_lookup(codon_3, protein),]
                 score += np.max(scores)
-                reward += (np.argmax(scores) + 1) if (condition) else -2 
-                self.dna_pointer += 2
+                reward += 2 if (condition) else -2 
+                # reward += (np.argmax(scores) + 1) if (condition) else -2 
+                self.dna_pointer += (np.argmax(scores)+2)
     
         self.protein_pointer += 1
 
         done = self.isDone()
 
         next_state = np.zeros(shape=(4, 21, 1)) if done else self.get_state()
+
 
         return score, reward, done, next_state
 
@@ -216,6 +222,7 @@ class Environment:
 
         # Match
         if action == 0:
+            self.print_frames(action)
             # Set Pointer to 0 if at start
             p = 0
             codon = self.dna_sequence[p : p + 3]
@@ -235,6 +242,7 @@ class Environment:
 
         # Deletion
         elif action == 1:
+            self.print_frames(action)
             score += 0
             reward += -10
             self.dna_pointer += 2
@@ -242,6 +250,7 @@ class Environment:
 
         # Insertion
         elif action == 2:
+            self.print_frames(action)
             protein = self.protein_sequence[self.protein_pointer]
             codon_1 = self.dna_sequence[self.dna_pointer + 1 : self.dna_pointer + 4]
             codon_2 = self.dna_sequence[self.dna_pointer + 2 : self.dna_pointer + 5]
@@ -263,6 +272,7 @@ class Environment:
 
         # None of the Codons Match
         elif action == 3:
+            self.print_frames(action)
             p = self.dna_pointer
             codon_1 = self.dna_sequence[p : p + 3]
             codon_2 = self.dna_sequence[p + 1: p + 4]
