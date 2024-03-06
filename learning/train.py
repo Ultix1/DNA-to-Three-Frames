@@ -6,11 +6,34 @@ from network import DDDQN
 from main_agent import Agent
 from environment import Environment
 
-with open('data/DNA.txt', 'r') as file:
-    dna_sequence = file.read().strip()
+def save_params(episode, epsilon):
+    file = open("./saved_weights/params.txt", "w")
+    file.write(f"Episode: {episode}, Epsilon: {epsilon}")
+    file.close()
 
-with open('data/AA.txt', 'r') as file:
-    protein_sequence = file.read().strip()
+def record_results(episode, score, reward, duration, steps):
+    file = open("./saved_weights/training_results.txt", "a")
+    file.write(f"Episode: {episode}\n\tScore: {score}, Reward: {reward}, Time Taken: {duration}, Steps Taken: {steps} \n")
+    if(episode == params['max_ep']):
+        file.write("====================\n====================\n")
+    file.close()
+
+
+dna_dir = "data/dna"
+protein_dir = "data/proteins"
+
+dna_list = []
+protein_list = []
+
+for fn in os.listdir(dna_dir):
+    with open(f"{dna_dir}/{fn}", 'r') as file:
+        dna_list.append(file.read().strip())
+        file.close()
+
+for fn in os.listdir(protein_dir):
+    with open(f"{protein_dir}/{fn}", 'r') as file:
+        protein_list.append(file.read().strip())
+        file.close
 
 params = {
     'epsilon' : 0.99999,
@@ -18,13 +41,12 @@ params = {
     'decay' : 0.99,
     'gamma' : 0.99,
     'buffer_size' : 50000,
-    'max_ep' : 500,
+    'max_ep' : 1000,
     'batch_size' : 64,
     'train_freq' : 100,
     'tau': 0.01
 }
 
-environment = Environment(dna_sequence, protein_sequence)
 checkpoint_paths = ["./saved_weights/main/main_checkpoint.h5", "./saved_weights/target/target_checkpoint.h5"]
 
 actions = [0, 1, 2, 3]
@@ -33,31 +55,17 @@ input_shape = (4, 21, 1)
 
 MainQN = DDDQN(learning_rate, len(actions), input_shape)
 TargetQN = DDDQN(learning_rate, len(actions), input_shape)
+
+environment = Environment()
 agent = Agent(MainQN, TargetQN, environment, params, actions)
 
-def save_params(episode):
-    file = open("./saved_weights/params.txt", "w")
-    file.write(f"Episode: {episode}, Epsilon: {agent.epsilon}")
-    file.close()
 
-def record_results(episode, score, reward, duration, steps):
-    file = open("./saved_weights/training_results.txt", "a")
-    file.write(f"Episode: {episode}\n\tScore: {score}, Reward: {reward}, Time Taken: {duration}, Steps Taken: {steps} \n")
-    if(episode == params['max_ep']):
-        file.write("====================\n====================")
-    file.close()
-
-
-
-
-
-
-# Training Loop
-episodes = 1
+# <============================================= Training Loop =============================================>
 
 # Check if there are saved weights, load weights into networks
 resume = (os.path.isfile(checkpoint_paths[0]) and os.path.isfile(checkpoint_paths[1]))
-prev_eps = 0
+prev_episodes = 0
+
 # Resume Training
 if resume:
     print("\n\nResuming Training...\n")
@@ -73,16 +81,21 @@ if resume:
     file_1.close()
     file_2.close()
 
-# Let Agent Explore (Do random )
+# Let Agent Explore (Do random actions)
 else:
     print("\n\nStarting Explore Step...\n")
-    agent.explore(reps=100)
+    for i in range(len(dna_list)):
+        environment.set_seq(dna_list[i], protein_list[i])
+        agent.explore(reps=20)
 
 
 # Testing Alignment
-agent.test()
-exit()
+# agent.test()
+# exit()
 
+episodes = 1
+i = 0
+environment.set_seq(dna_list[i], protein_list[i])
 
 while episodes <= params['max_ep']:
         
@@ -99,12 +112,15 @@ while episodes <= params['max_ep']:
     # Update Target Q-Network every 20 Episodes
     if(episodes > 0 and episodes % 20 == 0):
         agent.soft_update_model(params['tau'])
+        
+        i = (i + 1) % len(dna_list)
+        environment.set_seq(dna_list[i], protein_list[i])
 
     # Save Weights every 10 Episodes
     if(episodes > 0 and episodes % 10 == 0):
         agent.mainQN.model.save_weights(checkpoint_paths[0])
         agent.targetQN.model.save_weights(checkpoint_paths[1])
-        save_params(episodes)
+        save_params(episodes, agent.epsilon)
 
     # Record results of agent
     record_results(episodes, score, reward, duration, steps)
