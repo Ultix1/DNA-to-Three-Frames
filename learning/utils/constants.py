@@ -5,7 +5,9 @@ class Action(Enum):
     DELETE = 1
     INSERT = 2
     MISMATCH = 3
-    NONE = -1
+    FRAMESHIFT_1 = 4
+    FRAMESHIFT_3 = 5
+    NONE = -999
 
 CODON_TABLE = {
     "TTT" : "F", "TTC" : "F", "TTA" : "L", "TTG" : "L",
