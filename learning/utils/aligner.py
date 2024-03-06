@@ -191,10 +191,23 @@ if __name__ == '__main__':
     protein_inputs = ['LVM', 'MR', 'MRIR', 'LGPL']
     aligner = ThreeFrameAligner()
 
-    for dna_input, protein_input in zip(dna_inputs, protein_inputs):
-        print(f'DNA: {dna_input}')
-        print(f'Protein: {protein_input}\n')
-        score, actions, matrix = aligner.align(dna_input, protein_input, print_matrix=True)
+    # for dna_input, protein_input in zip(dna_inputs, protein_inputs):
+    #     print(f'DNA: {dna_input}')
+    #     print(f'Protein: {protein_input}\n')
+    #     score, actions, matrix = aligner.align(dna_input, protein_input, print_matrix=True)
+    #     print(f'Score: {score}\n')
+    #     print(f'Actions: {[e.name for e in actions]}\n')
+    #     print('Action Matrix:')
+    #     for row in matrix:
+    #         print([e.name for e in row])
+    #     print()
+
+    with open("AA1.txt", "r") as a, open("DNA1.txt", "r") as b:
+        dna = b.read()
+        protein = a.read()
+        print(f'DNA: {dna}')
+        print(f'Protein: {protein}\n')
+        score, actions, matrix = aligner.align(dna, protein, print_matrix=True)
         print(f'Score: {score}\n')
         print(f'Actions: {[e.name for e in actions]}\n')
         print('Action Matrix:')
