@@ -35,15 +35,21 @@ class ThreeFrameAligner():
 
         actions.append(action_matrix[i][j])
         while i > 1 and j > 1:
-            best = max(enumerate([C_matrix[i][j-1], 
-                                  C_matrix[i-1][j-1]]), 
+            best = max(enumerate([C_matrix[i-2][j-1], 
+                                  C_matrix[i-3][j-1],
+                                  C_matrix[i-4][j-1]]), 
                        key=lambda x: x[1])
             if best[0] == 0:
-                actions.append(action_matrix[i][j-1])
+                actions.append(action_matrix[i-2][j-1])
+                i -= 2
+                j -= 1
+            elif best[0] == 1:
+                actions.append(action_matrix[i-3][j-1])
+                i -= 3
                 j -= 1
             else:
-                actions.append(action_matrix[i-1][j-1])
-                i -= 1
+                actions.append(action_matrix[i-4][j-1])
+                i -= 4
                 j -= 1
 
         return actions[::-1]
