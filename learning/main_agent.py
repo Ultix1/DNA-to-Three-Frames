@@ -172,7 +172,7 @@ class Agent():
             q_vals = self.mainQN.model(state)
             return np.argmax(q_vals)
         
-    def test(self):
+    def test(self, filename_1 : str = None, filename_2 : str = None):
         done = False
         steps = 0
         total_reward = 0
@@ -180,12 +180,13 @@ class Agent():
             state = self.env.get_state()
             action = self.get_action(tf.expand_dims(state, axis=0), test=True)
 
-            _, reward, done, ____ = self.env.step(action) if steps > 0 else self.env.first_step(action)
+            _, reward, done, ____ = self.env.step(action, True) if steps > 0 else self.env.first_step(action, True)
 
             steps += 1
             total_reward += reward
         
         print(f"Total Reward: {total_reward}, Steps Taken: {steps}")
+        self.env.save_aligment(filename_1, filename_2)
 
     def load_weights(self, path_1, path_2):
         """
