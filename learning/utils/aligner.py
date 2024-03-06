@@ -35,14 +35,10 @@ class ThreeFrameAligner():
 
         actions.append(action_matrix[i][j])
         while i > 1 and j > 1:
-            best = max(enumerate([C_matrix[i-1][j], 
-                                  C_matrix[i][j-1], 
+            best = max(enumerate([C_matrix[i][j-1], 
                                   C_matrix[i-1][j-1]]), 
                        key=lambda x: x[1])
             if best[0] == 0:
-                actions.append(action_matrix[i-1][j])
-                i -= 1
-            elif best[0] == 1:
                 actions.append(action_matrix[i][j-1])
                 j -= 1
             else:
@@ -190,9 +186,9 @@ if __name__ == '__main__':
     aligner = ThreeFrameAligner()
 
     for dna_input, protein_input in zip(dna_inputs, protein_inputs):
-        score, actions, matrix = aligner.align(dna_input, protein_input, print_matrix=True)
         print(f'DNA: {dna_input}')
-        print(f'Protein: {protein_input}')
+        print(f'Protein: {protein_input}\n')
+        score, actions, matrix = aligner.align(dna_input, protein_input, print_matrix=True)
         print(f'Score: {score}\n')
         print(f'Actions: {[e.name for e in actions]}\n')
         print('Action Matrix:')
