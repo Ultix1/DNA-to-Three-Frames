@@ -8,6 +8,7 @@ class SeqGen:
         self.lseqs = lseqs
         self.num_sets = num_sets
         self.sequences = [] 
+        self.mutated_sequences = []
         self.proteins = []
         self.BP = ['A', 'G', 'C', 'T']
         self.maxIndel = 2
@@ -29,8 +30,14 @@ class SeqGen:
 
     def generate_sequence(self):
         seq = np.random.randint(4, size=self.lseqs)
-        seq = np.mod(seq + (np.random.rand(self.lseqs) < self.p_snp) * np.random.randint(1, 4, size=self.lseqs), 4)
-        for i in range(self.lseqs):
+        return seq
+
+    def mutate_sequence(self, seq):
+        mutated_seq = np.mod(seq + (np.random.rand(self.lseqs) < self.p_snp) * np.random.randint(1, 4, size=self.lseqs), 4)
+        return mutated_seq
+
+    def introduce_indels(self, seq):
+        for i in range(len(seq)):
             if np.random.rand() < self.p_indel:
                 indel_length = self.zipfian(self.zif_s, self.maxIndel)
                 if np.random.rand() < 0.5:
@@ -38,8 +45,6 @@ class SeqGen:
                 else:
                     del_start = max(i - indel_length, 0)
                     seq = np.delete(seq, slice(del_start, i))
-        if len(seq) > self.lseqs:
-            seq = seq[:self.lseqs]
         return seq
 
     def dna_to_protein(self, dna_seq):
@@ -50,9 +55,16 @@ class SeqGen:
 
     def generate_sequences_and_proteins(self):
         for _ in range(self.num_sets):
-            dna_seq = self.generate_sequence()
-            protein_seq = self.dna_to_protein(dna_seq)
-            self.sequences.append(dna_seq)
+            original_seq = self.generate_sequence()
+            mutated_seq = self.mutate_sequence(original_seq.copy())
+            
+            original_seq_with_indels = self.introduce_indels(original_seq)
+            mutated_seq_with_indels = self.introduce_indels(mutated_seq)
+            
+            protein_seq = self.dna_to_protein(mutated_seq_with_indels)
+            
+            self.sequences.append(original_seq_with_indels)
+            self.mutated_sequences.append(mutated_seq_with_indels)
             self.proteins.append(protein_seq)
 
     def save_sequences_to_files(self):
