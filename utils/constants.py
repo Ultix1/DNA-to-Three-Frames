@@ -1,3 +1,12 @@
+from enum import Enum
+
+class Action(Enum):
+    MATCH = 0
+    DELETE = 1
+    INSERT = 2
+    MISMATCH = 3
+    NONE = -1
+
 CODON_TABLE = {
     "TTT" : "F", "TTC" : "F", "TTA" : "L", "TTG" : "L",
     "CTT" : "L", "CTC" : "L", "CTA" : "L", "CTG" : "L",
@@ -22,3 +31,4 @@ GAP_EXTENSION_PENALTY = 2
 GAP_OPEN_PENALTY = 3
 
 FRAMESHIFT_PENALTY = 4
+
