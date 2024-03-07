@@ -79,7 +79,7 @@ class ThreeFrameAligner():
                     I[2][j],
                     C[0][j-1] + self._get_score(self.substitution, dna_input, protein_input, 2, j) - self.frameshift                
                 ], [
-                    Action.INSERT, Action.FRAMESHIFT_1
+                    Action.INSERT, Action.FRAMESHIFT_3
                 ])), key=lambda x: x[0])
 
             C[3][j], T[3][j] = max(list(zip(
@@ -87,7 +87,7 @@ class ThreeFrameAligner():
                     I[3][j],
                     C[1][j-1] + self._get_score(self.substitution, dna_input, protein_input, 3, j) - self.frameshift
                 ], [
-                    Action.INSERT, Action.FRAMESHIFT_3
+                    Action.INSERT, Action.FRAMESHIFT_1
                 ])), key=lambda x: x[0])
 
             C[4][j], T[4][j] = max(list(zip(
@@ -98,8 +98,7 @@ class ThreeFrameAligner():
                     C[2][j-1] + self._get_score(self.substitution, dna_input, protein_input, 4, j) - self.frameshift 
                 ],[
                     Action.INSERT, Action.DELETE, Action.MATCH, Action.FRAMESHIFT_3
-                ]
-            )), key=lambda x: x[0])
+                ])), key=lambda x: x[0])
 
         # Matrix filling
         for i in range(N):
