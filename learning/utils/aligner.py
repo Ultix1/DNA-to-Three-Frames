@@ -1,20 +1,28 @@
+from enum import Enum
 import blosum as bl
 from constants import CODON_TABLE, FRAMESHIFT_PENALTY, GAP_OPEN_PENALTY, GAP_EXTENSION_PENALTY
 from constants import Action
 
 
 class ThreeFrameAligner():
+
+    class Backtrace(Enum):
+        GLOBAL = "global"
+        SEMI_GLOBAL = "semi-global"
+
     def __init__(self, 
                  gep=GAP_EXTENSION_PENALTY, 
                  gop=GAP_OPEN_PENALTY,
                  frameshift=FRAMESHIFT_PENALTY, 
                  table=CODON_TABLE,
-                 substition=None):
+                 substition=None,
+                 backtrace=None):
         self.gep = gep
         self.gop = gop
         self.frameshift = frameshift
         self.table = table
         self.substitution = substition or bl.BLOSUM(62, default=0)
+        self.backtrace = backtrace or self.Backtrace.GLOBAL
 
     def _translate_codon(self, codon):
         return self.table.get(codon, 'FAIL')
@@ -30,8 +38,13 @@ class ThreeFrameAligner():
 
     def _traceback(self, C, T, N, M):
         actions = []
-        i = N
+        i = 0
         j = M
+
+        if self.backtrace is self.Backtrace.GLOBAL:
+            i = N
+        if self.backtrace is self.Backtrace.SEMI_GLOBAL:
+            i = max(reversed(list(enumerate([e[-1] for e in C], start=1))), key=lambda x: x[1])[0]
 
         while i > 0 and j > 0:
             actions.append(max(list(zip(
@@ -46,7 +59,7 @@ class ThreeFrameAligner():
                     T[i-3][j]
                 ])), key=lambda x: x[0])[1])
 
-            i -= 3
+            i -= 3 if i % 3 == 0 else i % 3
             j -= 1
 
         return actions[::-1]
@@ -133,7 +146,7 @@ class ThreeFrameAligner():
                             Action.MATCH, Action.INSERT, Action.DELETE, Action.DELETE
                         ])), key=lambda x: x[0])
 
-        score = C[N-1][M]
+        score = C[N-1][M] if self.backtrace is self.Backtrace.GLOBAL else max([e[-1] for e in C])
         actions = self._traceback(C, T, N, M)
 
         if debug:
@@ -143,14 +156,14 @@ class ThreeFrameAligner():
 
 
 if __name__ == '__main__':
-    dna_inputs = ['CTGGTGATG', 'ATGCGA', 'ATGCGATACGCTTGA', 'CTTGGTCCGAAT']
-    protein_inputs = ['LVM', 'MR', 'MRIR', 'LGPL']
-    aligner = ThreeFrameAligner()
+    dna_inputs = ['CTGGTGATG', 'ATGCGA', 'ATGCGATACGCTTGA', 'CTTGGTCCGAAT', 'CCCCACACA']
+    protein_inputs = ['LVM', 'MR', 'MRIR', 'LGPL', 'PPT']
+    aligner = ThreeFrameAligner(backtrace=ThreeFrameAligner.Backtrace.SEMI_GLOBAL)
 
     for dna_input, protein_input in zip(dna_inputs, protein_inputs):
         print(f'DNA: {dna_input}')
         print(f'Protein: {protein_input}\n')
-        score, actions = aligner.align(dna_input, protein_input, debug=True)
+        score, actions = aligner.align(dna_input, protein_input, debug=False)
         print(f'Score: {score}\n')
         print(f'Actions: {[e.name for e in actions]}\n')
 
@@ -159,7 +172,7 @@ if __name__ == '__main__':
     #     protein = a.read()
     #     print(f'DNA: {dna}')
     #     print(f'Protein: {protein}\n')
-    #     score, actions, matrix = aligner.align(dna, protein, print_matrix=True)
+    #     score, actions = aligner.align(dna, protein, debug=False)
     #     print(f'Score: {score}\n')
     #     print(f'Actions: {[e.name for e in actions]}\n')
 
