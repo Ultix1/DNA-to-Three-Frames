@@ -62,8 +62,8 @@ class ThreeFrameAligner():
         # Note: Placed j-1 for accessing protein_input since index out of bounds error
         C[0][0] = 0
         for j in range(1, M+1):
-            C[0][j] = I[0][j]
-            C[j][0] = D[j][0]
+            C[0][j], T[0][j] = I[0][j], Action.INSERT
+            C[j][0], T[j][0] = D[j][0], Action.DELETE
 
             C[1][j], T[1][j] = max(list(zip(
                 [ 
