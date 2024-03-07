@@ -30,27 +30,23 @@ class ThreeFrameAligner():
 
     def _traceback(self, C, T, N, M):
         actions = []
-        i = N - 1
+        i = N
         j = M
 
         while i > 0 and j > 0:
             actions.append(max(list(zip(
                 [
-                    C[i][j],
                     C[i-1][j],
-                    C[i-2][j]
+                    C[i-2][j],
+                    C[i-3][j]
                 ],
                 [
-                    T[i][j],
                     T[i-1][j],
-                    T[i-2][j]
+                    T[i-2][j],
+                    T[i-3][j]
                 ])), key=lambda x: x[0])[1])
-            if actions[-1] == T[i][j]:
-                i -= 3
-            elif actions[-1] == T[i-1][j]:
-                i -= 2
-            elif actions[-1] == T[i-2][j]:
-                i -= 1
+
+            i -= 3
             j -= 1
 
         return actions[::-1]
