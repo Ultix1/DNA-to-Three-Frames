@@ -21,7 +21,7 @@ class ThreeFrameAligner():
         self.gop = gop
         self.frameshift = frameshift
         self.table = table
-        self.substitution = substition or bl.BLOSUM(62, default=0)
+        self.substitution = substition or bl.BLOSUM(62)
         self.backtrace = backtrace
 
     def _translate_codon(self, codon):
