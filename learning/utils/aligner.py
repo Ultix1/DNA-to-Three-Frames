@@ -72,6 +72,12 @@ class ThreeFrameAligner():
         C = [[float(0) for _ in range(M+1)] for _ in range(N)]
         T = [[Action.NONE for _ in range(M+1)] for _ in range(N)]
 
+        # Initialization
+        for j in range(M+1):
+            I[j][0] = float('-inf')
+            D[0][j] = D[2][j] = D[3][j] = float('-inf')
+            D[1][j] = C[0][j] - self.gop - self.gep
+
         # Note: Placed j-1 for accessing protein_input since index out of bounds error
         C[0][0] = 0
         for j in range(1, M+1):
