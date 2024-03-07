@@ -16,13 +16,13 @@ class ThreeFrameAligner():
                  frameshift=FRAMESHIFT_PENALTY, 
                  table=CODON_TABLE,
                  substition=None,
-                 backtrace=None):
+                 backtrace: Backtrace = Backtrace.GLOBAL):
         self.gep = gep
         self.gop = gop
         self.frameshift = frameshift
         self.table = table
         self.substitution = substition or bl.BLOSUM(62, default=0)
-        self.backtrace = backtrace or self.Backtrace.GLOBAL
+        self.backtrace = backtrace
 
     def _translate_codon(self, codon):
         return self.table.get(codon, 'FAIL')
@@ -158,7 +158,7 @@ class ThreeFrameAligner():
 if __name__ == '__main__':
     dna_inputs = ['CTGGTGATG', 'ATGCGA', 'ATGCGATACGCTTGA', 'CTTGGTCCGAAT', 'CCCCACACA']
     protein_inputs = ['LVM', 'MR', 'MRIR', 'LGPL', 'PPT']
-    aligner = ThreeFrameAligner(backtrace=ThreeFrameAligner.Backtrace.SEMI_GLOBAL)
+    aligner = ThreeFrameAligner()
 
     for dna_input, protein_input in zip(dna_inputs, protein_inputs):
         print(f'DNA: {dna_input}')
