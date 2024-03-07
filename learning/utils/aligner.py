@@ -27,8 +27,8 @@ class ThreeFrameAligner():
     def _translate_codon(self, codon):
         return self.table.get(codon, 'FAIL')
 
-    def _get_score(self, scoring, dna, protein, i, j):
-        return scoring[self._translate_codon(dna[i-1:i+2])][protein[j-1]] if self._translate_codon(dna[i-1:i+2]) != 'FAIL' else -999
+    def _get_score(self, dna, protein, i, j):
+        return self.substitution[self._translate_codon(dna[i-1:i+2])][protein[j-1]] if self._translate_codon(dna[i-1:i+2]) != 'FAIL' else float('-inf')
 
     def _matrix_printer(self, matrices: list[list]):
         for matrix in matrices:
@@ -82,7 +82,7 @@ class ThreeFrameAligner():
                 [ 
                     I[1][j], 
                     D[1][j],
-                    C[0][j-1] + self._get_score(self.substitution, dna_input, protein_input, 1, j)
+                    C[0][j-1] + self._get_score(dna_input, protein_input, 1, j)
                 ], [
                     Action.INSERT, Action.DELETE, Action.MATCH
                 ])), key=lambda x: x[0])
@@ -90,7 +90,7 @@ class ThreeFrameAligner():
             C[2][j], T[2][j] = max(list(zip(
                 [ 
                     I[2][j],
-                    C[0][j-1] + self._get_score(self.substitution, dna_input, protein_input, 2, j) - self.frameshift                
+                    C[0][j-1] + self._get_score(dna_input, protein_input, 2, j) - self.frameshift                
                 ], [
                     Action.INSERT, Action.FRAMESHIFT_3
                 ])), key=lambda x: x[0])
@@ -98,7 +98,7 @@ class ThreeFrameAligner():
             C[3][j], T[3][j] = max(list(zip(
                 [ 
                     I[3][j],
-                    C[1][j-1] + self._get_score(self.substitution, dna_input, protein_input, 3, j) - self.frameshift
+                    C[1][j-1] + self._get_score(dna_input, protein_input, 3, j) - self.frameshift
                 ], [
                     Action.INSERT, Action.FRAMESHIFT_1
                 ])), key=lambda x: x[0])
@@ -107,8 +107,8 @@ class ThreeFrameAligner():
                 [
                     I[4][j],
                     D[4][j],
-                    C[1][j-1] + self._get_score(self.substitution, dna_input, protein_input, 4, j),
-                    C[2][j-1] + self._get_score(self.substitution, dna_input, protein_input, 4, j) - self.frameshift 
+                    C[1][j-1] + self._get_score(dna_input, protein_input, 4, j),
+                    C[2][j-1] + self._get_score(dna_input, protein_input, 4, j) - self.frameshift 
                 ],[
                     Action.INSERT, Action.DELETE, Action.MATCH, Action.FRAMESHIFT_3
                 ])), key=lambda x: x[0])
@@ -127,9 +127,9 @@ class ThreeFrameAligner():
                     [ 
                         I[i][j],
                         D[i][j],
-                        C[i-2][j-1] + self._get_score(self.substitution, dna_input, protein_input, i, j) - self.frameshift,
-                        C[i-3][j-1] + self._get_score(self.substitution, dna_input, protein_input, i, j),
-                        C[i-4][j-1] + self._get_score(self.substitution, dna_input, protein_input, i, j) - self.frameshift
+                        C[i-2][j-1] + self._get_score(dna_input, protein_input, i, j) - self.frameshift,
+                        C[i-3][j-1] + self._get_score(dna_input, protein_input, i, j),
+                        C[i-4][j-1] + self._get_score(dna_input, protein_input, i, j) - self.frameshift
                     ], [
                         Action.INSERT, Action.DELETE, Action.FRAMESHIFT_1, Action.MATCH, Action.FRAMESHIFT_3
                     ])), key=lambda x: x[0])
