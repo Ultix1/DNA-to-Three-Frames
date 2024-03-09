@@ -26,8 +26,8 @@ params = {
     'train_freq' : 100,
     'tau': 0.01
 }
-input_shape = (4, 21, 1)
-actions = [0, 1, 2, 3]
+input_shape = (8, 21, 1)
+actions = [0, 1, 2, 3, 4]
 learning_rate = 0.001
 
 MainQN = DDDQN(learning_rate, len(actions), input_shape)
@@ -58,3 +58,4 @@ if(os.path.isfile(checkpoint_paths[0]) and os.path.isfile(checkpoint_paths[1])):
         print(f"For DNA and Protein Sequence {i + 1}:")
         agent.test(dna_list[i], protein_list[i])
         print("")
+        break
