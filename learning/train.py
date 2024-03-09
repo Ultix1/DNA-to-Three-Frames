@@ -2,6 +2,7 @@
 import os
 import numpy as np
 import time
+from utils.constants import Action
 from network import DDDQN
 from main_agent import Agent
 from environment import Environment
@@ -49,9 +50,9 @@ params = {
 
 checkpoint_paths = ["./saved_weights/main/main_checkpoint.h5", "./saved_weights/target/target_checkpoint.h5"]
 
-actions = [0, 1, 2, 3]
+actions = [Action.MATCH.value, Action.FRAMESHIFT_1.value, Action.FRAMESHIFT_3.value, Action.INSERT.value, Action.DELETE.value]
 learning_rate = 0.001
-input_shape = (4, 21, 1)
+input_shape = (8, 21, 1)
 
 MainQN = DDDQN(learning_rate, len(actions), input_shape)
 TargetQN = DDDQN(learning_rate, len(actions), input_shape)
@@ -87,11 +88,6 @@ else:
     for i in range(len(dna_list)):
         environment.set_seq(dna_list[i], protein_list[i])
         agent.explore(reps=20)
-
-
-# Testing Alignment
-# agent.test()
-# exit()
 
 episodes = 1
 i = 0
