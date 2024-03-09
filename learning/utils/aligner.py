@@ -1,8 +1,6 @@
 from enum import Enum
 import blosum as bl
-from constants import CODON_TABLE, FRAMESHIFT_PENALTY, GAP_OPEN_PENALTY, GAP_EXTENSION_PENALTY
-from constants import Action
-
+from constants import Action, CODON_TABLE, FRAMESHIFT_PENALTY, GAP_OPEN_PENALTY, GAP_EXTENSION_PENALTY
 
 class ThreeFrameAligner():
 
@@ -16,7 +14,7 @@ class ThreeFrameAligner():
                  frameshift=FRAMESHIFT_PENALTY, 
                  table=CODON_TABLE,
                  substition=None,
-                 backtrace: Backtrace = Backtrace.GLOBAL):
+                 backtrace: Backtrace = Backtrace.SEMI_GLOBAL):
         self.gep = gep
         self.gop = gop
         self.frameshift = frameshift
@@ -131,25 +129,25 @@ class ThreeFrameAligner():
 
                 C[i][j], T[i][j] = max(list(zip(
                     [ 
-                        I[i][j],
-                        D[i][j],
-                        C[i-2][j-1] + self._get_score(dna_input, protein_input, i, j) - self.frameshift,
+                        C[i-4][j-1] + self._get_score(dna_input, protein_input, i, j) - self.frameshift,
                         C[i-3][j-1] + self._get_score(dna_input, protein_input, i, j),
-                        C[i-4][j-1] + self._get_score(dna_input, protein_input, i, j) - self.frameshift
+                        C[i-2][j-1] + self._get_score(dna_input, protein_input, i, j) - self.frameshift,
+                        D[i][j],
+                        I[i][j]
                     ], [
-                        Action.INSERT, Action.DELETE, Action.FRAMESHIFT_1, Action.MATCH, Action.FRAMESHIFT_3
+                        Action.FRAMESHIFT_1, Action.MATCH, Action.FRAMESHIFT_3, Action.DELETE, Action.INSERT
                     ])), key=lambda x: x[0])
 
                 if i == N-1 and j == M:
                     # Note: -1 in index is to account for 0-indexing
                     C[N-1][M], T[N-1][M] = max(list(zip(
                         [ 
-                                C[N-1-1][M],
-                                C[N-2-1][M] - self.frameshift,
+                                D[N-3-1][M] - self.frameshift - self.gep,
                                 C[N-3-1][M] - self.gop - self.gep - self.frameshift,
-                                D[N-3-1][M] - self.frameshift - self.gep
+                                C[N-2-1][M] - self.frameshift,
+                                C[N-1-1][M],
                         ], [
-                            Action.MATCH, Action.INSERT, Action.DELETE, Action.DELETE
+                            Action.DELETE, Action.DELETE, Action.INSERT, Action.MATCH
                         ])), key=lambda x: x[0])
 
         score = C[N-1][M] if self.backtrace is self.Backtrace.GLOBAL else max([e[-1] for e in C])
@@ -162,14 +160,14 @@ class ThreeFrameAligner():
 
 
 if __name__ == '__main__':
-    dna_inputs = ['CTGGTGATG', 'ATGCGA', 'ATGCGATACGCTTGA', 'CTTGGTCCGAAT', 'CCCCACACA']
-    protein_inputs = ['LVM', 'MR', 'MRIR', 'LGPL', 'PPT']
+    dna_inputs = ['CACACACACACACACATTCGCAACCAGAACTCA']
+    protein_inputs = ['HHQSSHHQP-S']
     aligner = ThreeFrameAligner()
 
     for dna_input, protein_input in zip(dna_inputs, protein_inputs):
         print(f'DNA: {dna_input}')
         print(f'Protein: {protein_input}\n')
-        score, actions = aligner.align(dna_input, protein_input, debug=False)
+        score, actions = aligner.align(dna_input, protein_input, debug=True)
         print(f'Score: {score}\n')
         print(f'Actions: {[e.name for e in actions]}\n')
 
