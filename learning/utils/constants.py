@@ -2,11 +2,11 @@ from enum import Enum
 
 class Action(Enum):
     MATCH = 0
-    DELETE = 1
-    INSERT = 2
-    MISMATCH = 3
-    FRAMESHIFT_1 = 4
-    FRAMESHIFT_3 = 5
+    FRAMESHIFT_1 = 1
+    FRAMESHIFT_3 = 2
+    DELETE = 3
+    INSERT = 4
+    MISMATCH = 5
     NONE = -999
 
 CODON_TABLE = {
