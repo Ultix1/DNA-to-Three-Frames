@@ -64,7 +64,7 @@ class Agent():
 
         while not done:
             # Get current state
-            state = self.env.get_state()
+            state = self.env.get_state() if (self.total_steps > 0) else self.env.get_first_state()
 
             # Get predicted action
             action = self.get_action(tf.expand_dims(state, axis=0))
@@ -88,17 +88,25 @@ class Agent():
     
 
     def explore(self, reps : int = 1):
+        """
+        Lets the agent perform random actions for a fixed number of episodes
+
+        Args:
+            reps (int, optional): Number of episodes where the agent does random actions. Defaults to 1.
+        """
         for _ in range(reps):
             done = False
             steps = 0
             while not done:
-                state = self.env.get_state()
+                state = self.env.get_state() if steps > 0 else self.env.get_first_state()
                 action = np.random.choice(self.actions)
                 __, reward, done, next_state = self.env.step(action) if steps > 0 else self.env.first_step(action)
 
                 if(self.total_steps > 0 and self.total_steps % self.train_freq == 0):
                     self.train()
 
+                if state.shape != (8, 21, 1):
+                    print(state.shape)
                 self.episodeBuffer.add(state, action, reward, next_state, done)
                 steps += 1
 
@@ -165,7 +173,7 @@ class Agent():
         Returns:
             Action: Integer value representing the action to be taken
         """
-        if (random.uniform(0, 1) < self.epsilon and not test):
+        if (random.uniform(0, 1) < self.epsilon and self.epsilon != self.epsilon_min and not test):
             return np.random.choice(self.actions)
         
         else:
@@ -173,11 +181,18 @@ class Agent():
             return np.argmax(q_vals)
         
     def test(self, filename_1 : str = None, filename_2 : str = None):
+        """
+        Tests the reinforcement learning agent
+
+        Args:
+            filename_1 (str, optional): Filename / Directory path to dna file. Defaults to None.
+            filename_2 (str, optional): Filename / Directory path to protein file. Defaults to None.
+        """
         done = False
         steps = 0
         total_reward = 0
         while not done:
-            state = self.env.get_state()
+            state = self.env.get_state() if steps > 0 else self.env.get_first_state()
             action = self.get_action(tf.expand_dims(state, axis=0), test=True)
 
             _, reward, done, ____ = self.env.step(action, True) if steps > 0 else self.env.first_step(action, True)
