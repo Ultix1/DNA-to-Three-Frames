@@ -1,6 +1,6 @@
 from enum import Enum
 import blosum as bl
-from constants import Action, CODON_TABLE, FRAMESHIFT_PENALTY, GAP_OPEN_PENALTY, GAP_EXTENSION_PENALTY
+from utils.constants import Action, CODON_TABLE, FRAMESHIFT_PENALTY, GAP_OPEN_PENALTY, GAP_EXTENSION_PENALTY
 
 class ThreeFrameAligner():
 
