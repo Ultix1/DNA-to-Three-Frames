@@ -154,15 +154,15 @@ class Environment:
             self.add_to_history(action)
 
 
-        if self.dna_pointer < 3:
-            dna = "_" + self.dna_sequence[self.dna_pointer - 2 : self.dna_pointer + 5]
-            proteins = self.protein_sequence[self.protein_pointer - 1 : self.protein_pointer + 1]
-            _, true_action = self.aligner.align(dna, proteins, debug=False)
+        # if self.dna_pointer < 3:
+        #     dna = "_" + self.dna_sequence[self.dna_pointer - 2 : self.dna_pointer + 5]
+        #     proteins = self.protein_sequence[self.protein_pointer - 1 : self.protein_pointer + 1]
+        #     _, true_action = self.aligner.align(dna, proteins, debug=False)
 
-        else:
-            dna = self.dna_sequence[self.dna_pointer - 3 : self.dna_pointer + 5]
-            proteins = self.protein_sequence[self.protein_pointer - 1 : self.protein_pointer + 1]
-            _, true_action = self.aligner.align(dna, proteins, debug=False)
+        # else:
+        #     dna = self.dna_sequence[self.dna_pointer - 3 : self.dna_pointer + 5]
+        #     proteins = self.protein_sequence[self.protein_pointer - 1 : self.protein_pointer + 1]
+        #     _, true_action = self.aligner.align(dna, proteins, debug=False)
 
         # MATCH
         if action == 0:
@@ -179,7 +179,7 @@ class Environment:
             # If they match, set reward
             else:
                 score += self.blosum_lookup(codon, protein)
-                reward += 2 if (validate(action=action,curr_frame=self.table[codon], protein_=protein)) else -2
+                reward += 2 if (validate(action=action,curr_frame=self.table[codon], protein=protein)) else -2
                 self.dna_pointer += 3
 
         # FRAMESHIFT 1
@@ -201,7 +201,7 @@ class Environment:
                 frame_3 = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
 
                 score += self.blosum_lookup(codon, protein)
-                reward += 2 if (validate(action=action,curr_frames=[self.table[frame_1],self.table[frame_2],self.table[frame_3]], protein_=protein)) else -2
+                reward += 2 if (validate(action=action,curr_frames=[self.table[frame_1],self.table[frame_2],self.table[frame_3]], protein=protein)) else -2
                 self.dna_pointer += 2
 
         # FRAMESHIFT 3
@@ -223,7 +223,7 @@ class Environment:
                 frame_2 = self.dna_sequence[self.dna_pointer + 1 :self.dna_pointer + 4]
                 frame_3 = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
                 score += self.blosum_lookup(codon, protein)
-                reward += 2 if (validate(action=action,curr_frames=[self.table[frame_1],self.table[frame_2],self.table[frame_3]], protein_=protein)) else -2
+                reward += 2 if (validate(action=action,curr_frames=[self.table[frame_1],self.table[frame_2],self.table[frame_3]], protein=protein)) else -2
                 self.dna_pointer += 4
 
         # INSERTION
@@ -266,12 +266,15 @@ class Environment:
                 frame_a = self.dna_sequence[self.dna_pointer - 3 :self.dna_pointer] if self.dna_pointer > 2 else "TAG"
                 frame_b = self.dna_sequence[self.dna_pointer - 2 :self.dna_pointer + 1]
                 frame_c = self.dna_sequence[self.dna_pointer - 1 :self.dna_pointer + 2]
+                
                 # Current Frames
                 frame_1 = self.dna_sequence[self.dna_pointer : self.dna_pointer + 3]
                 frame_2 = self.dna_sequence[self.dna_pointer + 1 :self.dna_pointer + 4]
                 frame_3 = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
+
                 # Current Protein
                 curr_protein = self.protein_sequence[self.protein_pointer]
+
                 # Past Protein
                 prev_protein = self.protein_sequence[self.protein_pointer - 1]
 
@@ -282,6 +285,37 @@ class Environment:
                 reward += 2 if (validate(action=action, proteins=[prev_protein, curr_protein], prev_frames=[self.table[frame_a],self.table[frame_b],self.table[frame_c]], curr_frames=[self.table[frame_1],self.table[frame_2],self.table[frame_3]])) else -2
                 self.dna_pointer += (2 + np.argmax(scores))
         
+        elif action == Action.MISMATCH.value:
+            # Past Frames
+            frame_a = self.dna_sequence[self.dna_pointer - 3 :self.dna_pointer] if self.dna_pointer > 2 else "TAG"
+            frame_b = self.dna_sequence[self.dna_pointer - 2 :self.dna_pointer + 1]
+            frame_c = self.dna_sequence[self.dna_pointer - 1 :self.dna_pointer + 2]
+            
+            # Current Frames
+            frame_1 = self.dna_sequence[self.dna_pointer : self.dna_pointer + 3]
+            frame_2 = self.dna_sequence[self.dna_pointer + 1 :self.dna_pointer + 4]
+            frame_3 = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
+
+            # Current Protein
+            curr_protein = self.protein_sequence[self.protein_pointer]
+
+            # Past Protein
+            prev_protein = self.protein_sequence[self.protein_pointer - 1]
+
+            score += 0
+            reward += 2 if (validate(
+                action=action,
+                proteins=(prev_protein + curr_protein),
+                prev_frames=(frame_a + frame_b + frame_c),
+                curr_frames=(frame_1 + frame_2 + frame_3)
+            )) else -2
+
+            self.dna_pointer += np.argmax([
+                self.blosum_lookup(frame_1, curr_protein) - FRAMESHIFT_PENALTY,
+                self.blosum_lookup(frame_2, curr_protein),
+                self.blosum_lookup(frame_3, curr_protein) - FRAMESHIFT_PENALTY
+            ]) + 2
+
         self.protein_pointer += 1
 
         done = self.isDone()
@@ -289,7 +323,6 @@ class Environment:
         next_state = np.zeros(shape=(8, 21, 1)) if done else self.get_state()
 
         return score, reward, done, next_state
-
 
     def first_step(self, action=0, record=False):
         """
@@ -331,7 +364,7 @@ class Environment:
             # If they match, set reward
             else:
                 score += self.blosum_lookup(codon, protein)
-                reward += 2 if (validate(action=action, curr_frame=self.table[codon], protein_=protein)) else -2
+                reward += 2 if (validate(action=action, curr_frame=self.table[codon], protein=protein)) else -2
                 self.dna_pointer += 2
 
         # FRAMESHIFT 1
@@ -347,7 +380,7 @@ class Environment:
             codon_2 = self.dna_sequence[self.dna_pointer + 2 : self.dna_pointer + 5]
             
             score += max([self.blosum_lookup(codon_1, protein), self.blosum_lookup(codon_2, protein)]) - GAP_EXTENSION_PENALTY
-            reward += 2 if (validate_first(codon_1 = self.table[codon_1],codon_2=self.table[codon_2], protein=protein)) else -2
+            reward += 2 if (validate_first(codon_1=self.table[codon_1],codon_2=self.table[codon_2], protein=protein)) else -2
             self.dna_pointer += 3
 
         # INSERTION
@@ -368,6 +401,20 @@ class Environment:
                 reward += -2
                 self.dna_pointer += 2
         
+        elif action == Action.MISMATCH.value:
+            protein = self.protein_sequence[self.protein_pointer]
+            codon_1 = self.dna_sequence[self.dna_pointer + 1 : self.dna_pointer + 4]
+            codon_2 = self.dna_sequence[self.dna_pointer + 2 : self.dna_pointer + 5]
+
+            score += 0
+            reward += 2 if (validate_first(self.table[codon_1], self.table[codon_2], protein, action)) else -2
+            self.dna_pointer += (
+                np.argmax([
+                    self.blosum_lookup(codon_1, protein),
+                    self.blosum_lookup(codon_2, protein) - FRAMESHIFT_PENALTY
+                ]) + 2
+            )
+
         self.protein_pointer += 1
 
         return score, reward, self.isDone(), self.get_state()
@@ -406,12 +453,34 @@ class Environment:
         return (self.dna_pointer + 5) >= len(self.dna_sequence) or self.protein_pointer >= len(self.protein_sequence)
     
     def add_to_history(self, action : int):
-        p = self.dna_pointer
+
+        if self.dna_pointer == 0:
+            frame_a = "TAG"
+            frame_b = "TAG"
+            frame_c = "TAG"
+            prev_protein = "*"
+
+        else:
+            frame_a = self.dna_sequence[self.dna_pointer - 3 :self.dna_pointer] if self.dna_pointer > 2 else "TAG"
+            frame_b = self.dna_sequence[self.dna_pointer - 2 :self.dna_pointer + 1]
+            frame_c = self.dna_sequence[self.dna_pointer - 1 :self.dna_pointer + 2]
+            prev_protein = self.protein_sequence[self.protein_pointer - 1]
+        
+        # Current Frames
+        frame_1 = self.dna_sequence[self.dna_pointer : self.dna_pointer + 3] if self.dna_pointer > 2 else "TAG"
+        frame_2 = self.dna_sequence[self.dna_pointer + 1 :self.dna_pointer + 4]
+        frame_3 = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
+        curr_protein = self.protein_sequence[self.protein_pointer]
+
         self.alignment_history.append([
-            self.table[self.dna_sequence[p : p + 3]],
-            self.table[self.dna_sequence[p + 1: p + 4]],
-            self.table[self.dna_sequence[p + 2: p + 5]],
-            self.protein_sequence[self.protein_pointer],
+            self.table[frame_a],
+            self.table[frame_b],
+            self.table[frame_c],
+            prev_protein,
+            self.table[frame_1],
+            self.table[frame_2],
+            self.table[frame_3],
+            curr_protein,
             action
         ])
 
@@ -426,7 +495,7 @@ class Environment:
 
             predictions = []
             for entry in self.alignment_history:
-                a = entry[4]
+                a = entry[-1]
 
                 if(a == 0):
                     a = "MATCH"
@@ -448,10 +517,12 @@ class Environment:
                     a = "DELETION"
                     predictions.append(Action.DELETE)
 
-                file.write(f"\nThree Frames: {entry[0]}, {entry[1]}, {entry[2]} <====> Protein: {entry[3]} - Action: {entry[4]} ({a})\n")
+                file.write(f"\nPrev. Frames: {entry[0]}, {entry[1]}, {entry[2]} => PP: {entry[3]}")
+                file.write(f"\nCurr Frames: {entry[4]}, {entry[5]}, {entry[6]} => CP: {entry[7]}\nAction: {entry[-1]} ({a})\n")
             
             aligner = ThreeFrameAligner()
             _, actions = aligner.align(self.dna_sequence, self.protein_sequence, debug=False)
             accuracy = sum(1 for x, y in zip(predictions, actions) if x == y) / len(predictions)
             file.write(f"\nAccuracy: {accuracy}\n\n")
+            file.close()
 
