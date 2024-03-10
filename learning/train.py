@@ -42,7 +42,7 @@ params = {
     'decay' : 0.99,
     'gamma' : 0.99,
     'buffer_size' : 50000,
-    'max_ep' : 1000,
+    'max_ep' : 5000,
     'batch_size' : 64,
     'train_freq' : 100,
     'tau': 0.01

@@ -3,6 +3,7 @@ from datetime import datetime
 from utils.encoder import get_codon_encoding, get_protein_encoding, get_table
 from utils.constants import GAP_EXTENSION_PENALTY, GAP_OPEN_PENALTY, FRAMESHIFT_PENALTY, Action
 from utils.aligner import ThreeFrameAligner
+from utils.step_validation import validate, validate_first
 import numpy as np
 
 class Environment:
@@ -15,7 +16,6 @@ class Environment:
             protein (string): Target Protein Sequence
         """
         self.rewards = bl.BLOSUM(62, default=0)
-        self.actions = Action()
         self.aligner = ThreeFrameAligner()
 
         # Get Encoded Codons and Protein Table
@@ -164,9 +164,8 @@ class Environment:
             proteins = self.protein_sequence[self.protein_pointer - 1 : self.protein_pointer + 1]
             _, true_action = self.aligner.align(dna, proteins, debug=False)
 
-
         # MATCH
-        if action == Action.MATCH.value:
+        if action == 0:
             p = self.dna_pointer + 1
             codon = self.dna_sequence[p : p + 3]
             protein = self.protein_sequence[self.protein_pointer]
@@ -180,11 +179,11 @@ class Environment:
             # If they match, set reward
             else:
                 score += self.blosum_lookup(codon, protein)
-                reward += 2 if (action is true_action[-1]) else -2
+                reward += 2 if (validate(action=action,curr_frame=self.table[codon], protein_=protein)) else -2
                 self.dna_pointer += 3
 
         # FRAMESHIFT 1
-        elif action == Action.FRAMESHIFT_1.value:
+        elif action == 1:
             codon = self.dna_sequence[self.dna_pointer : self.dna_pointer + 3]
             protein = self.protein_sequence[self.protein_pointer]
             
@@ -196,14 +195,20 @@ class Environment:
 
             # Apply Deletion
             else:
+                # Current Frames
+                frame_1 = self.dna_sequence[self.dna_pointer : self.dna_pointer + 3]
+                frame_2 = self.dna_sequence[self.dna_pointer + 1 :self.dna_pointer + 4]
+                frame_3 = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
+
                 score += self.blosum_lookup(codon, protein)
-                reward += 2 if (action is true_action[-1]) else -2
+                reward += 2 if (validate(action=action,curr_frames=[self.table[frame_1],self.table[frame_2],self.table[frame_3]], protein_=protein)) else -2
                 self.dna_pointer += 2
 
         # FRAMESHIFT 3
-        elif action == Action.FRAMESHIFT_3.value:
+        elif action == 2:
             codon = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
             protein = self.protein_sequence[self.protein_pointer]
+            
             
             # Gap Protein
             if(protein == '*'):
@@ -213,34 +218,43 @@ class Environment:
 
             # Apply Insertion
             else:
+                # Current Frames
+                frame_1 = self.dna_sequence[self.dna_pointer : self.dna_pointer + 3]
+                frame_2 = self.dna_sequence[self.dna_pointer + 1 :self.dna_pointer + 4]
+                frame_3 = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
                 score += self.blosum_lookup(codon, protein)
-                reward += 2 if (action is true_action[-1]) else -2
+                reward += 2 if (validate(action=action,curr_frames=[self.table[frame_1],self.table[frame_2],self.table[frame_3]], protein_=protein)) else -2
                 self.dna_pointer += 4
 
         # INSERTION
-        elif action == Action.INSERT.value:
+        elif action == 3:
             protein = self.protein_sequence[self.protein_pointer]
             if(protein == '*'):
                 score += 0
                 reward = 2
                 self.dna_pointer += 3
             else:
+                # Past Frames
+                frame_a = self.dna_sequence[self.dna_pointer - 3 :self.dna_pointer] if self.dna_pointer > 2 else "TAG"
+                frame_b = self.dna_sequence[self.dna_pointer - 2 :self.dna_pointer + 1]
+                frame_c = self.dna_sequence[self.dna_pointer - 1 :self.dna_pointer + 2]
                 # Current Frames
                 frame_1 = self.dna_sequence[self.dna_pointer : self.dna_pointer + 3]
                 frame_2 = self.dna_sequence[self.dna_pointer + 1 :self.dna_pointer + 4]
                 frame_3 = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
-
+                # Current Protein
+                curr_protein = self.protein_sequence[self.protein_pointer]
                 # Past Protein
                 prev_protein = self.protein_sequence[self.protein_pointer - 1]
                 scores = [self.blosum_lookup(frame_1, prev_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY + 1), self.blosum_lookup(frame_2, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), self.blosum_lookup(frame_3, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY + 1)]
                 
                 # Compare with aligner
                 score += max([self.blosum_lookup(x, prev_protein) for x in [frame_1, frame_2, frame_3]]) - GAP_EXTENSION_PENALTY
-                reward += 2 if (action is true_action[-1]) else -2
+                reward += 2 if (validate(action=action, proteins=[prev_protein, curr_protein], prev_frames=[self.table[frame_a],self.table[frame_b],self.table[frame_c]], curr_frames=[self.table[frame_1],self.table[frame_2],self.table[frame_3]])) else -2
                 self.dna_pointer += (2 + np.argmax(scores))
 
         # DELETION
-        elif action == Action.DELETE.value:
+        elif action == 4:
             protein = self.protein_sequence[self.protein_pointer]
             if(protein == '*'):
                 score += 0
@@ -252,14 +266,20 @@ class Environment:
                 frame_a = self.dna_sequence[self.dna_pointer - 3 :self.dna_pointer] if self.dna_pointer > 2 else "TAG"
                 frame_b = self.dna_sequence[self.dna_pointer - 2 :self.dna_pointer + 1]
                 frame_c = self.dna_sequence[self.dna_pointer - 1 :self.dna_pointer + 2]
-
+                # Current Frames
+                frame_1 = self.dna_sequence[self.dna_pointer : self.dna_pointer + 3]
+                frame_2 = self.dna_sequence[self.dna_pointer + 1 :self.dna_pointer + 4]
+                frame_3 = self.dna_sequence[self.dna_pointer + 2 :self.dna_pointer + 5]
                 # Current Protein
                 curr_protein = self.protein_sequence[self.protein_pointer]
+                # Past Protein
+                prev_protein = self.protein_sequence[self.protein_pointer - 1]
+
                 scores = [self.blosum_lookup(frame_a, curr_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY + 1), self.blosum_lookup(frame_b, curr_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), self.blosum_lookup(frame_c, curr_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY + 1)]
                 
                 # Compare with aligner
                 score += max([self.blosum_lookup(x, curr_protein) for x in [frame_a, frame_b, frame_c]]) - GAP_EXTENSION_PENALTY
-                reward += 2 if (action is true_action[-1]) else -2
+                reward += 2 if (validate(action=action, proteins=[prev_protein, curr_protein], prev_frames=[self.table[frame_a],self.table[frame_b],self.table[frame_c]], curr_frames=[self.table[frame_1],self.table[frame_2],self.table[frame_3]])) else -2
                 self.dna_pointer += (2 + np.argmax(scores))
         
         self.protein_pointer += 1
@@ -311,13 +331,13 @@ class Environment:
             # If they match, set reward
             else:
                 score += self.blosum_lookup(codon, protein)
-                reward += 2 if (action is true_action[-1]) else -2
+                reward += 2 if (validate(action=action, curr_frame=self.table[codon], protein_=protein)) else -2
                 self.dna_pointer += 2
 
         # FRAMESHIFT 1
         elif action == Action.FRAMESHIFT_1.value:
             score += 0
-            reward += -10
+            reward += -2
             self.dna_pointer += 2
 
         # FRAMESHIFT 3
@@ -325,15 +345,15 @@ class Environment:
             protein = self.protein_sequence[self.protein_pointer]
             codon_1 = self.dna_sequence[self.dna_pointer + 1 : self.dna_pointer + 4]
             codon_2 = self.dna_sequence[self.dna_pointer + 2 : self.dna_pointer + 5]
-                
+            
             score += max([self.blosum_lookup(codon_1, protein), self.blosum_lookup(codon_2, protein)]) - GAP_EXTENSION_PENALTY
-            reward += 2 if (action is true_action[-1]) else -2
+            reward += 2 if (validate_first(codon_1 = self.table[codon_1],codon_2=self.table[codon_2], protein=protein)) else -2
             self.dna_pointer += 3
 
         # INSERTION
         elif action == Action.INSERT.value:
             score += 0
-            reward += -10
+            reward += -2
             self.dna_pointer += 2
 
         # DELETION
@@ -345,7 +365,7 @@ class Environment:
                 self.dna_pointer += 2
             else:
                 score += 0
-                reward += -10
+                reward += -2
                 self.dna_pointer += 2
         
         self.protein_pointer += 1
