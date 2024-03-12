@@ -1,1673 +1,1674 @@
-ALIGNMENT RESULTS - 2024-03-11 21:27:28.693430
+ALIGNMENT RESULTS - 2024-03-12 09:50:19.582429
 DNA File: data/dna/DNA1_match.txt
 Protein File: data/proteins/AA1_match.txt
 
 Prev. Frames: _, _, _ => PP: *
 Curr Frames: *, L, * => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, L, * => PP: L
 Curr Frames: N, T, P => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: N, T, P => PP: T
 Curr Frames: H, T, R => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: H, T, R => PP: T
 Curr Frames: V, L, C => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, L, C => PP: L
 Curr Frames: A, H, I => CP: H
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, H, I => PP: H
 Curr Frames: S, R, E => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, R, E => PP: R
 Curr Frames: K, R, G => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, R, G => PP: R
 Curr Frames: V, S, Q => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, S, Q => PP: S
 Curr Frames: K, K, K => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, K, K => PP: K
 Curr Frames: R, G, E => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, G, E => PP: G
 Curr Frames: R, D, M => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, D, M => PP: D
 Curr Frames: *, E, S => CP: E
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, E, S => PP: E
 Curr Frames: A, Q, N => CP: Q
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, Q, N => PP: Q
 Curr Frames: T, Q, N => CP: Q
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, Q, N => PP: Q
 Curr Frames: I, S, R => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: I, S, R => PP: S
 Curr Frames: G, V, Y => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, V, Y => PP: V
 Curr Frames: I, F, S => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: I, F, S => PP: F
 Curr Frames: Q, K, R => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, K, R => PP: K
 Curr Frames: E, K, S => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, K, S => PP: K
 Curr Frames: A, R, D => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, R, D => PP: R
 Curr Frames: T, P, R => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, P, R => PP: P
 Curr Frames: A, L, C => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, L, C => PP: L
 Curr Frames: V, Y, I => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, Y, I => PP: Y
 Curr Frames: F, S, H => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: F, S, H => PP: S
 Curr Frames: I, Y, I => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: I, Y, I => PP: Y
 Curr Frames: S, P, R => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, P, R => PP: P
 Curr Frames: G, A, Q => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, A, Q => PP: A
 Curr Frames: R, D, T => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, D, T => PP: D
 Curr Frames: L, L, C => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, L, C => PP: L
 Curr Frames: V, W, G => CP: W
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, W, G => PP: W
 Curr Frames: E, K, K => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, K, K => PP: K
 Curr Frames: R, G, G => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, G, G => PP: G
 Curr Frames: V, L, Y => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, L, Y => PP: L
 Curr Frames: I, S, R => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: I, S, R => PP: S
 Curr Frames: D, I, L => CP: I
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: D, I, L => PP: I
 Curr Frames: C, A, Q => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: C, A, Q => PP: A
 Curr Frames: K, R, G => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, R, G => PP: R
 Curr Frames: A, R, G => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, R, G => PP: R
 Curr Frames: E, K, K => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, K, K => PP: K
 Curr Frames: N, T, H => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: N, T, H => PP: T
 Curr Frames: T, P, P => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, P, P => PP: P
 Curr Frames: L, W, G => CP: W
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, W, G => PP: W
 Curr Frames: E, N, T => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, N, T => PP: N
 Curr Frames: P, R, A => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, R, A => PP: R
 Curr Frames: Q, R, E => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, R, E => PP: R
 Curr Frames: N, I, Y => CP: I
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: N, I, Y => PP: I
-Curr Frames: M, *, E => CP: *
+Curr Frames: M, *, E => CP: A
 Action: 5 (MISMATCH)
-Reward of Action: -2
+Reward of Action: 0
 
-Prev. Frames: M, *, E => PP: *
+Prev. Frames: M, *, E => PP: A
 Curr Frames: R, G, G => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, G, G => PP: G
 Curr Frames: V, L, C => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, L, C => PP: L
 Curr Frames: A, P, H => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, P, H => PP: P
 Curr Frames: I, S, R => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: I, S, R => PP: S
 Curr Frames: V, C, V => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, C, V => PP: C
 Curr Frames: C, A, H => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: C, A, H => PP: A
 Curr Frames: T, R, G => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, R, G => PP: R
 Curr Frames: G, G, V => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, G, V => PP: G
 Curr Frames: C, A, R => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: C, A, R => PP: A
 Curr Frames: V, L, * => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, L, * => PP: L
 Curr Frames: K, S, A => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, S, A => PP: S
 Curr Frames: P, P, L => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, P, L => PP: P
 Curr Frames: S, L, F => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, L, F => PP: L
 Curr Frames: L, W, G => CP: W
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, W, G => PP: W
 Curr Frames: G, V, F => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, V, F => PP: V
 Curr Frames: S, L, W => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, L, W => PP: L
 Curr Frames: G, V, S => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, V, S => PP: V
 Curr Frames: Q, N, I => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, N, I => PP: N
 Curr Frames: S, R, D => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, R, D => PP: R
 Curr Frames: T, P, R => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, P, R => PP: P
 Curr Frames: E, N, T => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, N, T => PP: N
 Curr Frames: L, C, A => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, C, A => PP: C
 Curr Frames: Q, S, V => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, S, V => PP: S
 Curr Frames: C, V, * => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: C, V, * => PP: V
 Curr Frames: N, T, R => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: N, T, R => PP: T
 Curr Frames: E, K, S => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, K, S => PP: K
-Curr Frames: V, *, S => CP: *
+Curr Frames: V, *, S => CP: A
 Action: 5 (MISMATCH)
-Reward of Action: -2
+Reward of Action: 0
 
-Prev. Frames: V, *, S => PP: *
-Curr Frames: V, Y, T => CP: Y
-Action: 0 (MATCH)
-Reward of Action: 2
+Prev. Frames: *, S, V => PP: A
+Curr Frames: Y, T, L => CP: Y
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
 
 Prev. Frames: V, Y, T => PP: Y
 Curr Frames: L, W, G => CP: W
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, W, G => PP: W
 Curr Frames: D, M, W => CP: M
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: D, M, W => PP: M
 Curr Frames: G, E, N => CP: E
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, E, N => PP: E
 Curr Frames: I, Y, I => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: I, Y, I => PP: Y
 Curr Frames: S, P, Q => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, P, Q => PP: P
 Curr Frames: R, D, T => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, D, T => PP: D
 Curr Frames: P, R, G => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, R, G => PP: R
 Curr Frames: E, K, R => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, K, R => PP: K
 Curr Frames: D, M, C => CP: M
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: D, M, C => PP: M
 Curr Frames: A, R, A => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, R, A => PP: R
 Curr Frames: H, I, Y => CP: I
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: H, I, Y => PP: I
 Curr Frames: T, R, G => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, R, G => PP: R
 Curr Frames: E, S, V => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, S, V => PP: S
 Curr Frames: W, G, E => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: W, G, E => PP: G
 Curr Frames: K, K, N => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, K, N => PP: K
 Curr Frames: T, L, S => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, L, S => PP: L
 Curr Frames: R, A, R => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, A, R => PP: A
 Curr Frames: E, S, A => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, S, A => PP: S
 Curr Frames: R, G, E => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, G, E => PP: G
 Curr Frames: S, A, L => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, A, L => PP: A
 Curr Frames: L, C, A => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, C, A => PP: C
 Curr Frames: R, V, F => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, V, F => PP: V
 Curr Frames: S, L, S => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, L, S => PP: L
 Curr Frames: H, T, R => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: H, T, R => PP: T
 Curr Frames: D, I, Y => CP: I
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: D, I, Y => PP: I
 Curr Frames: T, P, P => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, P, P => PP: P
 Curr Frames: R, G, G => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, G, G => PP: G
 Curr Frames: D, T, R => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: D, T, R => PP: T
 Curr Frames: V, S, L => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, S, L => PP: S
 Curr Frames: L, Y, I => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, Y, I => PP: Y
 Curr Frames: S, R, G => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, R, G => PP: R
 Curr Frames: G, A, L => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, A, L => PP: A
 Curr Frames: Y, T, P => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Y, T, P => PP: T
 Curr Frames: H, T, H => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: H, T, H => PP: T
 Curr Frames: T, Q, N => CP: Q
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, Q, N => PP: Q
 Curr Frames: T, H, I => CP: H
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, H, I => PP: H
 Curr Frames: L, Y, I => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, Y, I => PP: Y
 Curr Frames: S, Q, R => CP: Q
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, Q, R => PP: Q
 Curr Frames: G, D, I => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, D, I => PP: D
 Curr Frames: Y, T, L => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Y, T, L => PP: T
 Curr Frames: *, N, T => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, N, T => PP: N
 Curr Frames: L, S, R => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, S, R => PP: S
 Curr Frames: D, T, L => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: D, T, L => PP: T
 Curr Frames: L, C, V => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, C, V => PP: C
 Curr Frames: *, N, I => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, N, I => PP: N
 Curr Frames: *, N, I => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, N, I => PP: N
 Curr Frames: F, L, Y => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: F, L, Y => PP: L
 Curr Frames: I, S, R => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: I, S, R => PP: S
 Curr Frames: G, V, C => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, V, C => PP: V
 Curr Frames: V, F, S => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, F, S => PP: F
 Curr Frames: P, R, D => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, R, D => PP: R
 Curr Frames: T, L, C => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, L, C => PP: L
 Curr Frames: V, F, S => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, F, S => PP: F
-Curr Frames: L, *, R => CP: *
-Action: 2 (FRAMESHIFT_3)
-Reward of Action: -2
+Curr Frames: L, *, R => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
 
-Prev. Frames: *, R, G => PP: *
-Curr Frames: V, S, L => CP: V
-Action: 1 (FRAMESHIFT_1)
-Reward of Action: 2
+Prev. Frames: L, *, R => PP: A
+Curr Frames: G, V, S => CP: V
+Action: 0 (MATCH)
+Reward of Action: 0
 
 Prev. Frames: G, V, S => PP: V
 Curr Frames: L, S, Q => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, S, Q => PP: S
 Curr Frames: K, R, D => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, R, D => PP: R
 Curr Frames: I, F, F => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: I, F, F => PP: F
 Curr Frames: L, Y, T => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, Y, T => PP: Y
 Curr Frames: L, Y, M => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, Y, M => PP: Y
 Curr Frames: C, A, Q => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: C, A, Q => PP: A
 Curr Frames: S, A, R => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, A, R => PP: A
 Curr Frames: D, I, L => CP: I
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: D, I, L => PP: I
 Curr Frames: Y, T, R => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Y, T, R => PP: T
 Curr Frames: E, R, G => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, R, G => PP: R
 Curr Frames: E, N, I => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, N, I => PP: N
 Curr Frames: S, P, L => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, P, L => PP: P
 Curr Frames: F, F, S => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: F, F, S => PP: F
 Curr Frames: H, M, * => CP: M
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: H, M, * => PP: M
 Curr Frames: E, S, A => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, S, A => PP: S
 Curr Frames: R, E, S => CP: E
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, E, S => PP: E
 Curr Frames: A, P, Q => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, P, Q => PP: P
 Curr Frames: K, K, N => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, K, N => PP: K
 Curr Frames: I, Y, I => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: I, Y, I => PP: Y
 Curr Frames: *, R, E => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, R, E => PP: R
 Curr Frames: K, R, E => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, R, E => PP: R
 Curr Frames: R, D, I => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, D, I => PP: D
-Curr Frames: L, *, R => CP: *
-Action: 0 (MATCH)
-Reward of Action: -2
+Curr Frames: L, *, R => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
 
-Prev. Frames: L, *, R => PP: *
+Prev. Frames: L, *, R => PP: A
 Curr Frames: E, S, V => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, S, V => PP: S
 Curr Frames: F, S, Q => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: F, S, Q => PP: S
 Curr Frames: R, E, N => CP: E
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, E, N => PP: E
 Curr Frames: T, Q, R => CP: Q
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, Q, R => PP: Q
 Curr Frames: G, A, H => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, A, H => PP: A
 Curr Frames: T, H, I => CP: H
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, H, I => PP: H
 Curr Frames: Y, T, P => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Y, T, P => PP: T
 Curr Frames: Q, N, I => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, N, I => PP: N
 Curr Frames: F, S, R => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: F, S, R => PP: S
 Curr Frames: G, A, P => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, A, P => PP: A
 Curr Frames: P, L, * => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, L, * => PP: L
 Curr Frames: K, N, I => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, N, I => PP: N
 Curr Frames: F, F, F => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: F, F, F => PP: F
 Curr Frames: S, P, H => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, P, H => PP: P
 Curr Frames: T, L, S => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, L, S => PP: L
 Curr Frames: Q, K, S => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, K, S => PP: K
 Curr Frames: A, P, L => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, P, L => PP: P
 Curr Frames: W, G, G => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: W, G, G => PP: G
 Curr Frames: G, E, S => CP: E
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, E, S => PP: E
 Curr Frames: A, P, R => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, P, R => PP: P
 Curr Frames: G, V, Y => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, V, Y => PP: V
-Curr Frames: M, *, D => CP: *
-Action: 2 (FRAMESHIFT_3)
-Reward of Action: -2
+Curr Frames: M, *, D => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
 
-Prev. Frames: *, D, I => PP: *
-Curr Frames: F, S, P => CP: F
-Action: 1 (FRAMESHIFT_1)
-Reward of Action: 2
+Prev. Frames: M, *, D => PP: A
+Curr Frames: I, F, S => CP: F
+Action: 0 (MATCH)
+Reward of Action: 0
 
 Prev. Frames: I, F, S => PP: F
 Curr Frames: P, Q, K => CP: Q
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, Q, K => PP: Q
 Curr Frames: N, T, L => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: N, T, L => PP: T
 Curr Frames: Y, M, C => CP: M
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Y, M, C => PP: M
 Curr Frames: A, P, L => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, P, L => PP: P
 Curr Frames: L, C, A => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, C, A => PP: C
 Curr Frames: P, H, T => CP: H
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, H, T => PP: H
 Curr Frames: P, L, S => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, L, S => PP: L
 Curr Frames: L, C, A => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, C, A => PP: C
 Curr Frames: L, F, F => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, F, F => PP: F
-Curr Frames: L, *, N => CP: *
-Action: 4 (DELETION)
-Reward of Action: -2
+Curr Frames: L, *, N => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
 
-Prev. Frames: L, *, N => PP: *
+Prev. Frames: L, *, N => PP: A
 Curr Frames: T, P, Q => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, P, Q => PP: P
 Curr Frames: S, V, C => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, V, C => PP: V
 Curr Frames: A, R, V => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, R, V => PP: R
-Curr Frames: L, *, E => CP: *
-Action: 0 (MATCH)
-Reward of Action: -2
+Curr Frames: L, *, E => CP: A
+Action: 4 (DELETION)
+Reward of Action: 0
 
-Prev. Frames: L, *, E => PP: *
-Curr Frames: R, G, A => CP: G
-Action: 0 (MATCH)
-Reward of Action: 2
+Prev. Frames: V, L, * => PP: A
+Curr Frames: E, R, G => CP: G
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
 
 Prev. Frames: R, G, A => PP: G
 Curr Frames: L, S, L => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, S, L => PP: S
 Curr Frames: W, G, D => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: W, G, D => PP: G
 Curr Frames: I, S, R => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: I, S, R => PP: S
 Curr Frames: G, G, E => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, G, E => PP: G
 Curr Frames: N, T, Q => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: N, T, Q => PP: T
 Curr Frames: R, G, D => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, G, D => PP: G
 Curr Frames: M, W, G => CP: W
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: M, W, G => PP: W
 Curr Frames: G, G, D => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, G, D => PP: G
 Curr Frames: T, L, S => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, L, S => PP: L
 Curr Frames: P, Q, R => CP: Q
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, Q, R => PP: Q
 Curr Frames: G, E, K => CP: E
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, E, K => PP: E
 Curr Frames: K, K, K => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, K, K => PP: K
 Curr Frames: S, V, L => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, V, L => PP: V
 Curr Frames: Y, T, P => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Y, T, P => PP: T
 Curr Frames: R, A, P => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, A, P => PP: A
 Curr Frames: Q, N, I => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, N, I => PP: N
 Curr Frames: S, P, R => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, P, R => PP: P
 Curr Frames: G, V, S => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, V, S => PP: V
 Curr Frames: Q, K, R => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, K, R => PP: K
 Curr Frames: G, V, L => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, V, L => PP: V
 Curr Frames: *, S, V => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, S, V => PP: S
 Curr Frames: Y, T, P => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Y, T, P => PP: T
 Curr Frames: H, T, Q => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: H, T, Q => PP: T
 Curr Frames: S, A, R => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, A, R => PP: A
 Curr Frames: V, Y, T => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, Y, T => PP: Y
 Curr Frames: L, W, G => CP: W
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, W, G => PP: W
 Curr Frames: G, D, T => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, D, T => PP: D
 Curr Frames: H, T, R => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: H, T, R => PP: T
 Curr Frames: V, C, V => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, C, V => PP: C
 Curr Frames: F, L, W => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: F, L, W => PP: L
 Curr Frames: G, V, Y => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, V, Y => PP: V
 Curr Frames: T, P, R => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, P, R => PP: P
 Curr Frames: D, T, R => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: D, T, R => PP: T
 Curr Frames: A, L, Y => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, L, Y => PP: L
-Curr Frames: M, *, E => CP: *
-Action: 5 (MISMATCH)
-Reward of Action: -2
+Curr Frames: M, *, E => CP: A
+Action: 4 (DELETION)
+Reward of Action: 0
 
-Prev. Frames: M, *, E => PP: *
-Curr Frames: R, G, E => CP: G
-Action: 0 (MATCH)
-Reward of Action: 2
+Prev. Frames: Y, M, * => PP: A
+Curr Frames: E, R, G => CP: G
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
 
 Prev. Frames: R, G, E => PP: G
 Curr Frames: R, G, A => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, G, A => PP: G
 Curr Frames: P, L, F => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, L, F => PP: L
 Curr Frames: F, L, * => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: F, L, * => PP: L
 Curr Frames: K, R, E => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, R, E => PP: R
 Curr Frames: N, T, H => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: N, T, H => PP: T
 Curr Frames: T, P, R => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, P, R => PP: P
 Curr Frames: A, P, P => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, P, P => PP: P
 Curr Frames: P, H, T => CP: H
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, H, T => PP: H
 Curr Frames: L, C, V => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, C, V => PP: C
 Curr Frames: *, N, T => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, N, T => PP: N
-Curr Frames: L, *, E => CP: *
+Curr Frames: L, *, E => CP: A
 Action: 5 (MISMATCH)
-Reward of Action: -2
+Reward of Action: 0
 
-Prev. Frames: L, *, E => PP: *
+Prev. Frames: L, *, E => PP: A
 Curr Frames: N, M, * => CP: M
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: N, M, * => PP: M
 Curr Frames: E, N, T => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: E, N, T => PP: N
 Curr Frames: R, A, P => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, A, P => PP: A
 Curr Frames: L, S, L => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, S, L => PP: S
 Curr Frames: *, N, T => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, N, T => PP: N
 Curr Frames: P, R, G => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, R, G => PP: R
-Curr Frames: V, *, K => CP: *
-Action: 4 (DELETION)
-Reward of Action: -2
+Curr Frames: V, *, K => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
 
-Prev. Frames: V, *, K => PP: *
-Curr Frames: K, R, G => CP: R
-Action: 0 (MATCH)
-Reward of Action: 2
+Prev. Frames: G, V, * => PP: A
+Curr Frames: K, K, R => CP: R
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
 
 Prev. Frames: K, R, G => PP: R
 Curr Frames: A, L, F => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, L, F => PP: L
 Curr Frames: F, S, L => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: F, S, L => PP: S
 Curr Frames: S, P, Q => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, P, Q => PP: P
 Curr Frames: R, E, N => CP: E
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, E, N => PP: E
 Curr Frames: T, H, T => CP: H
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, H, T => PP: H
 Curr Frames: Q, N, T => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, N, T => PP: N
 Curr Frames: P, P, L => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, P, L => PP: P
 Curr Frames: Y, T, H => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Y, T, H => PP: T
 Curr Frames: I, S, P => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: I, S, P => PP: S
 Curr Frames: L, L, * => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, L, * => PP: L
 Curr Frames: R, G, G => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, G, G => PP: G
 Curr Frames: V, L, Y => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, L, Y => PP: L
 Curr Frames: T, R, V => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, R, V => PP: R
 Curr Frames: *, D, M => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, D, M => PP: D
 Curr Frames: C, V, * => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: C, V, * => PP: V
 Curr Frames: S, A, H => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, A, H => PP: A
 Curr Frames: T, L, C => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, L, C => PP: L
 Curr Frames: A, H, T => CP: H
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, H, T => PP: H
 Curr Frames: R, G, G => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, G, G => PP: G
 Curr Frames: G, A, P => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, A, P => PP: A
 Curr Frames: L, S, L => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, S, L => PP: S
 Curr Frames: F, F, S => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: F, F, S => PP: F
 Curr Frames: L, L, * => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, L, * => PP: L
 Curr Frames: K, N, I => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, N, I => PP: N
 Curr Frames: L, W, G => CP: W
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, W, G => PP: W
 Curr Frames: V, F, L => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, F, L => PP: F
 Curr Frames: *, E, K => CP: E
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, E, K => PP: E
 Curr Frames: N, I, S => CP: I
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: N, I, S => PP: I
 Curr Frames: L, L, * => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, L, * => PP: L
 Curr Frames: K, N, T => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, N, T => PP: N
 Curr Frames: R, G, D => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, G, D => PP: G
 Curr Frames: T, L, C => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, L, C => PP: L
 Curr Frames: V, C, V => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, C, V => PP: C
 Curr Frames: S, H, M => CP: H
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, H, M => PP: H
 Curr Frames: W, G, G => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: W, G, G => PP: G
 Curr Frames: V, C, V => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, C, V => PP: C
 Curr Frames: S, R, A => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, R, A => PP: R
 Curr Frames: R, D, I => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, D, I => PP: D
 Curr Frames: *, K, S => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, K, S => PP: K
 Curr Frames: V, S, L => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: V, S, L => PP: S
 Curr Frames: Y, M, * => CP: M
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Y, M, * => PP: M
 Curr Frames: D, I, * => CP: I
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: D, I, * => PP: I
 Curr Frames: N, M, W => CP: M
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: N, M, W => PP: M
 Curr Frames: G, D, M => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: G, D, M => PP: D
 Curr Frames: C, V, L => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: C, V, L => PP: V
 Curr Frames: *, S, V => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, S, V => PP: S
 Curr Frames: L, Y, T => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, Y, T => PP: Y
 Curr Frames: R, V, S => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, V, S => PP: V
 Curr Frames: L, C, V => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, C, V => PP: C
 Curr Frames: S, R, V => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, R, V => PP: R
 Curr Frames: L, Y, T => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, Y, T => PP: Y
 Curr Frames: R, D, T => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, D, T => PP: D
 Curr Frames: H, T, H => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: H, T, H => PP: T
 Curr Frames: T, L, C => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, L, C => PP: L
 Curr Frames: A, L, F => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, L, F => PP: L
 Curr Frames: S, R, A => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, R, A => PP: R
 Curr Frames: P, R, E => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, R, E => PP: R
 Curr Frames: N, I, * => CP: I
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: N, I, * => PP: I
 Curr Frames: K, K, S => CP: K
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, K, S => PP: K
 Curr Frames: A, P, Q => CP: P
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, P, Q => PP: P
 Curr Frames: S, A, L => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: S, A, L => PP: A
 Curr Frames: *, S, V => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, S, V => PP: S
 Curr Frames: L, C, A => CP: C
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, C, A => PP: C
 Curr Frames: H, T, P => CP: T
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: H, T, P => PP: T
 Curr Frames: L, F, F => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, F, F => PP: F
 Curr Frames: F, F, S => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: F, F, S => PP: F
 Curr Frames: Q, S, A => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, S, A => PP: S
 Curr Frames: R, D, T => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, D, T => PP: D
 Curr Frames: L, F, S => CP: F
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, F, S => PP: F
 Curr Frames: Q, N, T => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, N, T => PP: N
 Curr Frames: L, S, P => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, S, P => PP: S
 Curr Frames: P, L, S => CP: L
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, L, S => PP: L
 Curr Frames: P, R, A => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: P, R, A => PP: R
 Curr Frames: R, A, P => CP: A
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, A, P => PP: A
 Curr Frames: L, Y, T => CP: Y
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: L, Y, T => PP: Y
 Curr Frames: Q, N, T => CP: N
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Q, N, T => PP: N
 Curr Frames: R, E, N => CP: E
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, E, N => PP: E
 Curr Frames: T, R, E => CP: R
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, R, E => PP: R
 Curr Frames: R, G, E => CP: G
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, G, E => PP: G
 Curr Frames: K, S, V => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: K, S, V => PP: S
 Curr Frames: Y, M, C => CP: M
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: Y, M, C => PP: M
 Curr Frames: A, H, T => CP: H
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: A, H, T => PP: H
 Curr Frames: R, V, Y => CP: V
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: R, V, Y => PP: V
 Curr Frames: T, H, M => CP: H
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: T, H, M => PP: H
 Curr Frames: *, D, T => CP: D
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
 Prev. Frames: *, D, T => PP: D
 Curr Frames: L, S, L => CP: S
 Action: 0 (MATCH)
-Reward of Action: 2
+Reward of Action: 0
 
-ERROR COUNTMatches: 2
+ERROR COUNT
+Matches: 0
 F_1: 0
-F_3: 2
+F_3: 0
 Ins: 0
-Dels: 2
-Mis: 4
+Dels: 0
+Mis: 0
 
-Accuracy: 0.9698795180722891
+Accuracy: 0.9578313253012049
 
