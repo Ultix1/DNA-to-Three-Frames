@@ -4,6 +4,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Directories
+/learning/data/dna
+/learning/data/proteins
+/learning/saved_weights
+/learning/temp
+/learning/utils/data
+
 # C extensions
 *.so
 
