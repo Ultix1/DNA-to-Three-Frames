@@ -3,22 +3,22 @@ import os
 import numpy as np
 import time
 from utils.constants import Action, PARAMS
-from network import DDDQN
-from main_agent import Agent
-from environment import Environment
+from models.network import DDDQN
+from models.main_agent import Agent
+from models.environment import Environment
+import matplotlib.pyplot as plt
 
 def save_params(episode, epsilon):
     file = open("./saved_weights/params.txt", "w")
     file.write(f"Episode: {episode}, Epsilon: {epsilon}")
     file.close()
 
-def record_results(episode, score, reward, duration, steps):
+def record_results(episode, score, reward, duration, steps, epsilon):
     file = open("./saved_weights/training_results.txt", "a")
-    file.write(f"Episode: {episode}\n\tScore: {score}, Reward: {reward}, Time Taken: {duration}, Steps Taken: {steps} \n")
+    file.write(f"Episode: {episode}, Epsilon: {epsilon}\n\tScore: {score}, Reward: {reward}, Time Taken: {duration}, Steps Taken: {steps} \n")
     if(episode == PARAMS['max_ep']):
         file.write("====================\n====================\n")
     file.close()
-
 
 dna_dir = "data/dna"
 protein_dir = "data/proteins"
@@ -38,16 +38,15 @@ for fn in os.listdir(protein_dir):
 
 checkpoint_paths = ["./saved_weights/main/main_checkpoint.h5", "./saved_weights/target/target_checkpoint.h5"]
 
-actions = [Action.MATCH.value, Action.FRAMESHIFT_1.value, Action.FRAMESHIFT_3.value, Action.INSERT.value, Action.DELETE.value, Action.MISMATCH.value]
-learning_rate = 0.001
-input_shape = (8, 21, 1)
+actions = PARAMS['actions']
+learning_rate = PARAMS['lr']
+input_shape = PARAMS['input_shape']
 
 MainQN = DDDQN(learning_rate, len(actions), input_shape)
 TargetQN = DDDQN(learning_rate, len(actions), input_shape)
 
 environment = Environment()
 agent = Agent(MainQN, TargetQN, environment, PARAMS, actions)
-
 
 # <============================================= Training Loop =============================================>
 
@@ -84,21 +83,25 @@ environment.set_seq(dna_list[i], protein_list[i])
 while episodes <= PARAMS['max_ep']:
         
     start = time.time()
+    curr_epsilon = agent.epsilon
     score, reward, steps = agent.play()
     duration = time.time() - start
-    
+
     agent.decay_epsilon()
     agent.reset()
 
     # Print results of agent
-    print(f"Episode: {episodes + prev_episodes}\n\tScore: {score}, Reward: {reward}, Time Taken: {duration}, Steps Taken: {steps} \n")
+    print(f"Episode: {episodes + prev_episodes}, Epsilon: {curr_epsilon}\n\tScore: {score}, Reward: {reward}, Time Taken: {duration}, Steps Taken: {steps} \n")
     
     # Update Target Q-Network every 20 Episodes
     if(episodes > 0 and episodes % 20 == 0):
         agent.soft_update_model(PARAMS['tau'])
-        
-        i = (i + 1) % len(dna_list)
-        environment.set_seq(dna_list[i], protein_list[i])
+
+        if len(dna_list) > 1:
+            i = (i + 1) % len(dna_list)
+            print(f"Loaded DNA File: {dna_list[i]}")
+            print(f"Loaded Protein File: {protein_list[i]}\n")
+            environment.set_seq(dna_list[i], protein_list[i])
 
     # Save Weights every 10 Episodes
     if(episodes > 0 and episodes % 10 == 0):
@@ -107,7 +110,7 @@ while episodes <= PARAMS['max_ep']:
         save_params(episodes, agent.epsilon)
 
     # Record results of agent
-    record_results(episodes, score, reward, duration, steps)
+    record_results(episodes, score, reward, duration, steps, curr_epsilon)
 
     episodes += 1
 
