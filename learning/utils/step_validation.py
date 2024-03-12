@@ -14,7 +14,7 @@ def validate_first(codon_1, codon_2, protein, action=Action.MATCH.value):
     
       return False
 
-def validate(action, proteins=None, protein=None, prev_frames=None, curr_frames=None, curr_frame=None):
+def validate(action:int, proteins:list=None, protein:str=None, prev_frames:list=None, curr_frames:list=None, curr_frame:str=None):
     # Match (Perfect)
     if action == 0:
       return curr_frame == protein
@@ -40,13 +40,28 @@ def validate(action, proteins=None, protein=None, prev_frames=None, curr_frames=
     # Insertion 
     elif action == 3:
       rewards = bl.BLOSUM(62, default=-999)
+
+      # If current protein in current frames
       if proteins[1] in curr_frames:
         return False
+
+      elif (proteins[0] not in curr_frames) and (proteins[1] not in prev_frames) and (proteins[1] not in curr_frames):
+        return False
+
       else:
         # Insertion(score_a) vs Deletion(score_b)
-        score_a = max(rewards[curr_frames[0]][proteins[0]], rewards[curr_frames[1]][proteins[0]], rewards[curr_frames[2]][proteins[0]])
-        score_b = max(rewards[prev_frames[0]][proteins[1]], rewards[prev_frames[1]][proteins[1]], rewards[prev_frames[2]][proteins[1]])
-        return score_a > score_b
+        score_a = max(
+          rewards[curr_frames[0]][proteins[0]], 
+          rewards[curr_frames[1]][proteins[0]], 
+          rewards[curr_frames[2]][proteins[0]]
+        )
+
+        score_b = max(
+          rewards[prev_frames[0]][proteins[1]], 
+          rewards[prev_frames[1]][proteins[1]], 
+          rewards[prev_frames[2]][proteins[1]]
+        )
+        return score_a >= score_b
       
     # Deletion
     elif action == 4:
@@ -55,31 +70,37 @@ def validate(action, proteins=None, protein=None, prev_frames=None, curr_frames=
       if proteins[1] in curr_frames:
         return False
       
+      elif (proteins[0] not in curr_frames) and (proteins[1] not in prev_frames) and (proteins[1] not in curr_frames):
+        return False
+      
       else:
         # Deletion(score_1) vs Insertion(score_2)
         score_1 = max(
             rewards[prev_frames[0]][proteins[1]], 
             rewards[prev_frames[1]][proteins[1]], 
             rewards[prev_frames[2]][proteins[1]]
-        ) - GAP_EXTENSION_PENALTY
+        )
 
         score_2 = max(
             rewards[curr_frames[0]][proteins[0]], 
             rewards[curr_frames[1]][proteins[0]], 
             rewards[curr_frames[2]][proteins[0]]
-        ) - GAP_EXTENSION_PENALTY
+        )
 
         return score_1 > score_2
       
     elif action == 5:
-      # Condition for Deletion
-      condition_1 = proteins[0] not in curr_frames
-
       # Condition for Insertion
-      condition_2 = proteins[1] not in prev_frames
+      condition_1 = proteins[0] not in curr_frames and proteins[0] != "*"
+
+      # Condition for Deletion
+      condition_2 = proteins[1] not in prev_frames and proteins[1] != "*"
 
       # Condition for Frameshift_1, Match, Frameshift_3
-      condition_3 = proteins[1] not in [curr_frames]
+      condition_3 = proteins[1] not in curr_frames and proteins[1] != "*"
+
+      if(proteins[0] == "*" and proteins[1] == "*"):
+        print("\nDOUBLE ASTERISK\n")
 
       return (condition_1 and condition_2 and condition_3)
       
