@@ -20,9 +20,9 @@ class DDDQN():
         """
         self.optimizer = Adam(learning_rate)
         self.act_size = action_size
-        self.model = self.build_model(input_shape, action_size)
+        self.model = self.build_model(input_shape)
 
-    def build_model(self, input_shape, n_actions):
+    def build_model(self, input_shape):
 
         inputs = K_Input(shape=input_shape)
 
@@ -47,3 +47,5 @@ class DDDQN():
         q_vals = state_value + (advantage - advantage_mean)
 
         return Model(inputs=inputs, outputs=q_vals)
+    
+

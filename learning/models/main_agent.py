@@ -2,11 +2,11 @@
 import tensorflow as tf
 import numpy as np
 import random
-from environment import Environment
-from experience_buffer import Experience_Buffer
 from keras import Model
 from keras.optimizers import Adam
-from network import DDDQN
+from models.environment import Environment
+from models.experience_buffer import Experience_Buffer
+from models.network import DDDQN
 
 class Agent():
 
@@ -105,8 +105,6 @@ class Agent():
                 if(self.total_steps > 0 and self.total_steps % self.train_freq == 0):
                     self.train()
 
-                if state.shape != (8, 21, 1):
-                    print(state.shape)
                 self.episodeBuffer.add(state, action, reward, next_state, done)
                 steps += 1
 
@@ -173,7 +171,8 @@ class Agent():
         Returns:
             Action: Integer value representing the action to be taken
         """
-        if (random.uniform(0, 1) < self.epsilon and self.epsilon != self.epsilon_min and not test):
+        # if (random.uniform(0, 1) < self.epsilon and self.epsilon != self.epsilon_min and not test):
+        if (random.uniform(0, 1) < self.epsilon and not test):
             return np.random.choice(self.actions)
         
         else:

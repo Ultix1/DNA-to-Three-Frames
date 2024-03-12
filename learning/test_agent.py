@@ -1,7 +1,7 @@
 import os
-from environment import Environment
-from main_agent import Agent
-from network import DDDQN
+from models.environment import Environment
+from models.main_agent import Agent
+from models.network import DDDQN
 from utils.constants import PARAMS
 
 dna_dir = "data/dna"
@@ -16,9 +16,9 @@ for fn in os.listdir(dna_dir):
 for fn in os.listdir(protein_dir):
     protein_list.append(f"{protein_dir}/{fn}")
 
-input_shape = (8, 21, 1)
-actions = [0, 1, 2, 3, 4]
-learning_rate = 0.001
+input_shape = PARAMS['input_shape']
+actions = PARAMS['actions']
+learning_rate = PARAMS['lr']
 
 MainQN = DDDQN(learning_rate, len(actions), input_shape)
 TargetQN = DDDQN(learning_rate, len(actions), input_shape)
