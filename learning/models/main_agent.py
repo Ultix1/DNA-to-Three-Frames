@@ -179,17 +179,59 @@ class Agent():
             q_vals = self.mainQN.model(state)
             return np.argmax(q_vals)
         
-    def test(self, filename_1 : str = None, filename_2 : str = None):
+    def test(self, filename_1 : str = None, filename_2 : str = None, save=False, verbose=False):
         """
-        Tests the reinforcement learning agent
+        Tests the agent on the current environment
 
         Args:
             filename_1 (str, optional): Filename / Directory path to dna file. Defaults to None.
             filename_2 (str, optional): Filename / Directory path to protein file. Defaults to None.
+            save (bool, optional): Boolean determining if the alignment processes are saved. Defaults to False.
+            verbose (bool, optional): Boolean determining if the score and rewards should be displayed. Defaults to False.
+
+        Returns:
+            _type_: _description_
         """
         done = False
         steps = 0
         total_reward = 0
+        total_score = 0
+        while not done:
+            state = self.env.get_state() if steps > 0 else self.env.get_first_state()
+            action = self.get_action(tf.expand_dims(state, axis=0), test=True)
+
+            score, reward, done, ____ = self.env.step(action, True) if steps > 0 else self.env.first_step(action, True)
+
+            steps += 1
+            total_reward += reward
+            total_score += score
+        
+        if save:
+            self.env.save_aligment(filename_1, filename_2)
+        
+        if verbose:
+            print(f"Total Reward: {total_reward}, Steps Taken: {steps}")
+
+        return total_score, total_reward
+
+
+    def find(self, filename_1:str, filename_2:str, target_protein:str, protein_len: int = 10, save=False):
+        """
+        Finds a protein given the sequence
+
+        Args:
+            filename_1 (str, optional): Filename / Directory path to dna file.
+            filename_2 (str, optional): Filename / Directory path to protein file.
+            target_protein (str) : The target protein sequence the agent will find
+            protein_len (int) : Size or length of target protein sequence
+        """
+        done = False
+        steps = 0
+        total_matches = 0
+
+        i = 0
+        found_index = -1
+
         while not done:
             state = self.env.get_state() if steps > 0 else self.env.get_first_state()
             action = self.get_action(tf.expand_dims(state, axis=0), test=True)
@@ -197,10 +239,31 @@ class Agent():
             _, reward, done, ____ = self.env.step(action, True) if steps > 0 else self.env.first_step(action, True)
 
             steps += 1
-            total_reward += reward
+
+            # If Correct Match
+            if(action == 0 and reward == 0):
+
+                # Compare current protein with target protein
+                if(target_protein[i] == self.env.protein_sequence[self.env.protein_pointer - 1]):
+                    if(total_matches == 0):
+                        found_index = (self.env.dna_pointer - 2)/3
+
+                    total_matches += 1
+                    i += 1
+
+                # If next character is wrong
+                else:
+                    i = 0
+                    total_matches = 0
+
+            if(total_matches == protein_len):
+                done = True
         
-        print(f"Total Reward: {total_reward}, Steps Taken: {steps}")
-        self.env.save_aligment(filename_1, filename_2)
+        print(f"Sequence was found at PROTEIN index: {found_index}")
+        print(f"Sequence was found at DNA index: {found_index * 3}")
+
+        if save:
+            self.env.save_aligment(filename_1, filename_2)
 
     def load_weights(self, path_1, path_2):
         """
