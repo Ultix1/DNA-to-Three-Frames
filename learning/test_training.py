@@ -46,5 +46,5 @@ if(os.path.isfile(checkpoint_paths[0]) and os.path.isfile(checkpoint_paths[1])):
         environment.set_seq(dna, protein)
 
         print(f"For DNA and Protein Sequence {i + 1}:")
-        agent.test(dna_list[i], protein_list[i])
+        agent.test(dna_list[i], protein_list[i], save=True)
         print("")
