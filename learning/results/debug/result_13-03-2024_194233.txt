@@ -1,0 +1,1676 @@
+ALIGNMENT RESULTS - 2024-03-13 19:42:33.804606
+DNA File: 
+Protein File: 
+
+Prev. Frames: _, _, _ => PP: *
+Curr Frames: *, M, W => CP: M
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: *, M, W => PP: M
+Curr Frames: G, G, V => CP: G
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: G, G, V => PP: G
+Curr Frames: F, S, L => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: K
+Curr Frames: *, K, N => CP: D
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: *, K, N => PP: D
+Curr Frames: T, R, V => CP: R
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: T, R, V => PP: R
+Curr Frames: S, R, V => CP: L
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, R, V => PP: L
+Curr Frames: F, L, Y => CP: P
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: F, L, Y => PP: P
+Curr Frames: T, R, V => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: T, R, V => PP: E
+Curr Frames: F, F, F => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, F, F => PP: L
+Curr Frames: F, L, Y => CP: L
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: F, L, Y => PP: L
+Curr Frames: I, L, * => CP: Q
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: I, L, * => PP: Q
+Curr Frames: R, D, M => CP: R
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: *, R, D => PP: R
+Curr Frames: M, *, E => CP: S
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: M, *, E => PP: S
+Curr Frames: N, I, S => CP: L
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: I, S, L => PP: L
+Curr Frames: *, D, I => CP: S
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: *, D, I => PP: S
+Curr Frames: S, Q, N => CP: T
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: I, S, Q => PP: T
+Curr Frames: N, T, Q => CP: N
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: Q, N, T => PP: N
+Curr Frames: Q, K, R => CP: S
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Q, K, R => PP: S
+Curr Frames: E, K, K => CP: S
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: E, K, K => PP: S
+Curr Frames: N, I, F => CP: N
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: K, N, I => PP: N
+Curr Frames: F, S, L => CP: S
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: S
+Curr Frames: S, P, L => CP: S
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: L, S, P => PP: S
+Curr Frames: L, *, D => CP: S
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: L, *, D => PP: S
+Curr Frames: M, W, G => CP: N
+Action: 4 (DELETION)
+Reward of Action: -2
+
+Prev. Frames: W, G, V => PP: N
+Curr Frames: *, N, M => CP: G
+Action: 4 (DELETION)
+Reward of Action: -2
+
+Prev. Frames: *, N, M => PP: G
+Curr Frames: W, G, V => CP: S
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: W, G, V => PP: S
+Curr Frames: S, P, L => CP: L
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: P, L, * => PP: L
+Curr Frames: K, K, K => CP: L
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: K, K, K => PP: L
+Curr Frames: K, K, K => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, K, K => PP: L
+Curr Frames: K, N, T => CP: N
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: K, N, T => PP: N
+Curr Frames: R, V, F => CP: V
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: R, V, F => PP: V
+Curr Frames: L, Y, I => CP: Y
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: L, Y, I => PP: Y
+Curr Frames: F, L, Y => CP: S
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: L, Y, T => PP: S
+Curr Frames: L, S, P => CP: G
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: L, S, P => PP: G
+Curr Frames: L, Y, T => CP: T
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: Y, T, L => PP: T
+Curr Frames: *, D, I => CP: T
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: *, D, I => PP: T
+Curr Frames: F, F, L => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, F, L => PP: E
+Curr Frames: *, N, I => CP: F
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: *, N, I => PP: F
+Curr Frames: Y, I, F => CP: I
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: Y, I, F => PP: I
+Curr Frames: S, P, L => CP: I
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: S, P, L => PP: I
+Curr Frames: *, K, K => CP: G
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: *, K, K => PP: G
+Curr Frames: S, A, L => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, A, L => PP: N
+Curr Frames: *, N, I => CP: T
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: *, N, I => PP: T
+Curr Frames: S, Q, N => CP: G
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, Q, N => PP: G
+Curr Frames: T, R, V => CP: G
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: T, R, V => PP: G
+Curr Frames: F, S, L => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: N
+Curr Frames: F, F, F => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, F, F => PP: N
+Curr Frames: F, L, * => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, L, * => PP: N
+Curr Frames: S, A, L => CP: S
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: *, S, A => PP: S
+Curr Frames: L, *, E => CP: Y
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, *, E => PP: Y
+Curr Frames: N, I, S => CP: S
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: I, S, L => PP: S
+Curr Frames: Y, T, L => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Y, T, L => PP: V
+Curr Frames: F, S, L => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: V
+Curr Frames: *, N, I => CP: S
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: *, N, I => PP: S
+Curr Frames: S, H, I => CP: Q
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: I, S, H => PP: Q
+Curr Frames: I, S, Q => CP: N
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, Q, K => PP: N
+Curr Frames: K, K, K => CP: S
+Action: 5 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: K, K, K => PP: S
+Curr Frames: K, N, I => CP: H
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, N, I => PP: H
+Curr Frames: Y, T, L => CP: S
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Y, T, L => PP: S
+Curr Frames: S, P, L => CP: C
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: L, S, P => PP: C
+Curr Frames: L, F, S => CP: S
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: S
+Curr Frames: S, R, V => CP: N
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: L, S, R => PP: N
+Curr Frames: V, F, F => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: V, F, F => PP: N
+Curr Frames: F, S, Q => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, Q => PP: N
+Curr Frames: K, N, T => CP: S
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: K, N, T => PP: S
+Curr Frames: L, Y, M => CP: S
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, Y, M => PP: S
+Curr Frames: C, V, W => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: C, V, W => PP: T
+Curr Frames: G, A, Q => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: G, A, Q => PP: E
+Curr Frames: K, N, T => CP: P
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, N, T => PP: P
+Curr Frames: L, F, L => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: L, F, L => PP: K
+Curr Frames: *, K, N => CP: D
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: *, K, N => PP: D
+Curr Frames: I, *, K => CP: R
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: *, K, N => PP: R
+Curr Frames: I, S, L => CP: S
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: I, S, L => PP: S
+Curr Frames: W, G, V => CP: S
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: W, G, V => PP: S
+Curr Frames: F, S, L => CP: S
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: S
+Curr Frames: F, S, L => CP: K
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: K
+Curr Frames: F, S, L => CP: M
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: M
+Curr Frames: F, S, L => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: T
+Curr Frames: S, Q, N => CP: Q
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: S, Q, N => PP: Q
+Curr Frames: T, P, L => CP: Y
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: T, P, L => PP: Y
+Curr Frames: *, D, I => CP: G
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: *, D, I => PP: G
+Curr Frames: F, S, L => CP: S
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: S
+Curr Frames: F, L, * => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, L, * => PP: N
+Curr Frames: R, G, V => CP: V
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: G, V, * => PP: V
+Curr Frames: N, I, F => CP: D
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: *, N, I => PP: D
+Curr Frames: F, S, L => CP: D
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: D
+Curr Frames: F, S, L => CP: I
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: I
+Curr Frames: F, F, F => CP: L
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: F, F, F => PP: L
+Curr Frames: S, L, F => CP: N
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, L, F => PP: N
+Curr Frames: S, L, L => CP: P
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, L, L => PP: P
+Curr Frames: C, V, F => CP: Y
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: C, V, F => PP: Y
+Curr Frames: S, L, S => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, L, S => PP: T
+Curr Frames: Q, N, I => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Q, N, I => PP: E
+Curr Frames: L, Y, I => CP: I
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: Y, I, L => PP: I
+Curr Frames: *, K, N => CP: R
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: *, K, N => PP: R
+Curr Frames: I, Y, T => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: I, Y, T => PP: Q
+Curr Frames: L, F, S => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, F, S => PP: Q
+Curr Frames: L, L, W => CP: L
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: L, L, W => PP: L
+Curr Frames: G, A, P => CP: A
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: G, A, P => PP: A
+Curr Frames: L, W, G => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, W, G => PP: Q
+Curr Frames: V, Y, T => CP: I
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: G, V, Y => PP: I
+Curr Frames: T, L, S => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: T, L, S => PP: A
+Curr Frames: R, V, S => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: R, V, S => PP: A
+Curr Frames: R, V, S => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: R, V, S => PP: N
+Curr Frames: R, V, C => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: R, V, C => PP: L
+Curr Frames: A, L, * => CP: E
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: A, L, * => PP: E
+Curr Frames: K, K, S => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, K, S => PP: T
+Curr Frames: A, L, F => CP: M
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: A, L, F => PP: M
+Curr Frames: L, Y, T => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, Y, T => PP: N
+Curr Frames: P, L, F => CP: R
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: P, L, F => PP: R
+Curr Frames: L, *, S => CP: M
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, L, * => PP: M
+Curr Frames: S, A, L => CP: A
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: S, A, L => PP: A
+Curr Frames: Y, I, F => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Y, I, F => PP: Q
+Curr Frames: S, Q, K => CP: T
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, Q, K => PP: T
+Curr Frames: N, I, F => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: N, I, F => PP: V
+Curr Frames: F, S, L => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: F, S, L => PP: N
+Curr Frames: S, P, L => CP: L
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: P, L, S => PP: L
+Curr Frames: R, V, Y => CP: R
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: S, R, V => PP: R
+Curr Frames: Y, T, L => CP: T
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: Y, T, L => PP: T
+Curr Frames: S, P, L => CP: F
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, P, L => PP: F
+Curr Frames: S, P, L => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, P, L => PP: N
+Curr Frames: F, S, L => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: E
+Curr Frames: C, V, F => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: C, V, F => PP: N
+Curr Frames: F, S, L => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: E
+Curr Frames: L, Y, M => CP: M
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: Y, M, * => PP: M
+Curr Frames: E, K, R => CP: D
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: E, K, R => PP: D
+Curr Frames: G, V, S => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: G, V, S => PP: E
+Curr Frames: R, V, * => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: R, V, * => PP: L
+Curr Frames: E, K, N => CP: H
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: E, K, N => PP: H
+Curr Frames: T, L, F => CP: N
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: L, F, S => PP: N
+Curr Frames: L, F, S => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, F, S => PP: K
+Curr Frames: L, F, L => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, F, L => PP: N
+Curr Frames: Y, I, F => CP: L
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: L, Y, I => PP: L
+Curr Frames: F, F, S => CP: R
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, F, S => PP: R
+Curr Frames: Q, N, I => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: N, I, S => PP: L
+Curr Frames: L, F, S => CP: G
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, L, F => PP: G
+Curr Frames: S, L, L => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: N
+Curr Frames: L, W, G => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, W, G => PP: Q
+Curr Frames: E, K, N => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: E, K, N => PP: L
+Curr Frames: I, S, L => CP: M
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, L, F => PP: M
+Curr Frames: L, *, N => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, *, N => PP: T
+Curr Frames: I, L, * => CP: R
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: I, L, * => PP: R
+Curr Frames: N, I, S => CP: F
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: N, I, S => PP: F
+Curr Frames: Q, K, N => CP: N
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: K, N, T => PP: N
+Curr Frames: L, C, A => CP: D
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, C, A => PP: D
+Curr Frames: L, F, S => CP: F
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: L, F, S => PP: F
+Curr Frames: L, L, C => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, L, C => PP: K
+Curr Frames: V, *, N => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: C, V, * => PP: A
+Curr Frames: N, M, W => CP: N
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: *, N, M => PP: N
+Curr Frames: W, G, V => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: G, V, F => PP: L
+Curr Frames: S, L, F => CP: P
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, L, F => PP: P
+Curr Frames: S, L, * => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, L, * => PP: A
+Curr Frames: E, K, K => CP: E
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: *, E, K => PP: E
+Curr Frames: K, N, I => CP: N
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: K, N, I => PP: N
+Curr Frames: Y, I, L => CP: D
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Y, I, L => PP: D
+Curr Frames: *, D, I => CP: Y
+Action: 3 (INSERTION)
+Reward of Action: -2
+
+Prev. Frames: *, D, I => PP: Y
+Curr Frames: F, S, L => CP: S
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: S
+Curr Frames: *, D, I => CP: L
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: D, I, S => PP: L
+Curr Frames: P, L, S => CP: E
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: P, L, S => PP: E
+Curr Frames: P, L, Y => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: P, L, Y => PP: A
+Curr Frames: T, L, S => CP: R
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: T, L, S => PP: R
+Curr Frames: P, L, S => CP: M
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: P, L, S => PP: M
+Curr Frames: Q, N, T => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Q, N, T => PP: K
+Curr Frames: R, V, F => CP: R
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: T, R, V => PP: R
+Curr Frames: F, L, Y => CP: T
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: V, F, L => PP: T
+Curr Frames: Y, T, P => CP: L
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: Y, T, P => PP: L
+Curr Frames: L, Y, T => CP: F
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: P, L, Y => PP: F
+Curr Frames: T, L, F => CP: Y
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: L, F, S => PP: Y
+Curr Frames: L, F, S => CP: G
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, F, S => PP: G
+Curr Frames: L, F, F => CP: L
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: S, L, F => PP: L
+Curr Frames: F, F, S => CP: H
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, F, S => PP: H
+Curr Frames: Q, K, N => CP: Q
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: S, Q, K => PP: Q
+Curr Frames: N, T, L => CP: T
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: N, T, L => PP: T
+Curr Frames: F, S, L => CP: F
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: L, F, S => PP: F
+Curr Frames: L, L, W => CP: I
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, L, W => PP: I
+Curr Frames: G, E, K => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: G, E, K => PP: N
+Curr Frames: N, I, S => CP: L
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: K, N, I => PP: L
+Curr Frames: S, L, F => CP: W
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, L, F => PP: W
+Curr Frames: L, Y, I => CP: H
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, Y, I => PP: H
+Curr Frames: S, L, S => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, L, S => PP: K
+Curr Frames: Q, N, I => CP: N
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: Q, N, I => PP: N
+Curr Frames: S, L, F => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, L, F => PP: E
+Curr Frames: S, L, F => CP: L
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: S, L, F => PP: L
+Curr Frames: L, *, K => CP: F
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: *, K, N => PP: F
+Curr Frames: I, *, K => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: N, I, * => PP: L
+Curr Frames: K, N, I => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, N, I => PP: Q
+Curr Frames: S, L, * => CP: N
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: S, L, * => PP: N
+Curr Frames: N, I, L => CP: Y
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: *, N, I => PP: Y
+Curr Frames: L, C, V => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, C, V => PP: E
+Curr Frames: F, S, L => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: T
+Curr Frames: W, G, V => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: W, G, V => PP: K
+Curr Frames: F, L, * => CP: V
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: L, *, N => PP: V
+Curr Frames: T, L, * => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: T, L, * => PP: K
+Curr Frames: E, K, R => CP: K
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: E, K, R => PP: K
+Curr Frames: D, I, F => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: R, D, I => PP: N
+Curr Frames: F, S, L => CP: L
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: S, L, L => PP: L
+Curr Frames: Y, I, Y => CP: R
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Y, I, Y => PP: R
+Curr Frames: T, L, * => CP: L
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: T, L, * => PP: L
+Curr Frames: E, N, I => CP: H
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: E, N, I => PP: H
+Curr Frames: S, L, F => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, L, F => PP: T
+Curr Frames: S, L, S => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, L, S => PP: K
+Curr Frames: P, L, C => CP: I
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: P, L, C => PP: I
+Curr Frames: A, L, Y => CP: I
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: A, L, Y => PP: I
+Curr Frames: I, F, S => CP: N
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: Y, I, F => PP: N
+Curr Frames: S, Q, N => CP: S
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: F, S, Q => PP: S
+Curr Frames: N, I, L => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: N, I, L => PP: E
+Curr Frames: *, S, V => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: *, S, V => PP: A
+Curr Frames: F, S, P => CP: S
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, P => PP: S
+Curr Frames: L, F, S => CP: E
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: E
+Curr Frames: *, E, N => CP: Q
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: *, E, N => PP: Q
+Curr Frames: I, S, L => CP: E
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: I, S, L => PP: E
+Curr Frames: S, P, L => CP: I
+Action: 5 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: P, L, S => PP: I
+Curr Frames: R, V, S => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: R, V, S => PP: E
+Curr Frames: Q, N, I => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: N, I, Y => PP: L
+Curr Frames: I, F, L => CP: L
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: F, L, Y => PP: L
+Curr Frames: T, P, L => CP: I
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: P, L, F => PP: I
+Curr Frames: S, L, F => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, L, F => PP: E
+Curr Frames: S, L, S => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: N
+Curr Frames: S, Q, K => CP: K
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: Q, K, K => PP: K
+Curr Frames: N, I, S => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: N, I, S => PP: T
+Curr Frames: R, V, C => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: R, V, C => PP: T
+Curr Frames: V, L, * => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: V, L, * => PP: K
+Curr Frames: N, I, F => CP: L
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: N, I, F => PP: L
+Curr Frames: L, *, K => CP: F
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: *, K, K => PP: F
+Curr Frames: K, S, A => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, S, A => PP: V
+Curr Frames: L, *, N => CP: D
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: *, N, I => PP: D
+Curr Frames: S, P, L => CP: N
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: S, P, L => PP: N
+Curr Frames: S, R, V => CP: F
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, R, V => PP: F
+Curr Frames: L, C, V => CP: L
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: V, L, C => PP: L
+Curr Frames: V, C, V => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: V, C, V => PP: Q
+Curr Frames: L, *, K => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: *, K, K => PP: E
+Curr Frames: R, G, V => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: R, G, V => PP: T
+Curr Frames: W, G, V => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: W, G, V => PP: E
+Curr Frames: L, Y, M => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, Y, M => PP: K
+Curr Frames: C, A, L => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: C, A, L => PP: E
+Curr Frames: *, E, K => CP: R
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: *, E, K => PP: R
+Curr Frames: R, E, N => CP: Q
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: K, R, E => PP: Q
+Curr Frames: N, I, F => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: N, I, F => PP: T
+Curr Frames: F, S, R => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, R => PP: L
+Curr Frames: V, *, K => CP: R
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: *, K, K => PP: R
+Curr Frames: S, V, F => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, V, F => PP: E
+Curr Frames: F, L, * => CP: M
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, L, * => PP: M
+Curr Frames: K, K, K => CP: M
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, K, K => PP: M
+Curr Frames: K, K, K => CP: D
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, K, K => PP: D
+Curr Frames: S, V, F => CP: R
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, V, F => PP: R
+Curr Frames: S, R, V => CP: F
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: R, V, Y => PP: F
+Curr Frames: M, W, G => CP: N
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: M, W, G => PP: N
+Curr Frames: D, I, S => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: G, D, I => PP: E
+Curr Frames: S, Q, N => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, Q, N => PP: L
+Curr Frames: T, R, V => CP: R
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: T, R, V => PP: R
+Curr Frames: S, Q, N => CP: R
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: S, Q, N => PP: R
+Curr Frames: I, L, * => CP: L
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: I, L, * => PP: L
+Curr Frames: K, K, K => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, K, K => PP: E
+Curr Frames: K, N, I => CP: K
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: K, K, N => PP: K
+Curr Frames: I, S, H => CP: S
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: I, S, H => PP: S
+Curr Frames: M, C, A => CP: I
+Action: 5 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: M, C, A => PP: I
+Curr Frames: L, C, A => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, C, A => PP: E
+Curr Frames: L, Y, T => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, Y, T => PP: E
+Curr Frames: L, S, H => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, S, H => PP: V
+Curr Frames: I, Y, T => CP: H
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: Y, T, L => PP: H
+Curr Frames: C, A, L => CP: A
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: C, A, L => PP: A
+Curr Frames: *, K, K => CP: L
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: K, K, N => PP: L
+Curr Frames: I, F, F => CP: F
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: I, F, F => PP: F
+Curr Frames: L, Y, I => CP: M
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, Y, I => PP: M
+Curr Frames: S, L, C => CP: R
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, L, C => PP: R
+Curr Frames: V, L, Y => CP: I
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: V, L, Y => PP: I
+Curr Frames: T, L, * => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: T, L, * => PP: Q
+Curr Frames: N, I, S => CP: T
+Action: 5 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: N, I, S => PP: T
+Curr Frames: Q, N, I => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: N, I, Y => PP: L
+Curr Frames: M, W, G => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Y, M, W => PP: V
+Curr Frames: G, V, C => CP: M
+Action: 3 (INSERTION)
+Reward of Action: -2
+
+Prev. Frames: G, V, C => PP: M
+Curr Frames: V, L, Y => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: V, L, Y => PP: E
+Curr Frames: T, L, Y => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: T, L, Y => PP: Q
+Curr Frames: I, L, C => CP: S
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: I, L, C => PP: S
+Curr Frames: A, L, F => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: A, L, F => PP: E
+Curr Frames: L, *, S => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, L, * => PP: V
+Curr Frames: S, V, L => CP: I
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, V, L => PP: I
+Curr Frames: C, A, L => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: C, A, L => PP: Q
+Curr Frames: F, S, L => CP: R
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, S, L => PP: R
+Curr Frames: *, D, I => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: D, I, * => PP: V
+Curr Frames: N, M, W => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: N, M, W => PP: E
+Curr Frames: G, V, S => CP: F
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: G, V, S => PP: F
+Curr Frames: R, V, F => CP: H
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: V, F, S => PP: H
+Curr Frames: L, F, F => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, F, F => PP: A
+Curr Frames: L, *, N => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, *, N => PP: Q
+Curr Frames: I, Y, I => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: I, Y, I => PP: Q
+Curr Frames: F, F, L => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, F, L => PP: A
+Curr Frames: Y, T, P => CP: T
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: Y, T, P => PP: T
+Curr Frames: L, S, P => CP: L
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: P, L, S => PP: L
+Curr Frames: P, L, * => CP: H
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: P, L, * => PP: H
+Curr Frames: K, K, R => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, K, R => PP: V
+Curr Frames: G, V, * => CP: D
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: G, V, * => PP: D
+Curr Frames: E, K, N => CP: K
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: E, K, N => PP: K
+Curr Frames: T, L, Y => CP: G
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: T, L, Y => PP: G
+Curr Frames: T, L, S => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: T, L, S => PP: A
+Curr Frames: Q, N, I => CP: D
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Q, N, I => PP: D
+Curr Frames: L, *, N => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: L, *, N => PP: E
+Curr Frames: T, L, C => CP: L
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: T, L, C => PP: L
+Curr Frames: V, L, W => CP: D
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: V, L, W => PP: D
+Curr Frames: G, V, F => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: G, V, F => PP: Q
+Curr Frames: S, L, Y => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: S, L, Y => PP: A
+Curr Frames: I, L, C => CP: E
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: I, L, C => PP: E
+Curr Frames: V, F, S => CP: Q
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: V, F, S => PP: Q
+Curr Frames: Q, N, I => CP: H
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, Q, N => PP: H
+Curr Frames: I, F, F => CP: Q
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: I, F, F => PP: Q
+Curr Frames: F, F, F => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, F, F => PP: K
+Curr Frames: F, L, * => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, L, * => PP: K
+Curr Frames: R, D, I => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: R, D, I => PP: A
+Curr Frames: S, P, L => CP: R
+Action: 5 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: S, P, L => PP: R
+Curr Frames: S, R, V => CP: K
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, R, V => PP: K
+Curr Frames: Y, I, L => CP: K
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Y, I, L => PP: K
+Curr Frames: *, K, N => CP: K
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: *, K, N => PP: K
+Curr Frames: T, P, L => CP: I
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: P, L, F => PP: I
+Curr Frames: L, *, R => CP: M
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: F, L, * => PP: M
+Curr Frames: R, E, N => CP: L
+Action: 4 (DELETION)
+Reward of Action: 0
+
+Prev. Frames: R, E, N => PP: L
+Curr Frames: I, L, * => CP: I
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: N, I, L => PP: I
+Curr Frames: *, K, N => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: *, K, N => PP: V
+Curr Frames: I, *, K => CP: I
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: N, I, * => PP: I
+Curr Frames: K, K, K => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, K, K => PP: L
+Curr Frames: K, N, T => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: K, N, T => PP: A
+Curr Frames: Q, N, I => CP: A
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Q, N, I => PP: A
+Curr Frames: L, *, S => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: I, L, * => PP: V
+Curr Frames: S, V, F => CP: L
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: S, V, F => PP: L
+Curr Frames: L, Y, I => CP: L
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+Prev. Frames: F, L, Y => PP: L
+Curr Frames: I, L, C => CP: V
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: I, L, C => PP: V
+Curr Frames: V, S, R => CP: L
+Action: 3 (INSERTION)
+Reward of Action: 0
+
+Prev. Frames: C, V, S => PP: L
+Curr Frames: R, V, S => CP: L
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: R, V, S => PP: L
+Curr Frames: P, L, L => CP: L
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: P, L, L => PP: L
+Curr Frames: Y, I, * => CP: V
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: Y, I, * => PP: V
+Curr Frames: N, M, C => CP: G
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: N, M, C => PP: G
+Curr Frames: V, L, C => CP: I
+Action: 5 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: V, L, C => PP: I
+Curr Frames: V, L, Y => CP: Y
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: L, Y, I => PP: Y
+Curr Frames: L, *, K => CP: L
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: 0
+
+ERROR COUNT
+Matches: 0
+F_1: 0
+F_3: 0
+Ins: 2
+Dels: 2
+Mis: 9

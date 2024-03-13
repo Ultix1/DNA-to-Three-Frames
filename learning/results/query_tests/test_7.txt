@@ -1,0 +1,44 @@
+Target Protein: RMKLAKNRQY, found at Index 21
+Origin: fasta_tests/test_7/protein.txt
+Protein ID: tr|Q7JVH0|Q7JVH0_DROME
+
+Compared with fasta_tests/test_0/protein.txt
+Alignment Score: 436.0
+Agent Reward: -32
+
+Compared with fasta_tests/test_1/protein.txt
+Alignment Score: 442.0
+Agent Reward: -32
+
+Compared with fasta_tests/test_2/protein.txt
+Alignment Score: 404.0
+Agent Reward: -34
+
+Compared with fasta_tests/test_3/protein.txt
+Alignment Score: 480.0
+Agent Reward: -28
+
+Compared with fasta_tests/test_4/protein.txt
+Alignment Score: 455.0
+Agent Reward: -14
+
+Compared with fasta_tests/test_5/protein.txt
+Alignment Score: 435.0
+Agent Reward: -24
+
+Compared with fasta_tests/test_6/protein.txt
+Alignment Score: 452.0
+Agent Reward: -28
+
+Compared with fasta_tests/test_7/protein.txt
+Alignment Score: 1681.0
+Agent Reward: 0
+
+Compared with fasta_tests/test_8/protein.txt
+Alignment Score: 426.0
+Agent Reward: -34
+
+Compared with fasta_tests/test_9/protein.txt
+Alignment Score: 499.0
+Agent Reward: -26
+

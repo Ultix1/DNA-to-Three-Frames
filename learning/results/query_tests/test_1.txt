@@ -1,0 +1,44 @@
+Target Protein: TTTRTYSGIL, found at Index 171
+Origin: fasta_tests/test_1/protein.txt
+Protein ID: tr|Q9V3Y7|Q9V3Y7_DROME
+
+Compared with fasta_tests/test_0/protein.txt
+Alignment Score: 386.0
+Agent Reward: -34
+
+Compared with fasta_tests/test_1/protein.txt
+Alignment Score: 1712.0
+Agent Reward: 0
+
+Compared with fasta_tests/test_2/protein.txt
+Alignment Score: 372.0
+Agent Reward: -32
+
+Compared with fasta_tests/test_3/protein.txt
+Alignment Score: 381.0
+Agent Reward: -24
+
+Compared with fasta_tests/test_4/protein.txt
+Alignment Score: 387.0
+Agent Reward: -18
+
+Compared with fasta_tests/test_5/protein.txt
+Alignment Score: 400.0
+Agent Reward: -26
+
+Compared with fasta_tests/test_6/protein.txt
+Alignment Score: 557.0
+Agent Reward: -20
+
+Compared with fasta_tests/test_7/protein.txt
+Alignment Score: 377.0
+Agent Reward: -34
+
+Compared with fasta_tests/test_8/protein.txt
+Alignment Score: 429.0
+Agent Reward: -28
+
+Compared with fasta_tests/test_9/protein.txt
+Alignment Score: 406.0
+Agent Reward: -22
+

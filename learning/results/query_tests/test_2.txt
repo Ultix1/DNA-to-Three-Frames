@@ -1,0 +1,44 @@
+Target Protein: CALRQLQQYR, found at Index 12
+Origin: fasta_tests/test_2/protein.txt
+Protein ID: sp|Q9VUJ0|RM39_DROME
+
+Compared with fasta_tests/test_0/protein.txt
+Alignment Score: 485.0
+Agent Reward: -44
+
+Compared with fasta_tests/test_1/protein.txt
+Alignment Score: 452.0
+Agent Reward: -36
+
+Compared with fasta_tests/test_2/protein.txt
+Alignment Score: 1724.0
+Agent Reward: 0
+
+Compared with fasta_tests/test_3/protein.txt
+Alignment Score: 450.0
+Agent Reward: -24
+
+Compared with fasta_tests/test_4/protein.txt
+Alignment Score: 398.0
+Agent Reward: -22
+
+Compared with fasta_tests/test_5/protein.txt
+Alignment Score: 397.0
+Agent Reward: -20
+
+Compared with fasta_tests/test_6/protein.txt
+Alignment Score: 435.0
+Agent Reward: -32
+
+Compared with fasta_tests/test_7/protein.txt
+Alignment Score: 381.0
+Agent Reward: -34
+
+Compared with fasta_tests/test_8/protein.txt
+Alignment Score: 455.0
+Agent Reward: -26
+
+Compared with fasta_tests/test_9/protein.txt
+Alignment Score: 454.0
+Agent Reward: -30
+

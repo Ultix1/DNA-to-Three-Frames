@@ -1,0 +1,44 @@
+Target Protein: ATYRLLPMIK, found at Index 223
+Origin: fasta_tests/test_3/protein.txt
+Protein ID: tr|Q9VMX3|Q9VMX3_DROME
+
+Compared with fasta_tests/test_0/protein.txt
+Alignment Score: 418.0
+Agent Reward: -32
+
+Compared with fasta_tests/test_1/protein.txt
+Alignment Score: 410.0
+Agent Reward: -32
+
+Compared with fasta_tests/test_2/protein.txt
+Alignment Score: 387.0
+Agent Reward: -30
+
+Compared with fasta_tests/test_3/protein.txt
+Alignment Score: 1713.0
+Agent Reward: 0
+
+Compared with fasta_tests/test_4/protein.txt
+Alignment Score: 359.0
+Agent Reward: -24
+
+Compared with fasta_tests/test_5/protein.txt
+Alignment Score: 399.0
+Agent Reward: -22
+
+Compared with fasta_tests/test_6/protein.txt
+Alignment Score: 461.0
+Agent Reward: -28
+
+Compared with fasta_tests/test_7/protein.txt
+Alignment Score: 369.0
+Agent Reward: -22
+
+Compared with fasta_tests/test_8/protein.txt
+Alignment Score: 441.0
+Agent Reward: -20
+
+Compared with fasta_tests/test_9/protein.txt
+Alignment Score: 440.0
+Agent Reward: -30
+
