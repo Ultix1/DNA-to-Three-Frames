@@ -1,3 +1,4 @@
+import os
 import blosum as bl
 from datetime import datetime
 from utils.encoder import get_codon_encoding, get_protein_encoding, get_table
@@ -26,10 +27,6 @@ class Environment:
         # Initial Pointers
         self.dna_pointer = 0
         self.protein_pointer = 0
-        
-        # Tallies of Frameshift and Matches
-        self.frameshifts = 0
-        self.matches = 0
 
         # Alignment History
         self.alignment_history = []
@@ -37,15 +34,11 @@ class Environment:
 
     def reset(self):
         """
-        Resets the Environment, dna and protein pointers
+        Resets the Environment, as well as the dna and protein pointers
         """
         # Reset Pointers
         self.dna_pointer = 0
         self.protein_pointer = 0
-
-        # Reset Tallies
-        self.frameshifts = 0
-        self.matches = 0
 
         # Reset Alignment History
         self.alignment_history = []
@@ -63,6 +56,25 @@ class Environment:
         self.protein_sequence = protein
         self.reset()
 
+    def set_protein(self, protein: str):
+        """
+        Sets the protein sequence of the environment
+
+        Args:
+            protein (str): protein Sequence
+        """
+        self.protein_sequence = protein
+        self.reset()
+
+    def set_dna(self, dna: str):
+        """
+        Sets the dna sequence of the environment
+
+        Args:
+            dna (str): Dna Sequence
+        """
+        self.dna_sequence = dna
+        self.reset()
 
     def get_state(self):
         """
@@ -98,7 +110,7 @@ class Environment:
 
         state = np.vstack(state).astype(np.float32)
 
-        # Reshape state (8, 21, 1)
+        # Expand state
         state = np.expand_dims(state, axis = -1)
 
         return state
@@ -154,17 +166,6 @@ class Environment:
 
         if record:
             self.add_to_history(action)
-
-
-        # if self.dna_pointer < 3:
-        #     dna = "_" + self.dna_sequence[self.dna_pointer - 2 : self.dna_pointer + 5]
-        #     proteins = self.protein_sequence[self.protein_pointer - 1 : self.protein_pointer + 1]
-        #     _, true_action = self.aligner.align(dna, proteins, debug=False)
-
-        # else:
-        #     dna = self.dna_sequence[self.dna_pointer - 3 : self.dna_pointer + 5]
-        #     proteins = self.protein_sequence[self.protein_pointer - 1 : self.protein_pointer + 1]
-        #     _, true_action = self.aligner.align(dna, proteins, debug=False)
 
         # MATCH
         if action == 0:
@@ -538,9 +539,12 @@ class Environment:
         now = datetime.now()
         dt_string = now.strftime("%d-%m-%Y_%H:%M:%S")
 
-        # _, actions = self.aligner.align(self.dna_sequence, self.protein_sequence, debug=False)
+        result_path = "results/debug"
 
-        with open(f"results/result_{dt_string}.txt", 'a') as file:
+        if not os.path.exists(result_path):
+            os.makedirs(result_path)
+
+        with open(f"{result_path}/result_{dt_string}.txt", 'a') as file:
             file.write(f"ALIGNMENT RESULTS - {now}\n")
             file.write(f"DNA File: {filename_1}\n")
             file.write(f"Protein File: {filename_2}\n")
