@@ -1,44 +1,44 @@
-Target Protein: QLIICPYTIL, found at Index 221
+Target Protein: LERIIRRVIE, found at Index 191
 Origin: fasta_tests/test_5/protein.txt
 Protein ID: sp|Q9VXT2|DJC25_DROME
 
 Compared with fasta_tests/test_0/protein.txt
-Alignment Score: 368.0
-Agent Reward: -36
+Alignment Score: 14.0
+Agent Reward: -30
 
 Compared with fasta_tests/test_1/protein.txt
-Alignment Score: 389.0
-Agent Reward: -32
-
-Compared with fasta_tests/test_2/protein.txt
-Alignment Score: 425.0
-Agent Reward: -24
-
-Compared with fasta_tests/test_3/protein.txt
-Alignment Score: 412.0
+Alignment Score: 22.0
 Agent Reward: -18
 
+Compared with fasta_tests/test_2/protein.txt
+Alignment Score: 44.0
+Agent Reward: -30
+
+Compared with fasta_tests/test_3/protein.txt
+Alignment Score: 35.0
+Agent Reward: -40
+
 Compared with fasta_tests/test_4/protein.txt
-Alignment Score: 420.0
-Agent Reward: -28
+Alignment Score: 59.0
+Agent Reward: -24
 
 Compared with fasta_tests/test_5/protein.txt
 Alignment Score: 1761.0
 Agent Reward: 0
 
 Compared with fasta_tests/test_6/protein.txt
-Alignment Score: 419.0
-Agent Reward: -46
+Alignment Score: 33.0
+Agent Reward: -28
 
 Compared with fasta_tests/test_7/protein.txt
-Alignment Score: 352.0
-Agent Reward: -26
+Alignment Score: 70.0
+Agent Reward: -28
 
 Compared with fasta_tests/test_8/protein.txt
-Alignment Score: 392.0
+Alignment Score: 3.0
 Agent Reward: -34
 
 Compared with fasta_tests/test_9/protein.txt
-Alignment Score: 387.0
-Agent Reward: -34
+Alignment Score: 56.0
+Agent Reward: -26
 

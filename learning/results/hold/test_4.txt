@@ -1,21 +1,21 @@
-Target Protein: KWKNLRCSYR, found at Index 50
+Target Protein: REECDNSNNG, found at Index 93
 Origin: fasta_tests/test_4/protein.txt
 Protein ID: tr|Q9W0N1|Q9W0N1_DROME
 
 Compared with fasta_tests/test_0/protein.txt
-Alignment Score: 55.0
-Agent Reward: -34
+Alignment Score: 386.0
+Agent Reward: -22
 
 Compared with fasta_tests/test_1/protein.txt
-Alignment Score: 65.0
-Agent Reward: -26
+Alignment Score: 431.0
+Agent Reward: -30
 
 Compared with fasta_tests/test_2/protein.txt
-Alignment Score: 37.0
-Agent Reward: -34
+Alignment Score: 391.0
+Agent Reward: -28
 
 Compared with fasta_tests/test_3/protein.txt
-Alignment Score: 25.0
+Alignment Score: 451.0
 Agent Reward: -38
 
 Compared with fasta_tests/test_4/protein.txt
@@ -23,22 +23,22 @@ Alignment Score: 1712.0
 Agent Reward: 0
 
 Compared with fasta_tests/test_5/protein.txt
-Alignment Score: 47.0
-Agent Reward: -26
-
-Compared with fasta_tests/test_6/protein.txt
-Alignment Score: 69.0
-Agent Reward: -38
-
-Compared with fasta_tests/test_7/protein.txt
-Alignment Score: 80.0
-Agent Reward: -38
-
-Compared with fasta_tests/test_8/protein.txt
-Alignment Score: 54.0
+Alignment Score: 347.0
 Agent Reward: -30
 
+Compared with fasta_tests/test_6/protein.txt
+Alignment Score: 410.0
+Agent Reward: -28
+
+Compared with fasta_tests/test_7/protein.txt
+Alignment Score: 418.0
+Agent Reward: -42
+
+Compared with fasta_tests/test_8/protein.txt
+Alignment Score: 495.0
+Agent Reward: -22
+
 Compared with fasta_tests/test_9/protein.txt
-Alignment Score: 63.0
-Agent Reward: -32
+Alignment Score: 473.0
+Agent Reward: -28
 
