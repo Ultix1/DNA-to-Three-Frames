@@ -392,7 +392,13 @@ class Environment:
             # Past Protein
             prev_protein = self.protein_sequence[self.protein_pointer - 1]
 
-            score += 0
+            scores = [[
+                self.blosum_lookup(frame_1, curr_protein) - FRAMESHIFT_PENALTY,
+                self.blosum_lookup(frame_2, curr_protein),
+                self.blosum_lookup(frame_3, curr_protein) - FRAMESHIFT_PENALTY,
+                0
+            ]]
+            score += max(scores)
             reward += 0 if (validate(
                 action=action,
                 proteins=[prev_protein, curr_protein],
