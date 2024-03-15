@@ -79,8 +79,8 @@ class ThreeFrameAligner():
         # Note: Placed j-1 for accessing protein_input since index out of bounds error
         C[0][0] = 0
         for j in range(1, M+1):
-            C[0][j], T[0][j] = I[0][j], Action.INSERT
-            C[j][0], T[j][0] = D[j][0], Action.DELETE
+            C[0][j], T[0][j] = I[0][j], Action.INDEL
+            C[j][0], T[j][0] = D[j][0], Action.INDEL
 
             C[1][j], T[1][j] = max(list(zip(
                 [ 
@@ -88,7 +88,7 @@ class ThreeFrameAligner():
                     D[1][j],
                     C[0][j-1] + self._get_score(dna_input, protein_input, 1, j)
                 ], [
-                    Action.INSERT, Action.DELETE, Action.MATCH
+                    Action.INDEL, Action.INDEL, Action.MATCH
                 ])), key=lambda x: x[0])
 
             C[2][j], T[2][j] = max(list(zip(
@@ -96,7 +96,7 @@ class ThreeFrameAligner():
                     I[2][j],
                     C[0][j-1] + self._get_score(dna_input, protein_input, 2, j) - self.frameshift                
                 ], [
-                    Action.INSERT, Action.FRAMESHIFT_3
+                    Action.INDEL, Action.FRAMESHIFT_3
                 ])), key=lambda x: x[0])
 
             C[3][j], T[3][j] = max(list(zip(
@@ -104,7 +104,7 @@ class ThreeFrameAligner():
                     I[3][j],
                     C[1][j-1] + self._get_score(dna_input, protein_input, 3, j) - self.frameshift
                 ], [
-                    Action.INSERT, Action.FRAMESHIFT_1
+                    Action.INDEL, Action.FRAMESHIFT_1
                 ])), key=lambda x: x[0])
 
             C[4][j], T[4][j] = max(list(zip(
@@ -114,7 +114,7 @@ class ThreeFrameAligner():
                     C[1][j-1] + self._get_score(dna_input, protein_input, 4, j),
                     C[2][j-1] + self._get_score(dna_input, protein_input, 4, j) - self.frameshift 
                 ],[
-                    Action.INSERT, Action.DELETE, Action.MATCH, Action.FRAMESHIFT_3
+                    Action.INDEL, Action.INDEL, Action.MATCH, Action.FRAMESHIFT_3
                 ])), key=lambda x: x[0])
 
         # Matrix filling
@@ -135,7 +135,7 @@ class ThreeFrameAligner():
                         D[i][j],
                         I[i][j]
                     ], [
-                        Action.FRAMESHIFT_1, Action.MATCH, Action.FRAMESHIFT_3, Action.DELETE, Action.INSERT
+                        Action.FRAMESHIFT_1, Action.MATCH, Action.FRAMESHIFT_3, Action.INDEL, Action.INDEL
                     ])), key=lambda x: x[0])
 
                 if i == N-1 and j == M:
@@ -147,16 +147,16 @@ class ThreeFrameAligner():
                                 C[N-2-1][M] - self.frameshift,
                                 C[N-1-1][M],
                         ], [
-                            Action.DELETE, Action.DELETE, Action.INSERT, Action.MATCH
+                            Action.INDEL, Action.INDEL, Action.INDEL, Action.MATCH
                         ])), key=lambda x: x[0])
 
         score = C[N-1][M] if self.backtrace is self.Backtrace.GLOBAL else max([e[-1] for e in C])
-        actions = self._traceback(C, T, N, M)
+        # actions = self._traceback(C, T, N, M)
 
         if debug:
             self._matrix_printer([I, D, C, T])
 
-        return score, actions
+        return score
 
 
 if __name__ == '__main__':
