@@ -61,7 +61,7 @@ if resume:
     file_2 = open("./saved_weights/training_results.txt", "r")
     
     epsilon = float(file_1.readline().split(" ")[-1])
-    prev_episodes = int(list(file_2)[-4].split(" ")[-1])
+    prev_episodes = int(list(file_2)[-4].split(" ")[1][0:-1])
 
     agent.epsilon = epsilon
     agent.load_weights(checkpoint_paths[0], checkpoint_paths[1])

@@ -4,9 +4,10 @@ class Action(Enum):
     MATCH = 0
     FRAMESHIFT_1 = 1
     FRAMESHIFT_3 = 2
-    DELETE = 3
-    INSERT = 4
-    MISMATCH = 5
+    # DELETE = 3
+    # INSERT = 4
+    INDEL = 3
+    MISMATCH = 4
     NONE = -999
 
 CODON_TABLE = {
@@ -44,8 +45,7 @@ PARAMS = {
         Action.MATCH.value, 
         Action.FRAMESHIFT_1.value, 
         Action.FRAMESHIFT_3.value, 
-        Action.INSERT.value, 
-        Action.DELETE.value, 
+        Action.INDEL.value, 
         Action.MISMATCH.value
     ],
 }
