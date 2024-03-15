@@ -398,7 +398,19 @@ class Environment:
                 self.blosum_lookup(frame_3, curr_protein) - FRAMESHIFT_PENALTY,
                 0
             ]]
-            score += max(scores)
+            scores_1 = [
+                self.blosum_lookup(frame_1, prev_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY ), 
+                self.blosum_lookup(frame_2, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), 
+                self.blosum_lookup(frame_3, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY )
+            ]
+                # Deletion scores
+            scores_2 = [
+                self.blosum_lookup(frame_a, curr_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY ), 
+                self.blosum_lookup(frame_b, curr_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), 
+                self.blosum_lookup(frame_c, curr_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY )
+            ]
+            
+            score += max(max(scores,scores_1,scores_2))
             reward += 0 if (validate(
                 action=action,
                 proteins=[prev_protein, curr_protein],
