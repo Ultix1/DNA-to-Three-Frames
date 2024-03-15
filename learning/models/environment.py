@@ -518,7 +518,12 @@ class Environment:
             codon_1 = self.dna_sequence[self.dna_pointer : self.dna_pointer + 3]
             codon_2 = self.dna_sequence[self.dna_pointer + 1: self.dna_pointer + 4]
 
-            score += 0
+            scores = [
+                    self.blosum_lookup(codon_1, protein),
+                    self.blosum_lookup(codon_2, protein) - FRAMESHIFT_PENALTY,
+                    0
+                ]
+            score += max(scores)
             reward += 0 if (validate_first(self.table[codon_1], self.table[codon_2], protein, action)) else -2
             self.dna_pointer += (
                 np.argmax([
