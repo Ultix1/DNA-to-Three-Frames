@@ -1,37 +1,37 @@
-Target Protein: TSNHQKNTPS, found at Index 51
+Target Protein: ESDQQENSPD, found at Index 12
 Origin: fasta_tests/test_8/protein.txt
 Protein ID: tr|Q8IPF7|Q8IPF7_DROME
 
 Compared with fasta_tests/test_0/protein.txt
-Alignment Score: 14.0
-Agent Reward: -32
+Alignment Score: 105.0
+Agent Reward: -38
 
 Compared with fasta_tests/test_1/protein.txt
-Alignment Score: 5.0
+Alignment Score: 91.0
 Agent Reward: -22
 
 Compared with fasta_tests/test_2/protein.txt
-Alignment Score: 73.0
-Agent Reward: -20
+Alignment Score: 138.0
+Agent Reward: -22
 
 Compared with fasta_tests/test_3/protein.txt
-Alignment Score: 48.0
-Agent Reward: -30
+Alignment Score: 125.0
+Agent Reward: -32
 
 Compared with fasta_tests/test_4/protein.txt
-Alignment Score: 39.0
-Agent Reward: -18
+Alignment Score: 114.0
+Agent Reward: -20
 
 Compared with fasta_tests/test_5/protein.txt
-Alignment Score: 52.0
+Alignment Score: 136.0
 Agent Reward: -28
 
 Compared with fasta_tests/test_6/protein.txt
-Alignment Score: 48.0
+Alignment Score: 121.0
 Agent Reward: -32
 
 Compared with fasta_tests/test_7/protein.txt
-Alignment Score: 38.0
+Alignment Score: 121.0
 Agent Reward: -18
 
 Compared with fasta_tests/test_8/protein.txt
@@ -39,6 +39,6 @@ Alignment Score: 1717.0
 Agent Reward: 0
 
 Compared with fasta_tests/test_9/protein.txt
-Alignment Score: 141.0
-Agent Reward: -34
+Alignment Score: 197.0
+Agent Reward: -32
 

@@ -1,44 +1,44 @@
-Target Protein: LPMIKLNREV, found at Index 228
+Target Protein: LFAYRTEEST, found at Index 112
 Origin: fasta_tests/test_3/protein.txt
 Protein ID: tr|Q9VMX3|Q9VMX3_DROME
 
 Compared with fasta_tests/test_0/protein.txt
-Alignment Score: 83.0
-Agent Reward: -22
+Alignment Score: 170.0
+Agent Reward: -40
 
 Compared with fasta_tests/test_1/protein.txt
-Alignment Score: 46.0
-Agent Reward: -26
+Alignment Score: 99.0
+Agent Reward: -22
 
 Compared with fasta_tests/test_2/protein.txt
-Alignment Score: 35.0
-Agent Reward: -36
+Alignment Score: 107.0
+Agent Reward: -34
 
 Compared with fasta_tests/test_3/protein.txt
 Alignment Score: 1713.0
 Agent Reward: 0
 
 Compared with fasta_tests/test_4/protein.txt
-Alignment Score: 15.0
+Alignment Score: 103.0
 Agent Reward: -20
 
 Compared with fasta_tests/test_5/protein.txt
-Alignment Score: 75.0
-Agent Reward: -16
+Alignment Score: 148.0
+Agent Reward: -18
 
 Compared with fasta_tests/test_6/protein.txt
-Alignment Score: 79.0
-Agent Reward: -24
+Alignment Score: 131.0
+Agent Reward: -34
 
 Compared with fasta_tests/test_7/protein.txt
-Alignment Score: 36.0
-Agent Reward: -26
+Alignment Score: 110.0
+Agent Reward: -32
 
 Compared with fasta_tests/test_8/protein.txt
-Alignment Score: 55.0
-Agent Reward: -26
+Alignment Score: 112.0
+Agent Reward: -28
 
 Compared with fasta_tests/test_9/protein.txt
-Alignment Score: 43.0
+Alignment Score: 108.0
 Agent Reward: -36
 

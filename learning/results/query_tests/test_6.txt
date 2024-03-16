@@ -1,44 +1,44 @@
-Target Protein: NCRQLESLLL, found at Index 64
+Target Protein: RLLNLRRHQP, found at Index 235
 Origin: fasta_tests/test_6/protein.txt
 Protein ID: tr|Q9VN80|Q9VN80_DROME
 
 Compared with fasta_tests/test_0/protein.txt
-Alignment Score: -5.0
+Alignment Score: 80.0
 Agent Reward: -20
 
 Compared with fasta_tests/test_1/protein.txt
-Alignment Score: 33.0
+Alignment Score: 96.0
 Agent Reward: -26
 
 Compared with fasta_tests/test_2/protein.txt
-Alignment Score: 26.0
+Alignment Score: 92.0
 Agent Reward: -36
 
 Compared with fasta_tests/test_3/protein.txt
-Alignment Score: 54.0
-Agent Reward: -18
+Alignment Score: 113.0
+Agent Reward: -20
 
 Compared with fasta_tests/test_4/protein.txt
-Alignment Score: 48.0
+Alignment Score: 126.0
 Agent Reward: -32
 
 Compared with fasta_tests/test_5/protein.txt
-Alignment Score: 73.0
-Agent Reward: -26
+Alignment Score: 149.0
+Agent Reward: -28
 
 Compared with fasta_tests/test_6/protein.txt
 Alignment Score: 1725.0
 Agent Reward: 0
 
 Compared with fasta_tests/test_7/protein.txt
-Alignment Score: 35.0
+Alignment Score: 97.0
 Agent Reward: -22
 
 Compared with fasta_tests/test_8/protein.txt
-Alignment Score: 55.0
-Agent Reward: -24
+Alignment Score: 110.0
+Agent Reward: -28
 
 Compared with fasta_tests/test_9/protein.txt
-Alignment Score: 44.0
-Agent Reward: -38
+Alignment Score: 99.0
+Agent Reward: -34
 

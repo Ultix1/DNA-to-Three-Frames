@@ -1,44 +1,44 @@
-Target Protein: QIFPDISREP, found at Index 189
+Target Protein: LPARLEDNSG, found at Index 92
 Origin: fasta_tests/test_1/protein.txt
 Protein ID: tr|Q9V3Y7|Q9V3Y7_DROME
 
 Compared with fasta_tests/test_0/protein.txt
-Alignment Score: 33.0
-Agent Reward: -22
+Alignment Score: 115.0
+Agent Reward: -18
 
 Compared with fasta_tests/test_1/protein.txt
 Alignment Score: 1712.0
 Agent Reward: 0
 
 Compared with fasta_tests/test_2/protein.txt
-Alignment Score: 52.0
-Agent Reward: -42
+Alignment Score: 140.0
+Agent Reward: -40
 
 Compared with fasta_tests/test_3/protein.txt
-Alignment Score: 71.0
+Alignment Score: 161.0
 Agent Reward: -22
 
 Compared with fasta_tests/test_4/protein.txt
-Alignment Score: 33.0
+Alignment Score: 104.0
 Agent Reward: -18
 
 Compared with fasta_tests/test_5/protein.txt
-Alignment Score: 58.0
+Alignment Score: 129.0
 Agent Reward: -28
 
 Compared with fasta_tests/test_6/protein.txt
-Alignment Score: 103.0
+Alignment Score: 159.0
 Agent Reward: -16
 
 Compared with fasta_tests/test_7/protein.txt
-Alignment Score: 52.0
+Alignment Score: 129.0
 Agent Reward: -14
 
 Compared with fasta_tests/test_8/protein.txt
-Alignment Score: 65.0
+Alignment Score: 127.0
 Agent Reward: -28
 
 Compared with fasta_tests/test_9/protein.txt
-Alignment Score: 74.0
+Alignment Score: 140.0
 Agent Reward: -24
 

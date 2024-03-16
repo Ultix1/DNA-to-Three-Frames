@@ -1,13 +1,13 @@
-Target Protein: KEEMRALSAE, found at Index 186
+Target Protein: EQRRQRDAVG, found at Index 43
 Origin: fasta_tests/test_2/protein.txt
 Protein ID: sp|Q9VUJ0|RM39_DROME
 
 Compared with fasta_tests/test_0/protein.txt
-Alignment Score: 45.0
+Alignment Score: 119.0
 Agent Reward: -38
 
 Compared with fasta_tests/test_1/protein.txt
-Alignment Score: 94.0
+Alignment Score: 151.0
 Agent Reward: -28
 
 Compared with fasta_tests/test_2/protein.txt
@@ -15,30 +15,30 @@ Alignment Score: 1724.0
 Agent Reward: 0
 
 Compared with fasta_tests/test_3/protein.txt
-Alignment Score: 70.0
+Alignment Score: 152.0
 Agent Reward: -34
 
 Compared with fasta_tests/test_4/protein.txt
-Alignment Score: 28.0
-Agent Reward: -30
+Alignment Score: 104.0
+Agent Reward: -32
 
 Compared with fasta_tests/test_5/protein.txt
-Alignment Score: 54.0
-Agent Reward: -28
+Alignment Score: 135.0
+Agent Reward: -32
 
 Compared with fasta_tests/test_6/protein.txt
-Alignment Score: 48.0
+Alignment Score: 117.0
 Agent Reward: -34
 
 Compared with fasta_tests/test_7/protein.txt
-Alignment Score: 55.0
+Alignment Score: 125.0
 Agent Reward: -40
 
 Compared with fasta_tests/test_8/protein.txt
-Alignment Score: 58.0
+Alignment Score: 127.0
 Agent Reward: -22
 
 Compared with fasta_tests/test_9/protein.txt
-Alignment Score: 59.0
+Alignment Score: 143.0
 Agent Reward: -26
 
