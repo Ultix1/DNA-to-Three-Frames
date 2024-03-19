@@ -1,6 +1,9 @@
 from enum import Enum
 import blosum as bl
-from utils.constants import Action, CODON_TABLE, FRAMESHIFT_PENALTY, GAP_OPEN_PENALTY, GAP_EXTENSION_PENALTY
+import psutil
+from utils.sequence_gen import SeqGen
+from utils.constants import Action, CODON_TABLE, FRAMESHIFT_PENALTY, GAP_OPEN_PENALTY, GAP_EXTENSION_PENALTY, NEG_INF
+from os import remove as remove_file
 
 class ThreeFrameAligner():
 
@@ -14,19 +17,21 @@ class ThreeFrameAligner():
                  frameshift=FRAMESHIFT_PENALTY, 
                  table=CODON_TABLE,
                  substition=None,
-                 backtrace: Backtrace = Backtrace.SEMI_GLOBAL):
+                 backtrace: Backtrace = Backtrace.GLOBAL):
         self.gep = gep
         self.gop = gop
         self.frameshift = frameshift
         self.table = table
         self.substitution = substition or bl.BLOSUM(62)
         self.backtrace = backtrace
+        self.process = psutil.Process()
+        self.ave_mem_usage = 0
 
     def _translate_codon(self, codon):
         return self.table.get(codon, 'FAIL')
 
     def _get_score(self, dna, protein, i, j):
-        return self.substitution[self._translate_codon(dna[i-1:i+2])][protein[j-1]] if self._translate_codon(dna[i-1:i+2]) != 'FAIL' else float('-inf')
+        return self.substitution[self._translate_codon(dna[i-1:i+2])][protein[j-1]] if self._translate_codon(dna[i-1:i+2]) != 'FAIL' else NEG_INF
 
     def _matrix_printer(self, matrices: list[list]):
         for matrix in matrices:
@@ -52,9 +57,9 @@ class ThreeFrameAligner():
                     C[i-3][j]
                 ],
                 [
-                    T[i-1][j],
-                    T[i-2][j],
-                    T[i-3][j]
+                    Action(T[i-1][j]),
+                    Action(T[i-2][j]),
+                    Action(T[i-3][j])
                 ])), key=lambda x: x[0])[1])
 
             i -= 3 if i % 3 == 0 else i % 3
@@ -65,22 +70,22 @@ class ThreeFrameAligner():
     def align(self, dna_input, protein_input, debug=False):
         # Define I, D, C, and Traceback matrices of size m x n
         N, M = len(dna_input), len(protein_input)
-        I = [[float(0) for _ in range(M+1)] for _ in range(N)]
-        D = [[float(0) for _ in range(M+1)] for _ in range(N)]
-        C = [[float(0) for _ in range(M+1)] for _ in range(N)]
-        T = [[Action.NONE for _ in range(M+1)] for _ in range(N)]
+        I = [[int() for _ in range(M+1)] for _ in range(N)]
+        D = [[int() for _ in range(M+1)] for _ in range(N)]
+        C = [[int() for _ in range(M+1)] for _ in range(N)]
+        T = [[int() for _ in range(M+1)] for _ in range(N)]
 
         # Initialization
         for j in range(M+1):
-            I[j][0] = float('-inf')
-            D[0][j] = D[2][j] = D[3][j] = float('-inf')
+            I[j][0] = NEG_INF
+            D[0][j] = D[2][j] = D[3][j] = NEG_INF
             D[1][j] = C[0][j] - self.gop - self.gep
 
         # Note: Placed j-1 for accessing protein_input since index out of bounds error
         C[0][0] = 0
         for j in range(1, M+1):
-            C[0][j], T[0][j] = I[0][j], Action.INDEL
-            C[j][0], T[j][0] = D[j][0], Action.INDEL
+            C[0][j], T[0][j] = I[0][j], Action.INSERT.value
+            C[j][0], T[j][0] = D[j][0], Action.DELETE.value
 
             C[1][j], T[1][j] = max(list(zip(
                 [ 
@@ -88,7 +93,7 @@ class ThreeFrameAligner():
                     D[1][j],
                     C[0][j-1] + self._get_score(dna_input, protein_input, 1, j)
                 ], [
-                    Action.INDEL, Action.INDEL, Action.MATCH
+                    Action.INSERT.value, Action.DELETE.value, Action.MATCH.value
                 ])), key=lambda x: x[0])
 
             C[2][j], T[2][j] = max(list(zip(
@@ -96,7 +101,7 @@ class ThreeFrameAligner():
                     I[2][j],
                     C[0][j-1] + self._get_score(dna_input, protein_input, 2, j) - self.frameshift                
                 ], [
-                    Action.INDEL, Action.FRAMESHIFT_3
+                    Action.INSERT.value, Action.FRAMESHIFT_3.value
                 ])), key=lambda x: x[0])
 
             C[3][j], T[3][j] = max(list(zip(
@@ -104,7 +109,7 @@ class ThreeFrameAligner():
                     I[3][j],
                     C[1][j-1] + self._get_score(dna_input, protein_input, 3, j) - self.frameshift
                 ], [
-                    Action.INDEL, Action.FRAMESHIFT_1
+                    Action.INSERT.value, Action.FRAMESHIFT_1.value
                 ])), key=lambda x: x[0])
 
             C[4][j], T[4][j] = max(list(zip(
@@ -114,12 +119,17 @@ class ThreeFrameAligner():
                     C[1][j-1] + self._get_score(dna_input, protein_input, 4, j),
                     C[2][j-1] + self._get_score(dna_input, protein_input, 4, j) - self.frameshift 
                 ],[
-                    Action.INDEL, Action.INDEL, Action.MATCH, Action.FRAMESHIFT_3
+                    Action.INSERT.value, Action.DELETE.value, Action.MATCH.value, Action.FRAMESHIFT_3.value
                 ])), key=lambda x: x[0])
 
         # Matrix filling
+        num_samples = 0
         for i in range(N):
             for j in range(1, M+1):
+
+                self.ave_mem_usage = (self.ave_mem_usage * num_samples + self.process.memory_info().rss) / (num_samples + 1)
+                num_samples += 1
+
                 I[i][j] = max(I[i][j-1] - self.gep, C[i][j-1] - self.gop - self.gep)
 
                 if i < 4:
@@ -135,7 +145,7 @@ class ThreeFrameAligner():
                         D[i][j],
                         I[i][j]
                     ], [
-                        Action.FRAMESHIFT_1, Action.MATCH, Action.FRAMESHIFT_3, Action.INDEL, Action.INDEL
+                        Action.FRAMESHIFT_1.value, Action.MATCH.value, Action.FRAMESHIFT_3.value, Action.DELETE.value, Action.INSERT.value
                     ])), key=lambda x: x[0])
 
                 if i == N-1 and j == M:
@@ -147,36 +157,41 @@ class ThreeFrameAligner():
                                 C[N-2-1][M] - self.frameshift,
                                 C[N-1-1][M],
                         ], [
-                            Action.INDEL, Action.INDEL, Action.INDEL, Action.MATCH
+                            Action.DELETE.value, Action.DELETE.value, Action.INSERT.value, Action.MATCH.value
                         ])), key=lambda x: x[0])
 
         score = C[N-1][M] if self.backtrace is self.Backtrace.GLOBAL else max([e[-1] for e in C])
-        # actions = self._traceback(C, T, N, M)
+        actions = self._traceback(C, T, N, M)
 
         if debug:
             self._matrix_printer([I, D, C, T])
 
-        return score
+        return score, actions
 
 
 if __name__ == '__main__':
-    dna_inputs = ['CACACACACACACACATTCGCAACCAGAACTCA']
-    protein_inputs = ['HHQSSHHQP-S']
-    aligner = ThreeFrameAligner()
+    base_pairs = [10, 30, 60, 100, 300, 500, 800, 1000, 1500, 3000, 4500, 6000, 7500, 9000, 13500, 15000]
 
-    for dna_input, protein_input in zip(dna_inputs, protein_inputs):
-        print(f'DNA: {dna_input}')
-        print(f'Protein: {protein_input}\n')
-        score, actions = aligner.align(dna_input, protein_input, debug=True)
-        print(f'Score: {score}\n')
-        print(f'Actions: {[e.name for e in actions]}\n')
+    print("Three Frame Aligner Memory Test\n")
+    for base_pair_len in base_pairs:
+        retries = 10
+        while True:
+            seq_gen = SeqGen(lseqs=base_pair_len, num_sets=1)
+            try:
+                seq_gen.generate_sequences_and_proteins()
+                seq_gen.save_sequences_to_files()
+                break
+            except Exception as e:
+                if retries == 0:
+                    raise e
+                retries -= 1
 
-    # with open("AA1.txt", "r") as a, open("DNA1.txt", "r") as b:
-    #     dna = b.read()
-    #     protein = a.read()
-    #     print(f'DNA: {dna}')
-    #     print(f'Protein: {protein}\n')
-    #     score, actions = aligner.align(dna, protein, debug=False)
-    #     print(f'Score: {score}\n')
-    #     print(f'Actions: {[e.name for e in actions]}\n')
+        with open("AA1.txt", "r") as a, open("DNA1.txt", "r") as b:
+            dna = b.read().strip()
+            protein = a.read().strip()
+            aligner = ThreeFrameAligner()
+            _, _ = aligner.align(dna, protein, debug=False)
 
+        print(f'seq_len={base_pair_len}\tave_mem_usage={float(aligner.ave_mem_usage)}')
+        remove_file("AA1.txt")
+        remove_file("DNA1.txt")
