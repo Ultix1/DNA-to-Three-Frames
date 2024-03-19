@@ -1,8 +1,8 @@
-
+from pathlib import Path
 import os
 import numpy as np
 import time
-from params import Action, PARAMS
+from params import PARAMS
 from models.network import DDDQN
 from models.main_agent import Agent
 from models.environment import Environment
@@ -36,7 +36,10 @@ for fn in os.listdir(protein_dir):
         protein_list.append(file.read().strip())
         file.close
 
-checkpoint_paths = ["./saved_weights/main/main_checkpoint.h5", "./saved_weights/target/target_checkpoint.h5"]
+Path("./saved_weights/main").mkdir(parents=True, exist_ok=True)
+Path("./saved_weights/target").mkdir(parents=True, exist_ok=True)
+
+checkpoint_paths = ["./saved_weights/main/main_checkpoint.weights.h5", "./saved_weights/target/target_checkpoint.weights.h5"]
 
 actions = PARAMS['actions']
 learning_rate = PARAMS['lr']

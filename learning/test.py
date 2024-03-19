@@ -19,7 +19,7 @@ def getN_chars(string:str, n: int = 10):
         return -1, ""
 
 # Load Weights
-checkpoint_paths = ["./saved_weights/main/main_checkpoint.h5", "./saved_weights/target/target_checkpoint.h5"]
+checkpoint_paths = ["./saved_weights/main/main_checkpoint.weights.h5", "./saved_weights/target/target_checkpoint.weights.h5"]
 test_output_path = "results/query_tests"
 
 if __name__ == '__main__':

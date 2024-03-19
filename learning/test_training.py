@@ -27,7 +27,7 @@ environment = Environment()
 agent = Agent(MainQN, TargetQN, environment, PARAMS, actions)
 
 # Load Weights
-checkpoint_paths = ["./saved_weights/main/main_checkpoint.h5", "./saved_weights/target/target_checkpoint.h5"]
+checkpoint_paths = ["./saved_weights/main/main_checkpoint.weights.h5", "./saved_weights/target/target_checkpoint.weights.h5"]
 
 if(os.path.isfile(checkpoint_paths[0]) and os.path.isfile(checkpoint_paths[1])):
     agent.epsilon = 0.01
