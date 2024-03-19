@@ -393,12 +393,12 @@ class Environment:
             # Past Protein
             prev_protein = self.protein_sequence[self.protein_pointer - 1]
 
-            scores = [[
+            scores = [
                 self.blosum_lookup(frame_1, curr_protein) - FRAMESHIFT_PENALTY,
                 self.blosum_lookup(frame_2, curr_protein),
                 self.blosum_lookup(frame_3, curr_protein) - FRAMESHIFT_PENALTY,
                 0
-            ]]
+            ]
             scores_1 = [
                 self.blosum_lookup(frame_1, prev_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY ), 
                 self.blosum_lookup(frame_2, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), 
