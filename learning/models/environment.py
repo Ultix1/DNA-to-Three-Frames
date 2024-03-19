@@ -18,7 +18,7 @@ class Environment:
             protein (string): Target Protein Sequence
         """
         self.rewards = bl.BLOSUM(62, default=0)
-        self.aligner = ThreeFrameAligner()
+        self.aligner = ThreeFrameAligner(backtrace=ThreeFrameAligner.Backtrace.SEMI_GLOBAL)
 
         # Get Encoded Codons and Protein Table
         self.table = get_table()

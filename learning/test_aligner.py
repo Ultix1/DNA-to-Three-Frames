@@ -2,7 +2,7 @@ from utils.aligner import ThreeFrameAligner
 import os
 
 if __name__ == "__main__":
-    aligner = ThreeFrameAligner()
+    aligner = ThreeFrameAligner(backtrace=ThreeFrameAligner.Backtrace.SEMI_GLOBAL)
     outuput_dir = "results/aligner_tests"
     data_dir = "fasta_tests"
 
