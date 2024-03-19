@@ -7,7 +7,7 @@ tf.get_logger().setLevel('ERROR')
 from models.environment import Environment
 from models.main_agent import Agent
 from models.network import DDDQN
-from utils.constants import PARAMS
+from params import PARAMS
 
 def getN_chars(string:str, n: int = 10):
     if len(string) >= n:

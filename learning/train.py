@@ -2,7 +2,7 @@
 import os
 import numpy as np
 import time
-from utils.constants import Action, PARAMS
+from params import Action, PARAMS
 from models.network import DDDQN
 from models.main_agent import Agent
 from models.environment import Environment

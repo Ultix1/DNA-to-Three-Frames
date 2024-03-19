@@ -2,7 +2,8 @@ import os
 import blosum as bl
 from datetime import datetime
 from utils.encoder import get_codon_encoding, get_protein_encoding, get_table
-from utils.constants import GAP_EXTENSION_PENALTY, GAP_OPEN_PENALTY, FRAMESHIFT_PENALTY, Action, PARAMS
+from utils.constants import GAP_EXTENSION_PENALTY, GAP_OPEN_PENALTY, FRAMESHIFT_PENALTY, Action
+from params import PARAMS
 from utils.aligner import ThreeFrameAligner
 from utils.step_validation import validate, validate_first
 import numpy as np

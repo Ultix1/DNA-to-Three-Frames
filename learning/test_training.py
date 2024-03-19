@@ -2,7 +2,7 @@ import os
 from models.environment import Environment
 from models.main_agent import Agent
 from models.network import DDDQN
-from utils.constants import PARAMS
+from params import PARAMS
 
 dna_dir = "data/dna"
 protein_dir = "data/proteins"
