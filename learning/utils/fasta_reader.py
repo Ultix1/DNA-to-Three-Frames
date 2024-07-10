@@ -2,13 +2,19 @@
 from Bio import SeqIO
 from utils.constants import CODON_TABLE
 
-def read_fasta(filename: str, max_size:int = 0, protein_len:int = 100):
+def read_fasta(filename: str, max_size:int = 0, protein_len:int = 100, protein_len_range:tuple = (0, 0)):
     test_sequences = {}
     with open(filename, "r") as handle:
         for record in SeqIO.parse(handle, "fasta"):
-            if len(record) == protein_len:
+            if(protein_len_range != (0, 0)):
+                if len(record) >= protein_len_range[0] and len(record) <= protein_len_range[1]:
+                    test_sequences[record.id] = record.seq
+                    if len(test_sequences) == max_size:
+                        break
+
+            elif len(record) == protein_len:
                 test_sequences[record.id] = record.seq
-                if len(test_sequences)  == max_size:
+                if len(test_sequences) == max_size:
                     break
             
             # print('ID:', record.id)

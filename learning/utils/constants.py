@@ -10,6 +10,8 @@ class Action(Enum):
     MISMATCH = 4
     NONE = -999
 
+PROTEINS = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y', "*"]
+
 CODON_TABLE = {
     "TTT" : "F", "TTC" : "F", "TTA" : "L", "TTG" : "L",
     "CTT" : "L", "CTC" : "L", "CTA" : "L", "CTG" : "L",

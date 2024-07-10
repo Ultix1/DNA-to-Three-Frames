@@ -2,6 +2,8 @@
 import pandas as pd
 
 proteins = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y', "*", "_"]
+
+# NOTE: We considered Padded Codon: 000 == 00* == 0**
 genetic_code = {
     'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
     'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
