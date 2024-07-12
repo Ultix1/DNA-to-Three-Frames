@@ -64,7 +64,7 @@ class Agent():
 
         while not done:
             # Get current state
-            state = self.env.get_state() if (self.total_steps > 0) else self.env.get_first_state()
+            state = self.env.get_state()
 
             # Get predicted action
             action = self.get_action(tf.expand_dims(state, axis=0))
@@ -98,7 +98,7 @@ class Agent():
             done = False
             steps = 0
             while not done:
-                state = self.env.get_state() if steps > 0 else self.env.get_first_state()
+                state = self.env.get_state()
                 action = np.random.choice(self.actions)
                 __, reward, done, next_state = self.env.step(action) if steps > 0 else self.env.first_step(action)
 
@@ -197,7 +197,7 @@ class Agent():
         total_reward = 0
         total_score = 0
         while not done:
-            state = self.env.get_state() if steps > 0 else self.env.get_first_state()
+            state = self.env.get_state()
             action = self.get_action(tf.expand_dims(state, axis=0), test=True)
 
             score, reward, done, ____ = self.env.step(action, True) if steps > 0 else self.env.first_step(action, True)
@@ -233,7 +233,7 @@ class Agent():
         found_index = -1
 
         while not done:
-            state = self.env.get_state() if steps > 0 else self.env.get_first_state()
+            state = self.env.get_state()
             action = self.get_action(tf.expand_dims(state, axis=0), test=True)
 
             _, reward, done, ____ = self.env.step(action, True) if steps > 0 else self.env.first_step(action, True)

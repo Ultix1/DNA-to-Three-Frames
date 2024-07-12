@@ -99,78 +99,40 @@ class Environment:
         self.reset()
 
     def get_state(self):
-        """
-        Returns Current state of environment
-
-        Returns:
-            NDArray: 2D Matrix representing the current and past three frames and protein character
-        """
         state = []
+        encoded_proteins = get_protein_encoding()
+        encoded_codons = get_codon_encoding(encoded_proteins, get_table())
 
         # NOTE: We considered Padded Codons: 000 == 00* == 0** == *00 == **0, where * is any nucleotide (A, C, T, G)
 
         # Append Previous 3 Frames (3 Codons)
-        for i in range(self.dna_pointer - 3, self.dna_pointer):
-            
+        for i in range(self.dna_pointer - 4, self.dna_pointer - 1):
             # If the current codon contains a padding, append 000 instead
-            state.append(self.encoded_codons[
-                self.dna_sequence[i:i+3] if self.dna_pointer != self.window_size else "000"   
+            state.append(encoded_codons[
+                "000" if ("0" in self.dna_sequence[i:i+3]) else self.dna_sequence[i:i+3]
             ])
 
         # Append Previous Protein
-        state.append(self.encoded_proteins[self.protein_sequence[self.protein_pointer - 1]])
+        state.append(encoded_proteins[self.protein_sequence[self.protein_pointer - 1]])
 
         # Append Current Window Frames (N Codons)
-        for i in range(self.dna_pointer, self.dna_pointer + self.window_size):
-            
+        for i in range(self.dna_pointer - 1, self.dna_pointer + 2 + ((self.window_size - 1) * 3)):
             # If the current codon contains a padding, append 000 instead
-            state.append(self.encoded_codons[
-                self.dna_sequence[i:i+3] if self.dna_sequence[i:i+3].find("0") == -1 else "000"
+            state.append(encoded_codons[
+                "000" if ("0" in self.dna_sequence[i:i+3]) else self.dna_sequence[i:i+3]
             ])
 
         # Append Current Window Protein
         for i in range(self.protein_pointer, self.protein_pointer + self.window_size):
-            state.append(self.encoded_proteins[self.protein_sequence[i]])
+            state.append(encoded_proteins[self.protein_sequence[i]])
 
+        # Convert to np array with Float Type
         state = np.vstack(state).astype(np.float32)
 
         # Expand state
         state = np.expand_dims(state, axis = -1)
 
         return state
-    
-
-    def get_first_state(self):
-        """
-        Get First State of the environment
-
-        Returns:
-            NDArray: 2d Matrix representing the 4 Zero rows, 2nd and 3rd reading frame
-        """
-        state = []
-
-        # Previous 3 frames are set to gap proteins / codons
-        for _ in range(3):
-            state.append(self.encoded_proteins['_'])
-
-        state.append(self.encoded_proteins['_'])
-
-        frame_2 = self.dna_sequence[0: 3]
-        frame_3 = self.dna_sequence[1: 4]
-
-        # Set current frame 1 to gap protein / codon
-        state.append(self.encoded_proteins['*'])
-        state.append(self.encoded_codons[frame_2])
-        state.append(self.encoded_codons[frame_3])
-
-        # Current protein and Previous protein set to a gap protein
-        state.append(self.encoded_proteins[self.protein_sequence[self.protein_pointer]])
-
-        state = np.vstack(state).astype(np.float32)
-        state = np.expand_dims(state, axis=-1)
-
-        return state
-    
 
     def step(self, action=0, record=False):
         """
@@ -707,10 +669,75 @@ class Environment:
             file.write(f"F_1: {tallies[1]}\n")
             file.write(f"F_3: {tallies[2]}\n")
             file.write(f"InDel: {tallies[3]}\n")
-            # file.write(f"Dels: {tallies[4]}\n")
             file.write(f"Mis: {tallies[4]}\n")
+            # file.write(f"Dels: {tallies[4]}\n")
 
             # accuracy = sum(1 for x, y in zip(predictions, actions) if x == y) / len(predictions)
             # file.write(f"\nAccuracy: {accuracy}\n\n")
             file.close()
 
+
+# def get_state_test(dna, protein, window_size=2, dna_pointer=4, protein_pointer=1):
+#     """
+#     Returns Current state of environment
+
+#     Returns:
+#         NDArray: 2D Matrix representing the current and past three frames and protein character
+#     """
+#     state = []
+#     chars = []
+#     encoded_proteins = get_protein_encoding()
+#     encoded_codons = get_codon_encoding(encoded_proteins, get_table())
+
+#     # NOTE: We considered Padded Codons: 000 == 00* == 0** == *00 == **0, where * is any nucleotide (A, C, T, G)
+
+#     # Append Previous 3 Frames (3 Codons)
+#     for i in range(dna_pointer - 4, dna_pointer - 1):
+        
+#         # If the current codon contains a padding, append 000 instead
+#         state.append(encoded_codons[
+#             "000" if ("0" in dna[i:i+3]) else dna[i:i+3]
+#         ])
+#         chars.append(dna[i:i+3])
+
+#     # Append Previous Protein
+#     state.append(encoded_proteins[protein[protein_pointer - 1]])
+#     chars.append(protein[protein_pointer - 1])
+
+#     # Append Current Window Frames (N Codons)
+#     for i in range(dna_pointer - 1, dna_pointer + 2 + ((window_size - 1) * 3)):
+        
+#         # If the current codon contains a padding, append 000 instead
+#         state.append(encoded_codons[
+#             "000" if ("0" in dna[i:i+3]) else dna[i:i+3]
+#         ])
+#         chars.append(dna[i:i+3])
+
+#     # Append Current Window Protein
+#     for i in range(protein_pointer, protein_pointer + window_size):
+#         state.append(encoded_proteins[protein[i]])
+#         chars.append(protein[i])
+
+#     for i in range(len(state)):
+#         print(state[i], "=>", chars[i])
+
+#     state = np.vstack(state).astype(np.float32)
+
+#     # Expand state
+#     state = np.expand_dims(state, axis = -1)
+
+#     print(f"DNA LEN: {len(dna)}")
+#     print(f"PROTEIN LEN: {len(protein)}")
+#     print(f"WINDOW SIZE: {window_size}")
+#     print(f"STATE SHAPE: {state.shape}")
+
+#     return state
+
+# if __name__ == "__main__":
+#     get_state_test(
+#         dna="0000AGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGT",
+#         protein="*SAINTSSAINTSSAINTS",
+#         window_size=10,
+#         dna_pointer=10,
+#         protein_pointer=3
+#     )
