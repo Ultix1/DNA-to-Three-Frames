@@ -4,9 +4,12 @@ import numpy as np
 import random
 from keras import Model
 from keras.optimizers import Adam
-from models.environment import Environment
-from models.experience_buffer import Experience_Buffer
-from models.network import DDDQN
+# from models.environment import Environment
+# from models.experience_buffer import Experience_Buffer
+# from models.network import DDDQN
+from models_v2.environment import Environment
+from models_v2.experience_buffer import Experience_Buffer
+from models_v2.network import DDDQN
 
 class Agent():
 
@@ -70,7 +73,7 @@ class Agent():
             action = self.get_action(tf.expand_dims(state, axis=0))
 
             # Get results of action
-            score, reward, done, next_state = self.env.step(action) if (self.total_steps > 0) else self.env.first_step(action)
+            score, reward, done, next_state = self.env.step(action)
 
             # Train main_network every select steps
             if(self.total_steps > 0 and self.total_steps % self.train_freq == 0):
@@ -100,7 +103,7 @@ class Agent():
             while not done:
                 state = self.env.get_state()
                 action = np.random.choice(self.actions)
-                __, reward, done, next_state = self.env.step(action) if steps > 0 else self.env.first_step(action)
+                __, reward, done, next_state = self.env.step(action)
 
                 if(self.total_steps > 0 and self.total_steps % self.train_freq == 0):
                     self.train()
@@ -200,7 +203,7 @@ class Agent():
             state = self.env.get_state()
             action = self.get_action(tf.expand_dims(state, axis=0), test=True)
 
-            score, reward, done, ____ = self.env.step(action, True) if steps > 0 else self.env.first_step(action, True)
+            score, reward, done, ____ = self.env.step(action, True)
 
             steps += 1
             total_reward += reward
@@ -236,7 +239,7 @@ class Agent():
             state = self.env.get_state()
             action = self.get_action(tf.expand_dims(state, axis=0), test=True)
 
-            _, reward, done, ____ = self.env.step(action, True) if steps > 0 else self.env.first_step(action, True)
+            _, reward, done, ____ = self.env.step(action, True)
 
             steps += 1
 
@@ -279,7 +282,6 @@ class Agent():
 
     def decay_epsilon(self):
         self.epsilon = max(self.epsilon * self.epsilon_decay, self.epsilon_min)
-
 
     def loss_fn(self, y_true, y_pred):
         return tf.reduce_mean(tf.square(y_true - y_pred))
