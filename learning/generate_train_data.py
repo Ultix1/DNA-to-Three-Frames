@@ -1,3 +1,4 @@
+from models_v2.environment import get_state_test
 from utils.fasta_reader import read_fasta, convert_to_dna
 from utils.sequence_gen import SeqGen
 from utils.constants import CODON_TABLE, PROTEINS
@@ -66,3 +67,13 @@ def generate_data(size, range):
 
 if __name__ == '__main__':
     generate_data(size=100, range=(100,200))
+
+# if __name__ == "__main__":
+#     x = input("Window Size: ")
+#     get_state_test(
+#         dna="0000AGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGTAGT",
+#         protein="*SAINTSSAINTSSAINTS",
+#         window_size=int(x),
+#         dna_pointer=4,
+#         protein_pointer=1
+#     )
