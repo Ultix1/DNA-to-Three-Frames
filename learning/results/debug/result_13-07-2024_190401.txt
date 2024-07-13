@@ -1,0 +1,1670 @@
+ALIGNMENT RESULTS - 2024-07-13 19:04:01.895983
+DNA File: data/dna/DNA.txt
+Protein File: data/proteins/AA.txt
+
+Prev. Frames: ['*', '*', '*'] => PP: *
+Curr Frames: ['*', 'R', 'G', 'V', '*', 'S', 'A', 'L', 'Y'] => CP: ['R', 'T', 'H']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['*', 'R', 'G'] => PP: R
+Curr Frames: ['V', '*', 'S', 'A', 'L', 'Y', 'T', 'P', 'Q'] => CP: ['T', 'H', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'S', 'A'] => PP: T
+Curr Frames: ['L', 'Y', 'T', 'P', 'Q', 'N', 'I', 'Y', 'I'] => CP: ['H', 'D', 'H']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['Y', 'T', 'P'] => PP: H
+Curr Frames: ['Q', 'N', 'I', 'Y', 'I', 'F', 'L', '*', 'S'] => CP: ['D', 'H', 'Y']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Q', 'N', 'I'] => PP: D
+Curr Frames: ['Y', 'I', 'F', 'L', '*', 'S', 'V', 'F', 'F'] => CP: ['H', 'Y', 'R']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['I', 'Y', 'I'] => PP: H
+Curr Frames: ['F', 'L', '*', 'S', 'V', 'F', 'F', 'S', 'L'] => CP: ['Y', 'R', 'V']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['F', 'L', '*'] => PP: Y
+Curr Frames: ['S', 'V', 'F', 'F', 'S', 'L', '*', 'K', 'S'] => CP: ['R', 'V', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'V', 'F'] => PP: R
+Curr Frames: ['F', 'S', 'L', '*', 'K', 'S', 'A', 'P', 'L'] => CP: ['V', 'W', 'L']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['F', 'S', 'L'] => PP: V
+Curr Frames: ['*', 'K', 'S', 'A', 'P', 'L', 'L', 'Y', 'T'] => CP: ['W', 'L', 'R']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'K', 'S'] => PP: W
+Curr Frames: ['A', 'P', 'L', 'L', 'Y', 'T', 'R', 'D', 'T'] => CP: ['L', 'R', 'F']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['P', 'L', 'L'] => PP: L
+Curr Frames: ['Y', 'T', 'R', 'D', 'T', 'Q', 'R', 'D', 'T'] => CP: ['R', 'F', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['T', 'R', 'D'] => PP: R
+Curr Frames: ['T', 'Q', 'R', 'D', 'T', 'P', 'L', 'S', 'R'] => CP: ['F', 'D', 'V']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['Q', 'R', 'D'] => PP: F
+Curr Frames: ['T', 'P', 'L', 'S', 'R', 'A', 'H', 'T', 'L'] => CP: ['D', 'V', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['T', 'P', 'L'] => PP: D
+Curr Frames: ['S', 'R', 'A', 'H', 'T', 'L', 'L', '*', 'R'] => CP: ['V', 'S', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'R', 'A'] => PP: V
+Curr Frames: ['H', 'T', 'L', 'L', '*', 'R', 'D', 'I', 'L'] => CP: ['S', 'N', 'K']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'H', 'T'] => PP: S
+Curr Frames: ['L', 'L', '*', 'R', 'D', 'I', 'L', 'C', 'A'] => CP: ['N', 'K', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'L', '*'] => PP: N
+Curr Frames: ['R', 'D', 'I', 'L', 'C', 'A', 'P', 'H', 'M'] => CP: ['K', 'W', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'D', 'I'] => PP: K
+Curr Frames: ['L', 'C', 'A', 'P', 'H', 'M', 'C', 'A', 'H'] => CP: ['W', 'M', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'C', 'A'] => PP: W
+Curr Frames: ['P', 'H', 'M', 'C', 'A', 'H', 'I', '*', 'R'] => CP: ['M', 'H', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['H', 'M', 'C'] => PP: M
+Curr Frames: ['A', 'H', 'I', '*', 'R', 'E', 'S', 'A', 'L'] => CP: ['H', 'S', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['A', 'H', 'I'] => PP: H
+Curr Frames: ['*', 'R', 'E', 'S', 'A', 'L', '*', 'N', 'T'] => CP: ['S', 'V', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'R', 'E'] => PP: S
+Curr Frames: ['S', 'A', 'L', '*', 'N', 'T', 'R', 'E', 'S'] => CP: ['V', 'H', 'T']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['E', 'S', 'A'] => PP: V
+Curr Frames: ['L', '*', 'N', 'T', 'R', 'E', 'S', 'A', 'P'] => CP: ['H', 'T', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'N', 'T'] => PP: H
+Curr Frames: ['R', 'E', 'S', 'A', 'P', 'Q', 'S', 'A', 'R'] => CP: ['T', 'M', 'L']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['R', 'E', 'S'] => PP: T
+Curr Frames: ['A', 'P', 'Q', 'S', 'A', 'R', 'E', 'K', 'K'] => CP: ['M', 'L', 'T']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'P', 'Q'] => PP: M
+Curr Frames: ['S', 'A', 'R', 'E', 'K', 'K', 'K', 'S', 'A'] => CP: ['L', 'T', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'A', 'R'] => PP: L
+Curr Frames: ['E', 'K', 'K', 'K', 'S', 'A', 'R', 'V', '*'] => CP: ['T', 'A', 'Y']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['E', 'K', 'K'] => PP: T
+Curr Frames: ['K', 'S', 'A', 'R', 'V', '*', 'E', 'R', 'G'] => CP: ['A', 'Y', 'L']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['K', 'S', 'A'] => PP: A
+Curr Frames: ['R', 'V', '*', 'E', 'R', 'G', 'A', 'R', 'A'] => CP: ['Y', 'L', 'G']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'V', '*'] => PP: Y
+Curr Frames: ['E', 'R', 'G', 'A', 'R', 'A', 'L', 'F', 'F'] => CP: ['L', 'G', 'K']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['E', 'R', 'G'] => PP: L
+Curr Frames: ['A', 'R', 'A', 'L', 'F', 'F', 'S', 'Q', 'K'] => CP: ['G', 'K', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['A', 'R', 'A'] => PP: G
+Curr Frames: ['L', 'F', 'F', 'S', 'Q', 'K', 'S', 'A', 'H'] => CP: ['K', 'P', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'F', 'F'] => PP: K
+Curr Frames: ['S', 'Q', 'K', 'S', 'A', 'H', 'M', 'W', 'G'] => CP: ['P', 'V', 'P']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['Q', 'K', 'S'] => PP: P
+Curr Frames: ['A', 'H', 'M', 'W', 'G', 'A', 'R', 'E', 'S'] => CP: ['V', 'P', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'H', 'M'] => PP: V
+Curr Frames: ['W', 'G', 'A', 'R', 'E', 'S', 'V', '*', 'K'] => CP: ['P', 'P', 'T']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['W', 'G', 'A'] => PP: P
+Curr Frames: ['R', 'E', 'S', 'V', '*', 'K', 'S', 'V', '*'] => CP: ['P', 'T', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'E', 'S'] => PP: P
+Curr Frames: ['V', '*', 'K', 'S', 'V', '*', 'D', 'I', 'S'] => CP: ['T', 'V', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'V', '*'] => PP: T
+Curr Frames: ['K', 'S', 'V', '*', 'D', 'I', 'S', 'P', 'Q'] => CP: ['V', 'S', 'T']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['K', 'S', 'V'] => PP: V
+Curr Frames: ['*', 'D', 'I', 'S', 'P', 'Q', 'N', 'T', 'R'] => CP: ['S', 'T', 'P']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'D', 'I'] => PP: S
+Curr Frames: ['S', 'P', 'Q', 'N', 'T', 'R', 'A', 'L', 'F'] => CP: ['T', 'P', 'Q']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['I', 'S', 'P'] => PP: T
+Curr Frames: ['Q', 'N', 'T', 'R', 'A', 'L', 'F', 'S', 'R'] => CP: ['P', 'Q', 'S']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'T', 'R'] => PP: P
+Curr Frames: ['A', 'L', 'F', 'S', 'R', 'G', 'D', 'I', 'Y'] => CP: ['Q', 'S', 'E']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'L', 'F'] => PP: Q
+Curr Frames: ['S', 'R', 'G', 'D', 'I', 'Y', 'T', 'R', 'D'] => CP: ['S', 'E', 'N']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['S', 'R', 'G'] => PP: S
+Curr Frames: ['D', 'I', 'Y', 'T', 'R', 'D', 'T', 'L', 'Y'] => CP: ['E', 'N', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'D', 'I'] => PP: E
+Curr Frames: ['Y', 'T', 'R', 'D', 'T', 'L', 'Y', 'I', 'Y'] => CP: ['N', 'M', 'I']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Y', 'T', 'R'] => PP: N
+Curr Frames: ['D', 'T', 'L', 'Y', 'I', 'Y', 'I', 'Y', 'T'] => CP: ['M', 'I', 'I']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['D', 'T', 'L'] => PP: M
+Curr Frames: ['Y', 'I', 'Y', 'I', 'Y', 'T', 'L', 'L', '*'] => CP: ['I', 'I', 'L']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['I', 'Y', 'I'] => PP: I
+Curr Frames: ['Y', 'T', 'L', 'L', '*', 'R', 'G', 'V', 'F'] => CP: ['I', 'L', 'W']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['I', 'Y', 'T'] => PP: I
+Curr Frames: ['L', 'L', '*', 'R', 'G', 'V', 'F', 'L', '*'] => CP: ['L', 'W', 'D']
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'L', '*'] => PP: L
+Curr Frames: ['R', 'G', 'V', 'F', 'L', '*', 'D', 'I', 'S'] => CP: ['W', 'D', 'C']
+Action: 1 (FRAMESHIFT_1)
+Reward of Action: -2
+
+Prev. Frames: ['*', 'R', 'G'] => PP: W
+Curr Frames: ['V', 'F', 'L', '*', 'D', 'I', 'S', 'L', 'S'] => CP: ['D', 'C', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'F', 'L'] => PP: D
+Curr Frames: ['*', 'D', 'I', 'S', 'L', 'S', 'R', 'A', 'P'] => CP: ['C', 'F', 'V']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'D', 'I'] => PP: C
+Curr Frames: ['S', 'L', 'S', 'R', 'A', 'P', 'P', 'P', 'R'] => CP: ['F', 'V', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'L', 'S'] => PP: F
+Curr Frames: ['R', 'A', 'P', 'P', 'P', 'R', 'E', 'R', 'E'] => CP: ['V', 'P', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'A', 'P'] => PP: V
+Curr Frames: ['P', 'P', 'R', 'E', 'R', 'E', 'N', 'T', 'L'] => CP: ['P', 'N', 'I']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['P', 'P', 'R'] => PP: P
+Curr Frames: ['E', 'R', 'E', 'N', 'T', 'L', 'C', 'V', '*'] => CP: ['N', 'I', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['E', 'R', 'E'] => PP: N
+Curr Frames: ['N', 'T', 'L', 'C', 'V', '*', 'K', 'N', 'T'] => CP: ['I', 'P', 'T']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['E', 'N', 'T'] => PP: I
+Curr Frames: ['L', 'C', 'V', '*', 'K', 'N', 'T', 'P', 'L'] => CP: ['P', 'T', 'E']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'C', 'V'] => PP: P
+Curr Frames: ['*', 'K', 'N', 'T', 'P', 'L', 'S', 'Q', 'N'] => CP: ['T', 'E', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'K', 'N'] => PP: T
+Curr Frames: ['T', 'P', 'L', 'S', 'Q', 'N', 'T', 'H', 'I'] => CP: ['E', 'N', 'Y']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'T', 'P'] => PP: E
+Curr Frames: ['L', 'S', 'Q', 'N', 'T', 'H', 'I', 'F', 'L'] => CP: ['N', 'Y', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['L', 'S', 'Q'] => PP: N
+Curr Frames: ['N', 'T', 'H', 'I', 'F', 'L', 'Y', 'I', '*'] => CP: ['Y', 'H', 'P']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['Q', 'N', 'T'] => PP: Y
+Curr Frames: ['H', 'I', 'F', 'L', 'Y', 'I', '*', 'R', 'D'] => CP: ['H', 'P', 'C']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['I', 'F', 'L'] => PP: H
+Curr Frames: ['Y', 'I', '*', 'R', 'D', 'I', 'L', 'Y', 'M'] => CP: ['P', 'C', 'T']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Y', 'I', '*'] => PP: P
+Curr Frames: ['R', 'D', 'I', 'L', 'Y', 'M', '*', 'E', 'R'] => CP: ['C', 'T', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'D', 'I'] => PP: C
+Curr Frames: ['L', 'Y', 'M', '*', 'E', 'R', 'G', 'V', 'L'] => CP: ['T', 'D', 'G']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['I', 'L', 'Y'] => PP: T
+Curr Frames: ['M', '*', 'E', 'R', 'G', 'V', 'L', '*', 'S'] => CP: ['D', 'G', 'I']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'E', 'R'] => PP: D
+Curr Frames: ['G', 'V', 'L', '*', 'S', 'A', 'P', 'R', 'E'] => CP: ['G', 'I', 'L']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['R', 'G', 'V'] => PP: G
+Curr Frames: ['L', '*', 'S', 'A', 'P', 'R', 'E', 'K', 'K'] => CP: ['I', 'L', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'L', '*'] => PP: I
+Curr Frames: ['S', 'A', 'P', 'R', 'E', 'K', 'K', 'N', 'M'] => CP: ['L', 'C', 'Y']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'A', 'P'] => PP: L
+Curr Frames: ['R', 'E', 'K', 'K', 'N', 'M', 'C', 'A', 'H'] => CP: ['C', 'Y', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'E', 'K'] => PP: C
+Curr Frames: ['K', 'N', 'M', 'C', 'A', 'H', 'T', 'R', 'V'] => CP: ['Y', 'V', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['K', 'N', 'M'] => PP: Y
+Curr Frames: ['C', 'A', 'H', 'T', 'R', 'V', 'W', 'G', 'V'] => CP: ['V', 'H', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['C', 'A', 'H'] => PP: V
+Curr Frames: ['T', 'R', 'V', 'W', 'G', 'V', 'W', 'G', 'A'] => CP: ['H', 'F', 'T']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'V', 'W'] => PP: H
+Curr Frames: ['G', 'V', 'W', 'G', 'A', 'R', 'A', 'P', 'P'] => CP: ['F', 'T', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'V', 'W'] => PP: F
+Curr Frames: ['G', 'A', 'R', 'A', 'P', 'P', 'R', 'A', 'P'] => CP: ['T', 'F', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'A', 'R'] => PP: T
+Curr Frames: ['A', 'P', 'P', 'R', 'A', 'P', 'R', 'D', 'T'] => CP: ['F', 'F', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'P', 'P'] => PP: F
+Curr Frames: ['R', 'A', 'P', 'R', 'D', 'T', 'L', 'C', 'A'] => CP: ['F', 'C', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'A', 'P'] => PP: F
+Curr Frames: ['R', 'D', 'T', 'L', 'C', 'A', 'L', 'S', 'P'] => CP: ['C', 'S', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'D', 'T'] => PP: C
+Curr Frames: ['L', 'C', 'A', 'L', 'S', 'P', 'P', 'Q', 'R'] => CP: ['S', 'V', 'Q']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'C', 'A'] => PP: S
+Curr Frames: ['L', 'S', 'P', 'P', 'Q', 'R', 'E', 'S', 'V'] => CP: ['V', 'Q', 'Y']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'S', 'P'] => PP: V
+Curr Frames: ['P', 'Q', 'R', 'E', 'S', 'V', 'C', 'V', 'W'] => CP: ['Q', 'Y', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['P', 'Q', 'R'] => PP: Q
+Curr Frames: ['E', 'S', 'V', 'C', 'V', 'W', 'G', 'A', 'L'] => CP: ['Y', 'A', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['E', 'S', 'V'] => PP: Y
+Curr Frames: ['C', 'V', 'W', 'G', 'A', 'L', 'S', 'L', 'F'] => CP: ['A', 'W', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['C', 'V', 'W'] => PP: A
+Curr Frames: ['G', 'A', 'L', 'S', 'L', 'F', 'L', 'C', 'V'] => CP: ['W', 'S', 'V']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'L', 'S'] => PP: W
+Curr Frames: ['L', 'F', 'L', 'C', 'V', 'F', 'S', 'L', 'C'] => CP: ['S', 'V', 'L']
+Action: 0 (MATCH)
+Reward of Action: -2
+
+Prev. Frames: ['L', 'F', 'L'] => PP: S
+Curr Frames: ['C', 'V', 'F', 'S', 'L', 'C', 'V', 'S', 'Q'] => CP: ['V', 'L', 'S']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['L', 'C', 'V'] => PP: V
+Curr Frames: ['F', 'S', 'L', 'C', 'V', 'S', 'Q', 'K', 'R'] => CP: ['L', 'S', 'M']
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'L', 'C'] => PP: L
+Curr Frames: ['V', 'S', 'Q', 'K', 'R', 'G', 'A', 'P', 'P'] => CP: ['S', 'M', 'W']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['C', 'V', 'S'] => PP: S
+Curr Frames: ['Q', 'K', 'R', 'G', 'A', 'P', 'P', 'R', 'D'] => CP: ['M', 'W', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Q', 'K', 'R'] => PP: M
+Curr Frames: ['G', 'A', 'P', 'P', 'R', 'D', 'T', 'P', 'L'] => CP: ['W', 'W', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'A', 'P'] => PP: W
+Curr Frames: ['P', 'R', 'D', 'T', 'P', 'L', 'F', 'S', 'H'] => CP: ['W', 'W', 'G']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['P', 'R', 'D'] => PP: W
+Curr Frames: ['T', 'P', 'L', 'F', 'S', 'H', 'I', 'S', 'R'] => CP: ['W', 'G', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'P', 'L'] => PP: W
+Curr Frames: ['F', 'S', 'H', 'I', 'S', 'R', 'A', 'R', 'G'] => CP: ['G', 'V', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['F', 'S', 'H'] => PP: G
+Curr Frames: ['I', 'S', 'R', 'A', 'R', 'G', 'A', 'P', 'R'] => CP: ['V', 'N', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['H', 'I', 'S'] => PP: V
+Curr Frames: ['R', 'A', 'R', 'G', 'A', 'P', 'R', 'D', 'I'] => CP: ['N', 'D', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'A', 'R'] => PP: N
+Curr Frames: ['G', 'A', 'P', 'R', 'D', 'I', 'F', 'S', 'P'] => CP: ['D', 'N', 'I']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'A', 'P'] => PP: D
+Curr Frames: ['R', 'D', 'I', 'F', 'S', 'P', 'L', 'F', 'S'] => CP: ['N', 'I', 'V']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'D', 'I'] => PP: N
+Curr Frames: ['F', 'S', 'P', 'L', 'F', 'S', 'L', 'C', 'A'] => CP: ['I', 'V', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['F', 'S', 'P'] => PP: I
+Curr Frames: ['L', 'F', 'S', 'L', 'C', 'A', 'R', 'G', 'D'] => CP: ['V', 'F', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'F', 'S'] => PP: V
+Curr Frames: ['L', 'C', 'A', 'R', 'G', 'D', 'T', 'P', 'H'] => CP: ['F', 'M', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['L', 'C', 'A'] => PP: F
+Curr Frames: ['R', 'G', 'D', 'T', 'P', 'H', 'M', 'C', 'V'] => CP: ['M', 'V', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'G', 'D'] => PP: M
+Curr Frames: ['T', 'P', 'H', 'M', 'C', 'V', 'S', 'R', 'V'] => CP: ['V', 'P', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'P', 'H'] => PP: V
+Curr Frames: ['M', 'C', 'V', 'S', 'R', 'V', 'S', 'P', 'L'] => CP: ['P', 'H', 'F']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['M', 'C', 'V'] => PP: P
+Curr Frames: ['S', 'R', 'V', 'S', 'P', 'L', '*', 'D', 'I'] => CP: ['H', 'F', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'R', 'V'] => PP: H
+Curr Frames: ['S', 'P', 'L', '*', 'D', 'I', 'Y', 'T', 'L'] => CP: ['F', 'D', 'L']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'P', 'L'] => PP: F
+Curr Frames: ['*', 'D', 'I', 'Y', 'T', 'L', 'F', 'L', 'W'] => CP: ['D', 'L', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['*', 'D', 'I'] => PP: D
+Curr Frames: ['Y', 'T', 'L', 'F', 'L', 'W', 'G', 'V', 'S'] => CP: ['L', 'S', 'F']
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'L', 'F'] => PP: L
+Curr Frames: ['L', 'W', 'G', 'V', 'S', 'H', 'M', 'C', 'V'] => CP: ['S', 'F', 'Y']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['F', 'L', 'W'] => PP: S
+Curr Frames: ['G', 'V', 'S', 'H', 'M', 'C', 'V', 'F', 'F'] => CP: ['F', 'Y', 'P']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['W', 'G', 'V'] => PP: F
+Curr Frames: ['S', 'H', 'M', 'C', 'V', 'F', 'F', 'S', 'P'] => CP: ['Y', 'P', 'Y']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'H', 'M'] => PP: Y
+Curr Frames: ['C', 'V', 'F', 'F', 'S', 'P', 'R', 'V', 'L'] => CP: ['P', 'Y', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['C', 'V', 'F'] => PP: P
+Curr Frames: ['F', 'S', 'P', 'R', 'V', 'L', 'C', 'V', '*'] => CP: ['Y', 'A', 'P']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'P', 'R'] => PP: Y
+Curr Frames: ['V', 'L', 'C', 'V', '*', 'R', 'G', 'E', 'S'] => CP: ['A', 'P', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'L', 'C'] => PP: A
+Curr Frames: ['V', '*', 'R', 'G', 'E', 'S', 'V', '*', 'E'] => CP: ['P', 'S', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', '*', 'R'] => PP: P
+Curr Frames: ['G', 'E', 'S', 'V', '*', 'E', 'N', 'T', 'P'] => CP: ['S', 'D', 'N']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['G', 'E', 'S'] => PP: S
+Curr Frames: ['V', '*', 'E', 'N', 'T', 'P', 'P', 'H', 'T'] => CP: ['D', 'N', 'Q']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'E', 'N'] => PP: D
+Curr Frames: ['T', 'P', 'P', 'H', 'T', 'L', 'L', 'W', 'G'] => CP: ['N', 'Q', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['T', 'P', 'P'] => PP: N
+Curr Frames: ['H', 'T', 'L', 'L', 'W', 'G', 'A', 'L', 'F'] => CP: ['Q', 'A', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['H', 'T', 'L'] => PP: Q
+Curr Frames: ['L', 'W', 'G', 'A', 'L', 'F', 'L', 'C', 'A'] => CP: ['A', 'F', 'G']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'W', 'G'] => PP: A
+Curr Frames: ['A', 'L', 'F', 'L', 'C', 'A', 'R', 'A', 'P'] => CP: ['F', 'G', 'E']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['G', 'A', 'L'] => PP: F
+Curr Frames: ['F', 'L', 'C', 'A', 'R', 'A', 'P', 'H', 'I'] => CP: ['G', 'E', 'A']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'F', 'L'] => PP: G
+Curr Frames: ['C', 'A', 'R', 'A', 'P', 'H', 'I', '*', 'N'] => CP: ['E', 'A', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['C', 'A', 'R'] => PP: E
+Curr Frames: ['A', 'P', 'H', 'I', '*', 'N', 'I', 'F', 'S'] => CP: ['A', 'M', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['R', 'A', 'P'] => PP: A
+Curr Frames: ['H', 'I', '*', 'N', 'I', 'F', 'S', 'P', 'Q'] => CP: ['M', 'W', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['H', 'I', '*'] => PP: M
+Curr Frames: ['N', 'I', 'F', 'S', 'P', 'Q', 'N', 'M', '*'] => CP: ['W', 'A', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'I', 'F'] => PP: W
+Curr Frames: ['S', 'P', 'Q', 'N', 'M', '*', 'E', 'K', 'K'] => CP: ['A', 'A', 'R']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'P', 'Q'] => PP: A
+Curr Frames: ['N', 'M', '*', 'E', 'K', 'K', 'K', 'N', 'T'] => CP: ['A', 'R', 'F']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['Q', 'N', 'M'] => PP: A
+Curr Frames: ['*', 'E', 'K', 'K', 'K', 'N', 'T', 'P', 'L'] => CP: ['R', 'F', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'E', 'K'] => PP: R
+Curr Frames: ['K', 'K', 'N', 'T', 'P', 'L', 'Y', 'M', 'C'] => CP: ['F', 'S', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['K', 'K', 'N'] => PP: F
+Curr Frames: ['T', 'P', 'L', 'Y', 'M', 'C', 'A', 'H', 'T'] => CP: ['S', 'V', 'I']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'P', 'L'] => PP: S
+Curr Frames: ['Y', 'M', 'C', 'A', 'H', 'T', 'L', 'F', 'L'] => CP: ['V', 'I', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Y', 'M', 'C'] => PP: V
+Curr Frames: ['A', 'H', 'T', 'L', 'F', 'L', 'C', 'V', 'F'] => CP: ['I', 'N', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'H', 'T'] => PP: I
+Curr Frames: ['L', 'F', 'L', 'C', 'V', 'F', 'L', '*', 'R'] => CP: ['N', 'P', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'F', 'L'] => PP: N
+Curr Frames: ['C', 'V', 'F', 'L', '*', 'R', 'G', 'G', 'V'] => CP: ['P', 'D', 'L']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['C', 'V', 'F'] => PP: P
+Curr Frames: ['L', '*', 'R', 'G', 'G', 'V', 'Y', 'T', 'P'] => CP: ['D', 'L', 'G']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', '*', 'R'] => PP: D
+Curr Frames: ['G', 'G', 'V', 'Y', 'T', 'P', 'H', 'I', 'S'] => CP: ['L', 'G', 'W']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'G', 'G'] => PP: L
+Curr Frames: ['V', 'Y', 'T', 'P', 'H', 'I', 'S', 'Q', 'R'] => CP: ['G', 'W', 'W']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'Y', 'T'] => PP: G
+Curr Frames: ['P', 'H', 'I', 'S', 'Q', 'R', 'G', 'E', 'N'] => CP: ['W', 'W', 'K']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['P', 'H', 'I'] => PP: W
+Curr Frames: ['S', 'Q', 'R', 'G', 'E', 'N', 'I', 'S', 'L'] => CP: ['W', 'K', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'Q', 'R'] => PP: W
+Curr Frames: ['G', 'E', 'N', 'I', 'S', 'L', '*', 'E', 'N'] => CP: ['K', 'V', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'E', 'N'] => PP: K
+Curr Frames: ['I', 'S', 'L', '*', 'E', 'N', 'T', 'P', 'P'] => CP: ['V', 'M', 'K']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'I', 'S'] => PP: V
+Curr Frames: ['L', '*', 'E', 'N', 'T', 'P', 'P', 'L', 'S'] => CP: ['M', 'K', 'E']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'L', '*'] => PP: M
+Curr Frames: ['E', 'N', 'T', 'P', 'P', 'L', 'S', 'Q', 'R'] => CP: ['K', 'E', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['E', 'N', 'T'] => PP: K
+Curr Frames: ['P', 'P', 'L', 'S', 'Q', 'R', 'D', 'I', '*'] => CP: ['E', 'N', 'R']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['P', 'P', 'L'] => PP: E
+Curr Frames: ['S', 'Q', 'R', 'D', 'I', '*', 'S', 'V', 'W'] => CP: ['N', 'R', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'Q', 'R'] => PP: N
+Curr Frames: ['D', 'I', '*', 'S', 'V', 'W', 'G', 'G', 'G'] => CP: ['R', 'M', 'E']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['I', '*', 'S'] => PP: R
+Curr Frames: ['V', 'W', 'G', 'G', 'G', 'D', 'I', 'S', 'P'] => CP: ['M', 'E', 'P']
+Action: 2 (FRAMESHIFT_3)
+Reward of Action: -2
+
+Prev. Frames: ['W', 'G', 'G'] => PP: M
+Curr Frames: ['G', 'D', 'I', 'S', 'P', 'P', 'R', 'G', 'G'] => CP: ['E', 'P', 'E']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['D', 'I', 'S'] => PP: E
+Curr Frames: ['P', 'P', 'R', 'G', 'G', 'V', 'Y', 'I', '*'] => CP: ['P', 'E', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['P', 'P', 'R'] => PP: P
+Curr Frames: ['G', 'G', 'V', 'Y', 'I', '*', 'R', 'D', 'T'] => CP: ['E', 'D', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'G', 'V'] => PP: E
+Curr Frames: ['Y', 'I', '*', 'R', 'D', 'T', 'P', 'L', 'F'] => CP: ['D', 'H', 'K']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Y', 'I', '*'] => PP: D
+Curr Frames: ['R', 'D', 'T', 'P', 'L', 'F', 'L', 'Y', 'I'] => CP: ['H', 'K', 'G']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'D', 'T'] => PP: H
+Curr Frames: ['P', 'L', 'F', 'L', 'Y', 'I', 'S', 'L', 'C'] => CP: ['K', 'G', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['P', 'L', 'F'] => PP: K
+Curr Frames: ['L', 'Y', 'I', 'S', 'L', 'C', 'A', 'R', 'G'] => CP: ['G', 'V', 'G']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'Y', 'I'] => PP: G
+Curr Frames: ['S', 'L', 'C', 'A', 'R', 'G', 'V', 'S', 'P'] => CP: ['V', 'G', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'L', 'C'] => PP: V
+Curr Frames: ['A', 'R', 'G', 'V', 'S', 'P', 'Q', 'N', 'T'] => CP: ['G', 'W', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['R', 'G', 'V'] => PP: G
+Curr Frames: ['S', 'P', 'Q', 'N', 'T', 'L', 'L', '*', 'R'] => CP: ['W', 'D', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'P', 'Q'] => PP: W
+Curr Frames: ['N', 'T', 'L', 'L', '*', 'R', 'G', 'A', 'H'] => CP: ['D', 'D', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'T', 'L'] => PP: D
+Curr Frames: ['L', '*', 'R', 'G', 'A', 'H', 'I', '*', 'K'] => CP: ['D', 'A', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', '*', 'R'] => PP: D
+Curr Frames: ['G', 'A', 'H', 'I', '*', 'K', 'N', 'T', 'P'] => CP: ['A', 'S', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['G', 'A', 'H'] => PP: A
+Curr Frames: ['I', '*', 'K', 'N', 'T', 'P', 'L', 'C', 'A'] => CP: ['S', 'M', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['I', '*', 'K'] => PP: S
+Curr Frames: ['N', 'T', 'P', 'L', 'C', 'A', 'H', 'M', 'C'] => CP: ['M', 'F', 'Q']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'T', 'P'] => PP: M
+Curr Frames: ['L', 'C', 'A', 'H', 'M', 'C', 'A', 'L', 'Y'] => CP: ['F', 'Q', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'C', 'A'] => PP: F
+Curr Frames: ['H', 'M', 'C', 'A', 'L', 'Y', 'T', 'P', 'L'] => CP: ['Q', 'H', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['H', 'M', 'C'] => PP: Q
+Curr Frames: ['A', 'L', 'Y', 'T', 'P', 'L', 'L', 'C', 'V'] => CP: ['H', 'P', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['L', 'Y', 'T'] => PP: H
+Curr Frames: ['P', 'L', 'L', 'C', 'V', 'S', 'Q', 'R', 'D'] => CP: ['P', 'V', 'I']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['T', 'P', 'L'] => PP: P
+Curr Frames: ['L', 'C', 'V', 'S', 'Q', 'R', 'D', 'T', 'P'] => CP: ['V', 'I', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['C', 'V', 'S'] => PP: V
+Curr Frames: ['Q', 'R', 'D', 'T', 'P', 'P', 'H', 'T', 'L'] => CP: ['I', 'N', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Q', 'R', 'D'] => PP: I
+Curr Frames: ['T', 'P', 'P', 'H', 'T', 'L', 'S', 'L', 'C'] => CP: ['N', 'A', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'P', 'P'] => PP: N
+Curr Frames: ['H', 'T', 'L', 'S', 'L', 'C', 'A', 'H', 'T'] => CP: ['A', 'D', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['H', 'T', 'L'] => PP: A
+Curr Frames: ['S', 'L', 'C', 'A', 'H', 'T', 'R', 'E', 'K'] => CP: ['D', 'W', 'Y']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'S', 'L'] => PP: D
+Curr Frames: ['C', 'A', 'H', 'T', 'R', 'E', 'K', 'S', 'V'] => CP: ['W', 'Y', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['C', 'A', 'H'] => PP: W
+Curr Frames: ['T', 'R', 'E', 'K', 'S', 'V', '*', 'K', 'N'] => CP: ['Y', 'A', 'T']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'R', 'E'] => PP: Y
+Curr Frames: ['K', 'S', 'V', '*', 'K', 'N', 'I', 'Y', 'M'] => CP: ['A', 'T', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['K', 'S', 'V'] => PP: A
+Curr Frames: ['*', 'K', 'N', 'I', 'Y', 'M', 'W', 'G', 'G'] => CP: ['T', 'D', 'E']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'K', 'N'] => PP: T
+Curr Frames: ['I', 'Y', 'M', 'W', 'G', 'G', 'D', 'M', 'C'] => CP: ['D', 'E', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['I', 'Y', 'M'] => PP: D
+Curr Frames: ['W', 'G', 'G', 'D', 'M', 'C', 'A', 'R', 'V'] => CP: ['E', 'W', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['W', 'G', 'G'] => PP: E
+Curr Frames: ['D', 'M', 'C', 'A', 'R', 'V', 'S', 'P', 'R'] => CP: ['W', 'N', 'L']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['D', 'M', 'C'] => PP: W
+Curr Frames: ['A', 'R', 'V', 'S', 'P', 'R', 'D', 'T', 'P'] => CP: ['N', 'L', 'R']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'R', 'V'] => PP: N
+Curr Frames: ['S', 'P', 'R', 'D', 'T', 'P', 'L', 'W', 'G'] => CP: ['L', 'R', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'P', 'R'] => PP: L
+Curr Frames: ['D', 'T', 'P', 'L', 'W', 'G', 'A', 'L', 'S'] => CP: ['R', 'W', 'V']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'P', 'L'] => PP: R
+Curr Frames: ['W', 'G', 'A', 'L', 'S', 'P', 'L', 'W', 'G'] => CP: ['W', 'V', 'R']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['L', 'W', 'G'] => PP: W
+Curr Frames: ['A', 'L', 'S', 'P', 'L', 'W', 'G', 'A', 'R'] => CP: ['V', 'R', 'H']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['G', 'A', 'L'] => PP: V
+Curr Frames: ['S', 'P', 'L', 'W', 'G', 'A', 'R', 'V', 'F'] => CP: ['R', 'H', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'P', 'L'] => PP: R
+Curr Frames: ['W', 'G', 'A', 'R', 'V', 'F', 'S', 'P', 'H'] => CP: ['H', 'F', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['W', 'G', 'A'] => PP: H
+Curr Frames: ['R', 'V', 'F', 'S', 'P', 'H', 'T', 'R', 'A'] => CP: ['F', 'C', 'Q']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['V', 'F', 'S'] => PP: F
+Curr Frames: ['P', 'H', 'T', 'R', 'A', 'P', 'R', 'A', 'P'] => CP: ['C', 'Q', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['P', 'H', 'T'] => PP: C
+Curr Frames: ['R', 'A', 'P', 'R', 'A', 'P', 'H', 'T', 'R'] => CP: ['Q', 'D', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'A', 'P'] => PP: Q
+Curr Frames: ['R', 'A', 'P', 'H', 'T', 'R', 'V', 'C', 'V'] => CP: ['D', 'D', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'A', 'P'] => PP: D
+Curr Frames: ['H', 'T', 'R', 'V', 'C', 'V', 'F', 'S', 'R'] => CP: ['D', 'N', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['H', 'T', 'R'] => PP: D
+Curr Frames: ['V', 'C', 'V', 'F', 'S', 'R', 'V', 'L', '*'] => CP: ['N', 'S', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'C', 'V'] => PP: N
+Curr Frames: ['F', 'S', 'R', 'V', 'L', '*', 'N', 'T', 'L'] => CP: ['S', 'W', 'D']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['F', 'S', 'R'] => PP: S
+Curr Frames: ['V', 'L', '*', 'N', 'T', 'L', 'C', 'V', 'L'] => CP: ['W', 'D', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'L', '*'] => PP: W
+Curr Frames: ['N', 'T', 'L', 'C', 'V', 'L', '*', 'D', 'I'] => CP: ['D', 'M', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'T', 'L'] => PP: D
+Curr Frames: ['C', 'V', 'L', '*', 'D', 'I', 'L', 'W', 'G'] => CP: ['M', 'D', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['C', 'V', 'L'] => PP: M
+Curr Frames: ['*', 'D', 'I', 'L', 'W', 'G', 'V', 'W', 'G'] => CP: ['D', 'F', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['*', 'D', 'I'] => PP: D
+Curr Frames: ['L', 'W', 'G', 'V', 'W', 'G', 'A', 'H', 'T'] => CP: ['F', 'A', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'W', 'G'] => PP: F
+Curr Frames: ['V', 'W', 'G', 'A', 'H', 'T', 'H', 'I', '*'] => CP: ['A', 'A', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'W', 'G'] => PP: A
+Curr Frames: ['A', 'H', 'T', 'H', 'I', '*', 'K', 'S', 'V'] => CP: ['A', 'M', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['G', 'A', 'H'] => PP: A
+Curr Frames: ['T', 'H', 'I', '*', 'K', 'S', 'V', '*', 'N'] => CP: ['M', 'S', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'H', 'I'] => PP: M
+Curr Frames: ['*', 'K', 'S', 'V', '*', 'N', 'I', 'Y', 'T'] => CP: ['S', 'C', 'I']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['*', 'K', 'S'] => PP: S
+Curr Frames: ['V', '*', 'N', 'I', 'Y', 'T', 'P', 'H', 'M'] => CP: ['C', 'I', 'T']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', '*', 'N'] => PP: C
+Curr Frames: ['I', 'Y', 'T', 'P', 'H', 'M', 'W', 'G', 'V'] => CP: ['I', 'T', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['N', 'I', 'Y'] => PP: I
+Curr Frames: ['T', 'P', 'H', 'M', 'W', 'G', 'V', 'S', 'P'] => CP: ['T', 'A', 'T']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['Y', 'T', 'P'] => PP: T
+Curr Frames: ['H', 'M', 'W', 'G', 'V', 'S', 'P', 'P', 'L'] => CP: ['A', 'T', 'E']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['H', 'M', 'W'] => PP: A
+Curr Frames: ['G', 'V', 'S', 'P', 'P', 'L', '*', 'E', 'K'] => CP: ['T', 'E', 'Q']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'V', 'S'] => PP: T
+Curr Frames: ['P', 'P', 'L', '*', 'E', 'K', 'N', 'I', 'F'] => CP: ['E', 'Q', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['P', 'P', 'L'] => PP: E
+Curr Frames: ['*', 'E', 'K', 'N', 'I', 'F', 'S', 'R', 'G'] => CP: ['Q', 'M', 'I']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'E', 'K'] => PP: Q
+Curr Frames: ['N', 'I', 'F', 'S', 'R', 'G', 'A', 'L', 'S'] => CP: ['M', 'I', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'I', 'F'] => PP: M
+Curr Frames: ['S', 'R', 'G', 'A', 'L', 'S', 'Q', 'S', 'V'] => CP: ['I', 'H', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['S', 'R', 'G'] => PP: I
+Curr Frames: ['A', 'L', 'S', 'Q', 'S', 'V', 'L', 'Y', 'T'] => CP: ['H', 'M', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'L', 'S'] => PP: H
+Curr Frames: ['Q', 'S', 'V', 'L', 'Y', 'T', 'L', 'F', 'S'] => CP: ['M', 'P', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Q', 'S', 'V'] => PP: M
+Curr Frames: ['L', 'Y', 'T', 'L', 'F', 'S', 'R', 'E', 'S'] => CP: ['P', 'A', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'Y', 'T'] => PP: P
+Curr Frames: ['L', 'F', 'S', 'R', 'E', 'S', 'A', 'R', 'V'] => CP: ['A', 'C', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'F', 'S'] => PP: A
+Curr Frames: ['R', 'E', 'S', 'A', 'R', 'V', '*', 'N', 'M'] => CP: ['C', 'D', 'L']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'E', 'S'] => PP: C
+Curr Frames: ['A', 'R', 'V', '*', 'N', 'M', 'C', 'V', 'S'] => CP: ['D', 'L', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'R', 'V'] => PP: D
+Curr Frames: ['*', 'N', 'M', 'C', 'V', 'S', 'L', 'S', 'Q'] => CP: ['L', 'C', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'M', 'C'] => PP: L
+Curr Frames: ['V', 'S', 'L', 'S', 'Q', 'K', 'N', 'M', 'W'] => CP: ['C', 'H', 'T']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'L', 'S'] => PP: C
+Curr Frames: ['Q', 'K', 'N', 'M', 'W', 'G', 'A', 'R', 'V'] => CP: ['H', 'T', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Q', 'K', 'N'] => PP: H
+Curr Frames: ['M', 'W', 'G', 'A', 'R', 'V', '*', 'R', 'E'] => CP: ['T', 'N', 'I']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['M', 'W', 'G'] => PP: T
+Curr Frames: ['A', 'R', 'V', '*', 'R', 'E', 'N', 'T', 'R'] => CP: ['N', 'I', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'R', 'V'] => PP: N
+Curr Frames: ['*', 'R', 'E', 'N', 'T', 'R', 'G', 'A', 'Q'] => CP: ['I', 'F', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'R', 'E'] => PP: I
+Curr Frames: ['N', 'T', 'R', 'G', 'A', 'Q', 'N', 'M', '*'] => CP: ['F', 'F', 'E']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'T', 'R'] => PP: F
+Curr Frames: ['G', 'A', 'Q', 'N', 'M', '*', 'D', 'T', 'L'] => CP: ['F', 'E', 'I']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'A', 'Q'] => PP: F
+Curr Frames: ['N', 'M', '*', 'D', 'T', 'L', 'C', 'V', 'F'] => CP: ['E', 'I', 'V']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['M', '*', 'D'] => PP: E
+Curr Frames: ['T', 'L', 'C', 'V', 'F', 'L', '*', 'D', 'T'] => CP: ['I', 'V', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'L', 'C'] => PP: I
+Curr Frames: ['V', 'F', 'L', '*', 'D', 'T', 'H', 'T', 'L'] => CP: ['V', 'N', 'I']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['C', 'V', 'F'] => PP: V
+Curr Frames: ['L', '*', 'D', 'T', 'H', 'T', 'L', '*', 'R'] => CP: ['N', 'I', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'D', 'T'] => PP: N
+Curr Frames: ['H', 'T', 'L', '*', 'R', 'G', 'V', 'W', 'G'] => CP: ['I', 'C', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['H', 'T', 'L'] => PP: I
+Curr Frames: ['*', 'R', 'G', 'V', 'W', 'G', 'V', 'C', 'V'] => CP: ['C', 'F', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'R', 'G'] => PP: C
+Curr Frames: ['V', 'W', 'G', 'V', 'C', 'V', 'F', 'S', 'Q'] => CP: ['F', 'A', 'E']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'W', 'G'] => PP: F
+Curr Frames: ['V', 'C', 'V', 'F', 'S', 'Q', 'S', 'V', 'F'] => CP: ['A', 'E', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'C', 'V'] => PP: A
+Curr Frames: ['F', 'S', 'Q', 'S', 'V', 'F', 'S', 'R', 'G'] => CP: ['E', 'P', 'T']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['F', 'S', 'Q'] => PP: E
+Curr Frames: ['S', 'V', 'F', 'S', 'R', 'G', 'V', '*', 'N'] => CP: ['P', 'T', 'Y']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'V', 'F'] => PP: P
+Curr Frames: ['S', 'R', 'G', 'V', '*', 'N', 'T', 'R', 'G'] => CP: ['T', 'Y', 'T']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'R', 'G'] => PP: T
+Curr Frames: ['V', '*', 'N', 'T', 'R', 'G', 'E', 'R', 'E'] => CP: ['Y', 'T', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', '*', 'N'] => PP: Y
+Curr Frames: ['T', 'R', 'G', 'E', 'R', 'E', 'S', 'V', 'S'] => CP: ['T', 'H', 'L']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['N', 'T', 'R'] => PP: T
+Curr Frames: ['G', 'E', 'R', 'E', 'S', 'V', 'S', 'L', 'C'] => CP: ['H', 'L', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'E', 'R'] => PP: H
+Curr Frames: ['E', 'S', 'V', 'S', 'L', 'C', 'V', 'C', 'A'] => CP: ['L', 'W', 'K']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['E', 'S', 'V'] => PP: L
+Curr Frames: ['S', 'L', 'C', 'V', 'C', 'A', 'R', 'G', 'A'] => CP: ['W', 'K', 'W']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'L', 'C'] => PP: W
+Curr Frames: ['V', 'C', 'A', 'R', 'G', 'A', 'H', 'I', 'F'] => CP: ['K', 'W', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'C', 'A'] => PP: K
+Curr Frames: ['R', 'G', 'A', 'H', 'I', 'F', 'S', 'L', 'L'] => CP: ['W', 'A', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'G', 'A'] => PP: W
+Curr Frames: ['H', 'I', 'F', 'S', 'L', 'L', 'Y', 'I', 'L'] => CP: ['A', 'W', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['H', 'I', 'F'] => PP: A
+Curr Frames: ['S', 'L', 'L', 'Y', 'I', 'L', '*', 'N', 'I'] => CP: ['W', 'C', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'L', 'L'] => PP: W
+Curr Frames: ['Y', 'I', 'L', '*', 'N', 'I', 'Y', 'T', 'H'] => CP: ['C', 'M', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Y', 'I', 'L'] => PP: C
+Curr Frames: ['*', 'N', 'I', 'Y', 'T', 'H', 'I', 'F', 'L'] => CP: ['M', 'M', 'E']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'N', 'I'] => PP: M
+Curr Frames: ['Y', 'T', 'H', 'I', 'F', 'L', '*', 'E', 'K'] => CP: ['M', 'E', 'R']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Y', 'T', 'H'] => PP: M
+Curr Frames: ['I', 'F', 'L', '*', 'E', 'K', 'N', 'T', 'R'] => CP: ['E', 'R', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['I', 'F', 'L'] => PP: E
+Curr Frames: ['*', 'E', 'K', 'N', 'T', 'R', 'A', 'R', 'A'] => CP: ['R', 'D', 'I']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'E', 'K'] => PP: R
+Curr Frames: ['N', 'T', 'R', 'A', 'R', 'A', 'P', 'P', 'Q'] => CP: ['D', 'I', 'L']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'R', 'A'] => PP: D
+Curr Frames: ['R', 'A', 'P', 'P', 'Q', 'N', 'T', 'L', '*'] => CP: ['I', 'L', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'A', 'P'] => PP: I
+Curr Frames: ['P', 'Q', 'N', 'T', 'L', '*', 'D', 'T', 'R'] => CP: ['L', 'P', 'R']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['P', 'Q', 'N'] => PP: L
+Curr Frames: ['T', 'L', '*', 'D', 'T', 'R', 'A', 'L', '*'] => CP: ['P', 'R', 'P']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'T', 'L'] => PP: P
+Curr Frames: ['*', 'D', 'T', 'R', 'A', 'L', '*', 'R', 'G'] => CP: ['R', 'P', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'D', 'T'] => PP: R
+Curr Frames: ['R', 'A', 'L', '*', 'R', 'G', 'A', 'Q', 'K'] => CP: ['P', 'D', 'L']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'R', 'A'] => PP: P
+Curr Frames: ['L', '*', 'R', 'G', 'A', 'Q', 'K', 'S', 'V'] => CP: ['D', 'L', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', '*', 'R'] => PP: D
+Curr Frames: ['G', 'A', 'Q', 'K', 'S', 'V', 'S', 'Q', 'S'] => CP: ['L', 'P', 'P']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'G', 'A'] => PP: L
+Curr Frames: ['Q', 'K', 'S', 'V', 'S', 'Q', 'S', 'V', 'C'] => CP: ['P', 'P', 'E']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Q', 'K', 'S'] => PP: P
+Curr Frames: ['V', 'S', 'Q', 'S', 'V', 'C', 'A', 'Q', 'R'] => CP: ['P', 'E', 'K']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'S', 'Q'] => PP: P
+Curr Frames: ['S', 'V', 'C', 'A', 'Q', 'R', 'G', 'A', 'L'] => CP: ['E', 'K', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'V', 'C'] => PP: E
+Curr Frames: ['A', 'Q', 'R', 'G', 'A', 'L', 'S', 'P', 'P'] => CP: ['K', 'D', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'Q', 'R'] => PP: K
+Curr Frames: ['G', 'A', 'L', 'S', 'P', 'P', 'R', 'V', 'C'] => CP: ['D', 'P', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'A', 'L'] => PP: D
+Curr Frames: ['S', 'P', 'P', 'R', 'V', 'C', 'V', 'L', '*'] => CP: ['P', 'V', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['S', 'P', 'P'] => PP: P
+Curr Frames: ['R', 'V', 'C', 'V', 'L', '*', 'R', 'G', 'D'] => CP: ['V', 'S', 'G']
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'V', 'C'] => PP: V
+Curr Frames: ['V', 'L', '*', 'R', 'G', 'D', 'I', '*', 'K'] => CP: ['S', 'G', 'M']
+Action: 0 (MATCH)
+Reward of Action: -2
+
+Prev. Frames: ['V', 'L', '*'] => PP: S
+Curr Frames: ['R', 'G', 'D', 'I', '*', 'K', 'R', 'G', 'G'] => CP: ['G', 'M', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['R', 'G', 'D'] => PP: G
+Curr Frames: ['I', '*', 'K', 'R', 'G', 'G', 'V', '*', 'K'] => CP: ['M', 'M', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['D', 'I', '*'] => PP: M
+Curr Frames: ['K', 'R', 'G', 'G', 'V', '*', 'K', 'N', 'T'] => CP: ['M', 'N', 'T']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['K', 'R', 'G'] => PP: M
+Curr Frames: ['G', 'V', '*', 'K', 'N', 'T', 'H', 'I', 'Y'] => CP: ['N', 'T', 'E']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'V', '*'] => PP: N
+Curr Frames: ['K', 'N', 'T', 'H', 'I', 'Y', 'T', 'Q', 'K'] => CP: ['T', 'E', 'V']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['K', 'N', 'T'] => PP: T
+Curr Frames: ['H', 'I', 'Y', 'T', 'Q', 'K', 'S', 'V', 'S'] => CP: ['E', 'V', 'S']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['T', 'H', 'I'] => PP: E
+Curr Frames: ['Y', 'T', 'Q', 'K', 'S', 'V', 'S', 'R', 'D'] => CP: ['V', 'S', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['Y', 'T', 'Q'] => PP: V
+Curr Frames: ['K', 'S', 'V', 'S', 'R', 'D', 'I', '*', 'R'] => CP: ['S', 'C', 'M']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['S', 'V', 'S'] => PP: S
+Curr Frames: ['R', 'D', 'I', '*', 'R', 'E', 'K', 'R', 'D'] => CP: ['C', 'M', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'D', 'I'] => PP: C
+Curr Frames: ['*', 'R', 'E', 'K', 'R', 'D', 'M', 'W', 'G'] => CP: ['M', 'M', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'R', 'E'] => PP: M
+Curr Frames: ['K', 'R', 'D', 'M', 'W', 'G', 'G', 'V', '*'] => CP: ['M', 'C', 'K']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['K', 'R', 'D'] => PP: M
+Curr Frames: ['M', 'W', 'G', 'G', 'V', '*', 'R', 'G', 'G'] => CP: ['C', 'K', 'T']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['D', 'M', 'W'] => PP: C
+Curr Frames: ['G', 'G', 'V', '*', 'R', 'G', 'G', 'G', 'A'] => CP: ['K', 'T', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'G', 'V'] => PP: K
+Curr Frames: ['*', 'R', 'G', 'G', 'G', 'A', 'P', 'L', 'F'] => CP: ['T', 'M', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'R', 'G'] => PP: T
+Curr Frames: ['G', 'G', 'A', 'P', 'L', 'F', 'S', 'Q', 'N'] => CP: ['M', 'C', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'G', 'A'] => PP: M
+Curr Frames: ['P', 'L', 'F', 'S', 'Q', 'N', 'I', 'F', 'S'] => CP: ['C', 'S', 'P']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['P', 'L', 'F'] => PP: C
+Curr Frames: ['S', 'Q', 'N', 'I', 'F', 'S', 'H', 'I', 'S'] => CP: ['S', 'P', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['F', 'S', 'Q'] => PP: S
+Curr Frames: ['N', 'I', 'F', 'S', 'H', 'I', 'S', 'P', 'Q'] => CP: ['P', 'N', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'I', 'F'] => PP: P
+Curr Frames: ['S', 'H', 'I', 'S', 'P', 'Q', 'S', 'A', 'H'] => CP: ['N', 'W', 'R']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['S', 'H', 'I'] => PP: N
+Curr Frames: ['S', 'P', 'Q', 'S', 'A', 'H', 'T', 'L', 'S'] => CP: ['W', 'R', 'R']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'P', 'Q'] => PP: W
+Curr Frames: ['S', 'A', 'H', 'T', 'L', 'S', 'L', 'Y', 'T'] => CP: ['R', 'R', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'A', 'H'] => PP: R
+Curr Frames: ['T', 'L', 'S', 'L', 'Y', 'T', 'R', 'G', 'V'] => CP: ['R', 'C', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'L', 'S'] => PP: R
+Curr Frames: ['L', 'Y', 'T', 'R', 'G', 'V', 'F', 'S', 'P'] => CP: ['C', 'F', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'Y', 'T'] => PP: C
+Curr Frames: ['R', 'G', 'V', 'F', 'S', 'P', 'L', 'S', 'P'] => CP: ['F', 'D', 'G']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'G', 'V'] => PP: F
+Curr Frames: ['F', 'S', 'P', 'L', 'S', 'P', 'R', 'E', 'R'] => CP: ['D', 'G', 'P']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['V', 'F', 'S'] => PP: D
+Curr Frames: ['P', 'L', 'S', 'P', 'R', 'E', 'R', 'E', 'S'] => CP: ['G', 'P', 'G']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['P', 'L', 'S'] => PP: G
+Curr Frames: ['P', 'R', 'E', 'R', 'E', 'S', 'A', 'Q', 'K'] => CP: ['P', 'G', 'R']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['S', 'P', 'R'] => PP: P
+Curr Frames: ['E', 'R', 'E', 'S', 'A', 'Q', 'K', 'S', 'V'] => CP: ['G', 'R', 'F']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['E', 'R', 'E'] => PP: G
+Curr Frames: ['S', 'A', 'Q', 'K', 'S', 'V', '*', 'R', 'G'] => CP: ['R', 'F', 'Y']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'A', 'Q'] => PP: R
+Curr Frames: ['K', 'S', 'V', '*', 'R', 'G', 'G', 'A', 'H'] => CP: ['F', 'Y', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['K', 'S', 'V'] => PP: F
+Curr Frames: ['*', 'R', 'G', 'G', 'A', 'H', 'T', 'P', 'P'] => CP: ['Y', 'H', 'I']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'R', 'G'] => PP: Y
+Curr Frames: ['G', 'A', 'H', 'T', 'P', 'P', 'L', 'C', 'V'] => CP: ['H', 'I', 'Q']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['A', 'H', 'T'] => PP: H
+Curr Frames: ['P', 'P', 'L', 'C', 'V', '*', 'S', 'V', 'F'] => CP: ['I', 'Q', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['P', 'L', 'C'] => PP: I
+Curr Frames: ['V', '*', 'S', 'V', 'F', 'S', 'R', 'E', 'K'] => CP: ['Q', 'S', 'K']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['V', '*', 'S'] => PP: Q
+Curr Frames: ['V', 'F', 'S', 'R', 'E', 'K', 'R', 'G', 'G'] => CP: ['S', 'K', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['F', 'S', 'R'] => PP: S
+Curr Frames: ['E', 'K', 'R', 'G', 'G', 'G', 'E', 'N', 'T'] => CP: ['K', 'A', 'H']
+Action: 0 (MATCH)
+Reward of Action: 0
+
+Prev. Frames: ['E', 'K', 'R'] => PP: K
+Curr Frames: ['G', 'G', 'G', 'E', 'N', 'T', 'L', 'Y', 'I'] => CP: ['A', 'H', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'G', 'G'] => PP: A
+Curr Frames: ['E', 'N', 'T', 'L', 'Y', 'I', 'F', 'F', 'S'] => CP: ['H', 'N', 'G']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['E', 'N', 'T'] => PP: H
+Curr Frames: ['L', 'Y', 'I', 'F', 'F', 'S', 'R', 'V', 'W'] => CP: ['N', 'G', 'I']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'Y', 'I'] => PP: N
+Curr Frames: ['F', 'F', 'S', 'R', 'V', 'W', 'G', 'G', 'G'] => CP: ['G', 'I', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['F', 'F', 'S'] => PP: G
+Curr Frames: ['R', 'V', 'W', 'G', 'G', 'G', 'A', 'R', 'E'] => CP: ['I', 'N', 'V']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'V', 'W'] => PP: I
+Curr Frames: ['G', 'G', 'G', 'A', 'R', 'E', 'S', 'A', 'P'] => CP: ['N', 'V', 'H']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'G', 'G'] => PP: N
+Curr Frames: ['A', 'R', 'E', 'S', 'A', 'P', 'P', 'H', 'T'] => CP: ['V', 'H', 'T']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['A', 'R', 'E'] => PP: V
+Curr Frames: ['S', 'A', 'P', 'P', 'H', 'T', 'H', 'T', 'P'] => CP: ['H', 'T', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'A', 'P'] => PP: H
+Curr Frames: ['P', 'H', 'T', 'H', 'T', 'P', 'R', 'V', 'S'] => CP: ['T', 'D', 'K']
+Action: 3 (INDEL)
+Reward of Action: -2
+
+Prev. Frames: ['P', 'H', 'T'] => PP: T
+Curr Frames: ['H', 'T', 'P', 'R', 'V', 'S', 'L', 'S', 'L'] => CP: ['D', 'K', 'M']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['H', 'T', 'P'] => PP: D
+Curr Frames: ['R', 'V', 'S', 'L', 'S', 'L', 'F', 'S', 'L'] => CP: ['K', 'M', 'D']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['P', 'R', 'V'] => PP: K
+Curr Frames: ['S', 'L', 'S', 'L', 'F', 'S', 'L', 'C', 'A'] => CP: ['M', 'D', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['S', 'L', 'S'] => PP: M
+Curr Frames: ['L', 'F', 'S', 'L', 'C', 'A', 'R', 'G', 'E'] => CP: ['D', 'C', 'Y']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['L', 'F', 'S'] => PP: D
+Curr Frames: ['L', 'C', 'A', 'R', 'G', 'E', 'K', 'R', 'D'] => CP: ['C', 'Y', 'C']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['L', 'C', 'A'] => PP: C
+Curr Frames: ['R', 'G', 'E', 'K', 'R', 'D', 'T', 'L', 'L'] => CP: ['Y', 'C', 'M']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'G', 'E'] => PP: Y
+Curr Frames: ['K', 'R', 'D', 'T', 'L', 'L', '*', 'N', 'T'] => CP: ['C', 'M', 'A']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['K', 'R', 'D'] => PP: C
+Curr Frames: ['T', 'L', 'L', '*', 'N', 'T', 'H', 'T', 'R'] => CP: ['M', 'A', 'R']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'L', 'L'] => PP: M
+Curr Frames: ['*', 'N', 'T', 'H', 'T', 'R', 'V', 'L', '*'] => CP: ['A', 'R', 'G']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'N', 'T'] => PP: A
+Curr Frames: ['H', 'T', 'R', 'V', 'L', '*', 'R', 'G', 'G'] => CP: ['R', 'G', 'Y']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['T', 'R', 'V'] => PP: R
+Curr Frames: ['L', '*', 'R', 'G', 'G', 'E', 'R', 'G', 'V'] => CP: ['G', 'Y', 'T']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['*', 'R', 'G'] => PP: G
+Curr Frames: ['G', 'E', 'R', 'G', 'V', 'W', 'G', 'E', 'N'] => CP: ['Y', 'T', 'M']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['G', 'G', 'E'] => PP: Y
+Curr Frames: ['R', 'G', 'V', 'W', 'G', 'E', 'N', 'I', '*'] => CP: ['T', 'M', 'T']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['R', 'G', 'V'] => PP: T
+Curr Frames: ['W', 'G', 'E', 'N', 'I', '*', 'S', 'V', 'F'] => CP: ['M', 'T', 'N']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['W', 'G', 'E'] => PP: M
+Curr Frames: ['N', 'I', '*', 'S', 'V', 'F', 'F', 'S', 'R'] => CP: ['T', 'N', 'T']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['N', 'I', '*'] => PP: T
+Curr Frames: ['S', 'V', 'F', 'F', 'S', 'R', 'E', 'N', 'T'] => CP: ['N', 'T', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['*', 'S', 'V'] => PP: N
+Curr Frames: ['F', 'F', 'S', 'R', 'E', 'N', 'T', 'R', 'D'] => CP: ['T', 'S', 'W']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['F', 'F', 'S'] => PP: T
+Curr Frames: ['R', 'E', 'N', 'T', 'R', 'D', 'M', 'W', 'G'] => CP: ['S', 'W', 'S']
+Action: 4 (MISMATCH)
+Reward of Action: -2
+
+Prev. Frames: ['R', 'E', 'N'] => PP: S
+Curr Frames: ['T', 'R', 'D', 'M', 'W', 'G', 'V', 'L', 'Y'] => CP: ['W', 'S', 'E']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+Prev. Frames: ['T', 'R', 'D'] => PP: W
+Curr Frames: ['M', 'W', 'G', 'V', 'L', 'Y', 'I', 'L', '*'] => CP: ['S', 'E', 'M']
+Action: 3 (INDEL)
+Reward of Action: 0
+
+Prev. Frames: ['M', 'W', 'G'] => PP: S
+Curr Frames: ['V', 'L', 'Y', 'I', 'L', '*', 'N', 'I', 'S'] => CP: ['E', 'M', '*']
+Action: 4 (MISMATCH)
+Reward of Action: 0
+
+ERROR COUNT
+Matches: 2
+F_1: 1
+F_3: 1
+InDel: 24
+Mis: 42
