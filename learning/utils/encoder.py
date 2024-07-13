@@ -21,7 +21,7 @@ genetic_code = {
     'TTC':'F', 'TTT':'F', 'TTA':'L', 'TTG':'L',
     'TAC':'Y', 'TAT':'Y', 'TAA':'*', 'TAG':'*',
     'TGC':'C', 'TGT':'C', 'TGA':'*', 'TGG':'W',
-    '000':'_'
+    '000':'*'
 }
 
 def get_protein_encoding(proteins : list = proteins):
