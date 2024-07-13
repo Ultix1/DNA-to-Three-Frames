@@ -1,19 +1,6 @@
 from utils.constants import Action, CODON_TABLE, FRAMESHIFT_PENALTY, GAP_OPEN_PENALTY, GAP_EXTENSION_PENALTY
 import blosum as bl
 
-def validate_first(codon_1, codon_2, protein, action=Action.MATCH.value):
-    if (action == 4):
-      return (codon_1 != protein and codon_2 != protein)
-
-    else:
-      if(protein == codon_1):
-          return False
-      
-      elif(protein == codon_2):
-          return True
-    
-      return False
-
 def validate(action:int, proteins:list=None, protein:str=None, prev_frames:list=None, curr_frames:list=None, curr_frame:str=None):
     # Match (Perfect)
     if action == 0:
@@ -114,8 +101,8 @@ def validate(action:int, proteins:list=None, protein:str=None, prev_frames:list=
       # Condition for Frameshift_1, Match, Frameshift_3
       condition_3 = proteins[1] not in curr_frames and proteins[1] != "*"
 
-      if(proteins[0] == "*" and proteins[1] == "*"):
-        print("\nDOUBLE ASTERISK\n")
+      # if(proteins[0] == "*" and proteins[1] == "*"):
+      #   print("\nDOUBLE ASTERISK\n")
 
       return (condition_1 and condition_2 and condition_3)
       
