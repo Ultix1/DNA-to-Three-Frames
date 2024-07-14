@@ -84,6 +84,19 @@ class ThreeFrameAligner():
         return actions[::-1], sequence[::-1]
 
     def align(self, dna_input, protein_input, debug=False):
+        """
+        Pairwise alignment of a DNA and Protein sequence using Zhang's Three Frame Algorithm
+
+        Parameters:
+            dna_input: str - DNA string
+            protein_input: str - protein string
+            debug=False: bool - print debug matrices
+
+        Returns:
+            score: int - maximal alignment score
+            actions: list[Action] - list of actions that produces the alignment
+            alignment: list[tuple[str, str]] - list of tuples containing DNA-Protein pairings
+        """
         # Define I, D, C, and Traceback matrices of size m x n
         N, M = len(dna_input), len(protein_input)
         I = [[int() for _ in range(M+1)] for _ in range(N)]
