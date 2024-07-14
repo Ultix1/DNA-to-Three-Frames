@@ -1,9 +1,7 @@
 from enum import Enum
 import blosum as bl
 import psutil
-from utils.sequence_gen import SeqGen
 from utils.constants import Action, CODON_TABLE, FRAMESHIFT_PENALTY, GAP_OPEN_PENALTY, GAP_EXTENSION_PENALTY, NEG_INF
-from os import remove as remove_file
 
 class ThreeFrameAligner():
 
@@ -39,8 +37,9 @@ class ThreeFrameAligner():
                 print(row)
             print()
 
-    def _traceback(self, C, T, N, M):
+    def _traceback(self, C, T, N, M, dna, protein):
         actions = []
+        sequence = []
         i = 0
         j = M
 
@@ -62,10 +61,27 @@ class ThreeFrameAligner():
                     Action(T[i-3][j])
                 ])), key=lambda x: x[0])[1])
 
-            i -= 3 if i % 3 == 0 else i % 3
-            j -= 1
+            action = actions[-1]
+            dna_pointer = i
+            protein_pointer = j
 
-        return actions[::-1]
+            if action.value == Action.MATCH.value:
+                i -= 3
+                j -= 1
+            elif action.value == Action.FRAMESHIFT_1.value:
+                i -= 4
+                j -= 1
+            elif action.value == Action.FRAMESHIFT_3.value:
+                i -= 2
+                j -= 1
+            elif action.value == Action.INSERT.value:
+                j -= 1
+            elif action.value == Action.DELETE.value:
+                i -= 3
+
+            sequence.append((dna[i:dna_pointer], protein[j:protein_pointer]))
+
+        return actions[::-1], sequence[::-1]
 
     def align(self, dna_input, protein_input, debug=False):
         # Define I, D, C, and Traceback matrices of size m x n
@@ -161,37 +177,9 @@ class ThreeFrameAligner():
                         ])), key=lambda x: x[0])
 
         score = C[N-1][M] if self.backtrace is self.Backtrace.GLOBAL else max([e[-1] for e in C])
-        actions = self._traceback(C, T, N, M)
+        actions, sequence = self._traceback(C, T, N, M, dna_input, protein_input)
 
         if debug:
             self._matrix_printer([I, D, C, T])
 
-        return score, actions
-
-
-if __name__ == '__main__':
-    base_pairs = [10, 30, 60, 100, 300, 500, 800, 1000, 1500, 3000, 4500, 6000, 7500, 9000, 13500, 15000]
-
-    print("Three Frame Aligner Memory Test\n")
-    for base_pair_len in base_pairs:
-        retries = 10
-        while True:
-            seq_gen = SeqGen(lseqs=base_pair_len, num_sets=1)
-            try:
-                seq_gen.generate_sequences_and_proteins()
-                seq_gen.save_sequences_to_files()
-                break
-            except Exception as e:
-                if retries == 0:
-                    raise e
-                retries -= 1
-
-        with open("AA1.txt", "r") as a, open("DNA1.txt", "r") as b:
-            dna = b.read().strip()
-            protein = a.read().strip()
-            aligner = ThreeFrameAligner()
-            _, _ = aligner.align(dna, protein, debug=False)
-
-        print(f'seq_len={base_pair_len}\tave_mem_usage={float(aligner.ave_mem_usage)}')
-        remove_file("AA1.txt")
-        remove_file("DNA1.txt")
+        return score, actions, sequence
