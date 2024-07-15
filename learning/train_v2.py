@@ -9,6 +9,10 @@ from models_v2.environment import Environment
 def save_params(episode, epsilon):
     file = open("./saved_weights/params.txt", "w")
     file.write(f"Episode: {episode}, Epsilon: {epsilon}")
+    file.write(f"Input Shape: {PARAMS['input_shape']}")
+    file.write(f"Window Size: {PARAMS['window_size']}")
+    file.write(f"Actions: {PARAMS['actions']}")
+    file.write(f"Learning Rate: {PARAMS['lr']}")
     file.close()
 
 def record_results(episode, score, reward, duration, steps, epsilon):
@@ -64,14 +68,15 @@ if resume:
     file_1 = open("./saved_weights/params.txt", "r")
     file_2 = open("./saved_weights/training_results.txt", "r")
     
-    epsilon = float(file_1.readline().split(" ")[-1])
-    prev_episodes = int(list(file_2)[-4].split(" ")[1][0:-1])
+    epsilon = float(list(file_1)[0].split(" ")[-1])
+    prev_episodes = int(list(file_2)[-2].split(" ")[1].replace(",", ""))
 
     agent.epsilon = epsilon
     agent.load_weights(checkpoint_paths[0], checkpoint_paths[1])
 
     file_1.close()
     file_2.close()
+
 
 # Let Agent Explore (Do random actions)
 else:
@@ -117,7 +122,7 @@ while episodes <= PARAMS['max_ep']:
         save_params(episodes, agent.epsilon)
 
     # Record results of agent
-    record_results({episodes + prev_episodes}, score, reward, duration, steps, curr_epsilon)
+    record_results((episodes + prev_episodes), score, reward, duration, steps, curr_epsilon)
 
     episodes += 1
 
