@@ -1,7 +1,7 @@
 
 import pandas as pd
 
-proteins = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y', "*", "_"]
+proteins = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y', "*", "_", "-"]
 
 # NOTE: We considered Padded Codon: 000 == 00* == 0**
 genetic_code = {
@@ -21,7 +21,7 @@ genetic_code = {
     'TTC':'F', 'TTT':'F', 'TTA':'L', 'TTG':'L',
     'TAC':'Y', 'TAT':'Y', 'TAA':'*', 'TAG':'*',
     'TGC':'C', 'TGT':'C', 'TGA':'*', 'TGG':'W',
-    '000':'*'
+    '000':'_'
 }
 
 def get_protein_encoding(proteins : list = proteins):
@@ -36,4 +36,8 @@ def get_codon_encoding(proteins : dict, codons : dict = genetic_code):
 
 def get_table():
     return genetic_code
+
+if __name__ == "__main__":
+    proteins = get_protein_encoding()
+    print(proteins)
 

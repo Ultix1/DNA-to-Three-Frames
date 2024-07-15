@@ -90,8 +90,8 @@ def validate(action:int, proteins:list=None, protein:str=None, prev_frames:list=
     #     )
 
     #     return score_1 > score_2
-      
-    elif action == 4:
+
+    elif action == 5:
       # Condition for Insertion
       condition_1 = proteins[0] not in curr_frames and proteins[0] != "*"
 
@@ -103,6 +103,5 @@ def validate(action:int, proteins:list=None, protein:str=None, prev_frames:list=
 
       # if(proteins[0] == "*" and proteins[1] == "*"):
       #   print("\nDOUBLE ASTERISK\n")
-
       return (condition_1 and condition_2 and condition_3)
       
