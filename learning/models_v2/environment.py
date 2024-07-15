@@ -41,13 +41,13 @@ class Environment:
         """
         if(len(self.dna_sequence) > 0 and len(self.protein_sequence) > 0):
             dna_pad = ["000" for _ in range(self.window_size)]
-            protein_pad = ["*" for _ in range(self.window_size)]
+            protein_pad = ["-" for _ in range(self.window_size)]
 
             # '0000' + DNA + Pad
             self.dna_sequence = "0000" + self.dna_sequence + ''.join(dna_pad)
 
             # '*' + Protein + Pad
-            self.protein_sequence = "*" + self.protein_sequence + ''.join(protein_pad)
+            self.protein_sequence = "-" + self.protein_sequence + ''.join(protein_pad)
 
     def reset(self):
         """
@@ -178,6 +178,8 @@ class Environment:
                     protein=protein
                 )) else -2
                 self.dna_pointer += 3
+            
+            self.protein_pointer += 1
 
         # FRAMESHIFT 1
         elif action == 1:
@@ -204,6 +206,8 @@ class Environment:
                 )) else -2
 
                 self.dna_pointer += 2
+            
+            self.protein_pointer += 1
 
         # FRAMESHIFT 3
         elif action == 2:
@@ -229,74 +233,85 @@ class Environment:
                     protein=protein
                 )) else -2
                 self.dna_pointer += 4
-
-        # INSERTION and DELETION
-        elif action == 3:
+            
+            self.protein_pointer += 1
+        
+        # INSERTION or DELETION
+        elif action == 3 or action == 4:
             prev_protein = self.protein_sequence[self.protein_pointer - 1]
-            protein = self.protein_sequence[self.protein_pointer]
+            curr_protein = self.protein_sequence[self.protein_pointer]
             
-            if(protein == '*'):
+            # Past Frames
+            frame_a = self.get_codon_by_index(self.dna_pointer - 4)
+            frame_b = self.get_codon_by_index(self.dna_pointer - 3)
+            frame_c = self.get_codon_by_index(self.dna_pointer - 2)
+            past_frames = [self.table[frame_a],self.table[frame_b],self.table[frame_c]]
+            # Current Frames
+            frame_1 = self.get_codon_by_index(self.dna_pointer - 1)
+            frame_2 = self.get_codon_by_index(self.dna_pointer)
+            frame_3 = self.get_codon_by_index(self.dna_pointer + 1)
+            curr_frames=[self.table[frame_1],self.table[frame_2],self.table[frame_3]]
+            # Insertion scores
+            scores_1 = [
+                self.blosum_lookup(frame_1, prev_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY ), 
+                self.blosum_lookup(frame_2, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), 
+                self.blosum_lookup(frame_3, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY )
+            ]
+
+            # Deletion scores
+            scores_2 = [
+                self.blosum_lookup(frame_a, curr_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY ), 
+                self.blosum_lookup(frame_b, curr_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), 
+                self.blosum_lookup(frame_c, curr_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY )
+            ]
+
+            if(prev_protein == '*' and action == 3):
                 score += 0
                 reward = -2
                 self.dna_pointer += 3
-            
-            if(prev_protein == '*'):
+                self.dna_pointer += 1
+
+            elif(curr_protein == '*' and action == 4):
                 score += 0
                 reward = -2
                 self.dna_pointer += 3
-            
+                self.dna_pointer += 1
+            elif(curr_protein in curr_frames):
+                score += 0
+                reward = -2
+                self.dna_pointer += 3
+                self.dna_pointer += 1
             else:
-                # Past Frames
-                frame_a = self.get_codon_by_index(self.dna_pointer - 4)
-                frame_b = self.get_codon_by_index(self.dna_pointer - 3)
-                frame_c = self.get_codon_by_index(self.dna_pointer - 2)
+                cond = max(scores_1) <= max(scores_2)
                 
-                # Current Frames
-                frame_1 = self.get_codon_by_index(self.dna_pointer - 1)
-                frame_2 = self.get_codon_by_index(self.dna_pointer)
-                frame_3 = self.get_codon_by_index(self.dna_pointer + 1)
+                # Deletion Condition
+                cond_2 = (
+                    curr_protein == self.table[frame_a] or 
+                    curr_protein == self.table[frame_b] or 
+                    curr_protein == self.table[frame_c]
+                )
                 
-                # Current Protein
-                curr_protein = self.protein_sequence[self.protein_pointer]
+                # Insertion Condition
+                cond_3 = (
+                    prev_protein == self.table[frame_1] or
+                    prev_protein == self.table[frame_2] or
+                    prev_protein == self.table[frame_3]
+                )
                 
-                # Past Protein
-                prev_protein = self.protein_sequence[self.protein_pointer - 1]
+                # Move Down if Insertion
+                self.protein_pointer += 1 if (action == 3) else 0
                 
-                # Insertion scores
-                scores_1 = [
-                    self.blosum_lookup(frame_1, prev_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY ), 
-                    self.blosum_lookup(frame_2, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), 
-                    self.blosum_lookup(frame_3, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY )
-                ]
-
-                # Deletion scores
-                scores_2 = [
-                    self.blosum_lookup(frame_a, curr_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY ), 
-                    self.blosum_lookup(frame_b, curr_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), 
-                    self.blosum_lookup(frame_c, curr_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY )
-                ]
-
-                # If Insertion Score is greater than Deletion Score
-                if max(scores_1) >= max(scores_2):
-                    score += max(scores_1)
-                    self.dna_pointer += (2 + np.argmax(scores_1))
-
-                # If Deletion Score is greater than Insertion Score
-                else:
-                    score += max(scores_2)
-                    self.dna_pointer += (2 + np.argmax(scores_2))
-               
-                # Compare with aligner
-                # score += max([self.blosum_lookup(x, prev_protein) for x in [frame_1, frame_2, frame_3]])
-                reward += 0 if (validate(
-                    action=action, 
-                    proteins=[prev_protein, curr_protein], 
-                    prev_frames=[self.table[frame_a],self.table[frame_b],self.table[frame_c]], 
-                    curr_frames=[self.table[frame_1],self.table[frame_2],self.table[frame_3]]
-                )) else -2
+                # Move Right if Deletion
+                self.dna_pointer += (2 + np.argmax(scores_2)) if (action == 4) else 0
+                
+                score += max(scores_1) if (cond and cond_2) else max(scores_2)
+                reward += 2 if (
+                    (action == 3 and not cond and cond_3) or        # Insertion is correct
+                    (action == 4 and cond and cond_2)               # Deletion is correct
+                ) else -2
 
         # MISMATCH
-        elif action == 4:
+        elif action == 5:
             # Past Frames
             frame_a = self.get_codon_by_index(self.dna_pointer - 4)
             frame_b = self.get_codon_by_index(self.dna_pointer - 3)
@@ -316,23 +331,28 @@ class Environment:
             scores = [
                 self.blosum_lookup(frame_1, curr_protein) - FRAMESHIFT_PENALTY,
                 self.blosum_lookup(frame_2, curr_protein),
-                self.blosum_lookup(frame_3, curr_protein) - FRAMESHIFT_PENALTY,
-                0
+                self.blosum_lookup(frame_3, curr_protein) - FRAMESHIFT_PENALTY
             ]
+
+            # Insertion scores
             scores_1 = [
                 self.blosum_lookup(frame_1, prev_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY ), 
                 self.blosum_lookup(frame_2, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), 
-                self.blosum_lookup(frame_3, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY )
-            ]
-                # Deletion scores
-            scores_2 = [
-                self.blosum_lookup(frame_a, curr_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY ), 
-                self.blosum_lookup(frame_b, curr_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), 
-                self.blosum_lookup(frame_c, curr_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY )
+                self.blosum_lookup(frame_3, prev_protein)  - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY)
             ]
             
+            # Deletion scores
+            scores_2 = [
+                self.blosum_lookup(frame_a, curr_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY ), 
+                self.blosum_lookup(frame_b, curr_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY), 
+                self.blosum_lookup(frame_c, curr_protein) - (GAP_OPEN_PENALTY + GAP_EXTENSION_PENALTY)
+            ]
+
             score += max(max(scores,scores_1,scores_2))
-            reward += 0 if (validate(
+
+            cond = (max(scores) > max(scores_1)) and (max(scores) > max(scores_2))
+
+            reward += 0 if cond or (validate(
                 action=action,
                 proteins=[prev_protein, curr_protein],
                 prev_frames=[self.table[frame_a], self.table[frame_b], self.table[frame_c]],
@@ -345,7 +365,7 @@ class Environment:
                 self.blosum_lookup(frame_3, curr_protein) - FRAMESHIFT_PENALTY
             ]) + 2
 
-        self.protein_pointer += 1
+            self.protein_pointer += 1
 
         done = self.isDone()
 
@@ -386,7 +406,6 @@ class Environment:
         print(f"Action: {action}, {frame_1}, {frame_2}, {frame_3}, {protein}")
     
     def add_to_history(self, action : int):
-
         # Pad previous 3 Frames
         frame_a = self.table[self.get_codon_by_index(self.dna_pointer - 4)]
         frame_b = self.table[self.get_codon_by_index(self.dna_pointer - 3)]
@@ -413,22 +432,20 @@ class Environment:
         )
 
 
-    def save_aligment(self, filename_1 : str = None, filename_2 : str = None):
+    def save_aligment(self, save_dir: str="", filename_1 : str = None, filename_2 : str = None):
         now = datetime.now()
         dt_string = now.strftime("%d-%m-%Y_%H:%M:%S")
 
-        result_path = "results/debug"
+        if not os.path.exists(save_dir):
+            os.makedirs(save_dir)
 
-        if not os.path.exists(result_path):
-            os.makedirs(result_path)
-
-        with open(f"{result_path}/result_{dt_string}.txt", 'a') as file:
+        with open(f"{save_dir}/result_{dt_string}.txt", 'a') as file:
             file.write(f"ALIGNMENT RESULTS - {now}\n")
             file.write(f"DNA File: {filename_1}\n")
             file.write(f"Protein File: {filename_2}\n")
 
             predictions = []
-            tallies = [0, 0, 0, 0, 0]
+            tallies = [0 for _ in range(len(PARAMS['actions']))]
 
             for record in self.alignment_history:
                 if(record['action'] == 0):
@@ -447,14 +464,19 @@ class Environment:
                     tallies[2] += 1 if record['reward'] < 0 else 0
 
                 elif (record['action'] == 3):
-                    a = "INDEL"
-                    predictions.append(Action.INDEL)
+                    a = "INSERTION"
+                    predictions.append(Action.INSERT)
                     tallies[3] += 1 if record['reward'] < 0 else 0
+
+                elif (record['action'] == 4):
+                    a = "DELETION"
+                    predictions.append(Action.DELETE)
+                    tallies[4] += 1 if record['reward'] < 0 else 0
 
                 else:
                     a = "MISMATCH"
                     predictions.append(Action.MISMATCH)
-                    tallies[4] += 1 if record['reward'] < 0 else 0
+                    tallies[5] += 1 if record['reward'] < 0 else 0
 
                 file.write(f"\nPrev. Frames: {record['prev_frames']} => PP: {record['prev_protein']}")
                 file.write(f"\nCurr Frames: {record['curr_frames']} => CP: {record['curr_protein']}")
@@ -465,9 +487,9 @@ class Environment:
             file.write(f"Matches: {tallies[0]}\n")
             file.write(f"F_1: {tallies[1]}\n")
             file.write(f"F_3: {tallies[2]}\n")
-            file.write(f"InDel: {tallies[3]}\n")
-            file.write(f"Mis: {tallies[4]}\n")
-            # file.write(f"Dels: {tallies[4]}\n")
+            file.write(f"Insertions: {tallies[3]}\n")
+            file.write(f"Deletions: {tallies[4]}\n")
+            file.write(f"Mismatch: {tallies[5]}\n")
 
             # accuracy = sum(1 for x, y in zip(predictions, actions) if x == y) / len(predictions)
             # file.write(f"\nAccuracy: {accuracy}\n\n")
@@ -528,5 +550,4 @@ class Environment:
 #     print(f"STATE SHAPE: {state.shape}")
 
 #     return state
-
 
