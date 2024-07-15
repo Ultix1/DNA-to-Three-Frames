@@ -37,49 +37,45 @@ class ThreeFrameAligner():
                 print(row)
             print()
 
-    def _traceback(self, C, T, N, M, dna, protein):
+    def _traceback(self, T, N, M, dna, protein):
         actions = []
         sequence = []
-        i = 0
+        i = N - 1
         j = M
 
-        if self.backtrace is self.Backtrace.GLOBAL:
-            i = N
-        if self.backtrace is self.Backtrace.SEMI_GLOBAL:
-            i = max(reversed(list(enumerate([e[-1] for e in C], start=1))), key=lambda x: x[1])[0]
+        # Set pointer to correct location
+        if Action(T[i][j]) is Action.MATCH:
+            i -= 1
 
         while i > 0 and j > 0:
-            actions.append(max(list(zip(
-                [
-                    C[i-1][j],
-                    C[i-2][j],
-                    C[i-3][j]
-                ],
-                [
-                    Action(T[i-1][j]),
-                    Action(T[i-2][j]),
-                    Action(T[i-3][j])
-                ])), key=lambda x: x[0])[1])
-
-            action = actions[-1]
-            dna_pointer = i
-            protein_pointer = j
-
-            if action.value == Action.MATCH.value:
+            action = Action(T[i][j])
+            if action is Action.MATCH:
+                if self._translate_codon(dna[i-1:i+2]) != protein[j-1]:
+                    action = Action.MISMATCH
+                sequence.append((dna[i-1:i+2], protein[j-1]))
                 i -= 3
                 j -= 1
-            elif action.value == Action.FRAMESHIFT_1.value:
+            if action is Action.FRAMESHIFT_1:
+                sequence.append((dna[i-2:i+2], protein[j-1]))
                 i -= 4
                 j -= 1
-            elif action.value == Action.FRAMESHIFT_3.value:
+            if action is Action.FRAMESHIFT_3:
+                sequence.append((dna[i:i+2], protein[j-1]))
                 i -= 2
                 j -= 1
-            elif action.value == Action.INSERT.value:
-                j -= 1
-            elif action.value == Action.DELETE.value:
-                i -= 3
-
-            sequence.append((dna[i:dna_pointer], protein[j:protein_pointer]))
+            if action is Action.INSERT:
+                sub_prot = ""
+                while Action(T[i][j]) is Action.INSERT:
+                    sub_prot = protein[j-1] + sub_prot
+                    j -= 1
+                sequence.append(("---", sub_prot))
+            if action is Action.DELETE:
+                sub_dna = ""
+                while Action(T[i][j]) is Action.DELETE:
+                    sub_dna = dna[i-1:i+2] + sub_dna
+                    i -= 3
+                sequence.append((sub_dna, "-"))
+            actions.append(action)
 
         return actions[::-1], sequence[::-1]
 
@@ -186,13 +182,13 @@ class ThreeFrameAligner():
                                 C[N-2-1][M] - self.frameshift,
                                 C[N-1-1][M],
                         ], [
-                            Action.DELETE.value, Action.DELETE.value, Action.INSERT.value, Action.MATCH.value
+                            Action.DELETE.value, Action.FRAMESHIFT_3.value, Action.FRAMESHIFT_1.value, Action.MATCH.value
                         ])), key=lambda x: x[0])
-
-        score = C[N-1][M] if self.backtrace is self.Backtrace.GLOBAL else max([e[-1] for e in C])
-        actions, sequence = self._traceback(C, T, N, M, dna_input, protein_input)
 
         if debug:
             self._matrix_printer([I, D, C, T])
 
-        return score, actions, sequence
+        score = C[N-1][M]
+        actions, alignment = self._traceback(T, N, M, dna_input, protein_input)
+
+        return score, actions, alignment
