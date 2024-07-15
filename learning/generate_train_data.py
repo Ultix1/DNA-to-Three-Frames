@@ -1,10 +1,11 @@
-from models_v2.environment import get_state_test
+from models_v2.environment import renderSeq
 from utils.fasta_reader import read_fasta, convert_to_dna
 from utils.sequence_gen import SeqGen
 from utils.constants import CODON_TABLE, PROTEINS
 import random
 import os
 import re
+import numpy as np
 
 DATA_DIR = "data"
 FASTA_DIR = "fasta_tests/fasta_files/fruit_fly.fasta"
@@ -65,8 +66,8 @@ def generate_data(size, range):
 
         start_key += 1
 
-if __name__ == '__main__':
-    generate_data(size=100, range=(100,200))
+# if __name__ == '__main__':
+#     generate_data(size=100, range=(100,200))
 
 # if __name__ == "__main__":
 #     x = input("Window Size: ")

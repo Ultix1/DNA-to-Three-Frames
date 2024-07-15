@@ -182,7 +182,7 @@ class Agent():
             q_vals = self.mainQN.model(state)
             return np.argmax(q_vals)
         
-    def test(self, filename_1 : str = None, filename_2 : str = None, save=False, verbose=False):
+    def test(self, save_dir:str, filename_1 : str = None, filename_2 : str = None, save=False, verbose=False):
         """
         Tests the agent on the current environment
 
@@ -210,7 +210,7 @@ class Agent():
             total_score += score
         
         if save:
-            self.env.save_aligment(filename_1, filename_2)
+            self.env.save_aligment(save_dir, filename_1, filename_2)
         
         if verbose:
             print(f"Total Reward: {total_reward}, Steps Taken: {steps}")
@@ -218,7 +218,7 @@ class Agent():
         return total_score, total_reward
 
 
-    def find(self, filename_1:str, filename_2:str, target_protein:str, protein_len: int = 10, save=False):
+    def find(self, save_dir:str, filename_1:str, filename_2:str, target_protein:str, protein_len: int = 10, save=False):
         """
         Finds a protein given the sequence
 
@@ -238,7 +238,7 @@ class Agent():
         while not done:
             state = self.env.get_state()
             action = self.get_action(tf.expand_dims(state, axis=0), test=True)
-
+            
             _, reward, done, ____ = self.env.step(action, True)
 
             steps += 1
@@ -266,7 +266,7 @@ class Agent():
         print(f"Sequence was found at DNA index: {found_index * 3}")
 
         if save:
-            self.env.save_aligment(filename_1, filename_2)
+            self.env.save_aligment(save_dir, filename_1, filename_2)
 
     def load_weights(self, path_1, path_2):
         """
