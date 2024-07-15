@@ -43,13 +43,12 @@ class ThreeFrameAligner():
         i = N - 1
         j = M
 
+        # Set pointer to correct location
         if Action(T[i][j]) is Action.MATCH:
             i -= 1
 
         while i > 0:
             action = Action(T[i][j])
-            if action is Action.NONE:
-                break
             if action is Action.MATCH:
                 if self._translate_codon(dna[i-1:i+2]) != protein[j-1]:
                     action = Action.MISMATCH
@@ -76,7 +75,6 @@ class ThreeFrameAligner():
                     sub_dna = dna[i-1:i+2] + sub_dna
                     i -= 3
                 sequence.append((sub_dna, "-"))
-
             actions.append(action)
 
         return actions[::-1], sequence[::-1]
@@ -184,13 +182,13 @@ class ThreeFrameAligner():
                                 C[N-2-1][M] - self.frameshift,
                                 C[N-1-1][M],
                         ], [
-                            Action.DELETE.value, Action.DELETE.value, Action.INSERT.value, Action.MATCH.value
+                            Action.DELETE.value, Action.FRAMESHIFT_3.value, Action.FRAMESHIFT_1.value, Action.MATCH.value
                         ])), key=lambda x: x[0])
-
-        score = C[N-1][M]
-        actions, sequence = self._traceback(T, N, M, dna_input, protein_input)
 
         if debug:
             self._matrix_printer([I, D, C, T])
 
-        return score, actions, sequence
+        score = C[N-1][M]
+        actions, alignment = self._traceback(T, N, M, dna_input, protein_input)
+
+        return score, actions, alignment
