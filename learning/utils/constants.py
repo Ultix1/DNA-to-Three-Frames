@@ -1,13 +1,14 @@
 from enum import Enum
 
 class Action(Enum):
-    MATCH = 0
-    FRAMESHIFT_1 = 1
-    FRAMESHIFT_3 = 2
-    INSERT = 3
-    DELETE = 4
-    MISMATCH = 5
-    NONE = -999
+    MATCH = 1
+    FRAMESHIFT_1 = 2
+    FRAMESHIFT_3 = 3
+    MISMATCH = 4
+    DELETE = -1
+    INSERT = -2
+    INDEL = 4
+    NONE = 0
 
 PROTEINS = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y', "*"]
 

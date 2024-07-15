@@ -4,7 +4,7 @@ from os import remove as remove_file
 
 if __name__ == '__main__':
     # base_pairs = [10, 30, 60, 100, 300, 500, 800, 1000, 1500, 3000, 4500, 6000, 7500, 9000, 13500, 15000]
-    base_pairs = [30, 30, 30]
+    base_pairs = [15, 15, 15, 15, 15]
 
     print("Three Frame Aligner Memory Test\n")
     for base_pair_len in base_pairs:
@@ -21,10 +21,8 @@ if __name__ == '__main__':
                 retries -= 1
 
         with open("AA1.txt", "r") as a, open("DNA1.txt", "r") as b:
-            # dna = b.read().strip()
-            # protein = a.read().strip()
-            dna = "TTAGTTATG"
-            protein = "LVM"
+            dna = b.read().strip()
+            protein = a.read().strip()
             aligner = ThreeFrameAligner()
             _, actions, seq = aligner.align(dna, protein, debug=True)
             print(dna)
