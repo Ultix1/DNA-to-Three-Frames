@@ -47,7 +47,7 @@ class ThreeFrameAligner():
         if Action(T[i][j]) is Action.MATCH:
             i -= 1
 
-        while i > 0:
+        while i > 0 and j > 0:
             action = Action(T[i][j])
             if action is Action.MATCH:
                 if self._translate_codon(dna[i-1:i+2]) != protein[j-1]:
