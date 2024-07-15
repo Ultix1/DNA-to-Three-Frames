@@ -6,6 +6,7 @@ from params import PARAMS
 
 dna_dir = "data/dna"
 protein_dir = "data/proteins"
+save_dir = "results/debug"
 
 dna_list = []
 protein_list = []
@@ -48,8 +49,8 @@ if(os.path.isfile(checkpoint_paths[0]) and os.path.isfile(checkpoint_paths[1])):
         environment.set_seq(dna, protein)
 
         print(f"For DNA and Protein Sequence {i + 1}:")
-        agent.test(dna_list[i], protein_list[i], save=True)
+        agent.test(save_dir, dna_list[i], protein_list[i], save=True)
         print("")
         
-        if(i == 1):
+        if(i == 14):
             break
