@@ -4,10 +4,9 @@ class Action(Enum):
     MATCH = 0
     FRAMESHIFT_1 = 1
     FRAMESHIFT_3 = 2
-    DELETE = 3
-    INSERT = 4
-    INDEL = 3
-    MISMATCH = 4
+    INSERT = 3
+    DELETE = 4
+    MISMATCH = 5
     NONE = -999
 
 PROTEINS = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y', "*"]
