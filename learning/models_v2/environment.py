@@ -110,20 +110,32 @@ class Environment:
         for i in range(self.dna_pointer - 4, self.dna_pointer - 1):
            
             # If the current codon contains a padding, append 000 instead
-            state.append(encoded_codons[self.get_codon_by_index(i)])
+            if(encoded_codons.get(self.get_codon_by_index(i)) is None):
+                state.append(encoded_codons["TAG"])
+            else:
+                state.append(encoded_codons[self.get_codon_by_index(i)])
 
         # Append Previous Protein
-        state.append(encoded_proteins[self.protein_sequence[self.protein_pointer - 1]])
+        if(encoded_proteins.get(self.protein_sequence[self.protein_pointer - 1]) is None):
+            state.append(encoded_proteins["*"])
+        else:
+            state.append(encoded_proteins[self.protein_sequence[self.protein_pointer - 1]])
 
         # Append Current Window Frames (N Codons)
         for i in range(self.dna_pointer - 1, self.dna_pointer + (self.window_size * 3) - 1):
             
             # If the current codon contains a padding, append 000 instead
-            state.append(encoded_codons[self.get_codon_by_index(i)])
+            if(encoded_codons.get(self.get_codon_by_index(i)) is None):
+                state.append(encoded_codons["TAG"])
+            else:
+                state.append(encoded_codons[self.get_codon_by_index(i)])
 
         # Append Current Window Protein
         for i in range(self.protein_pointer, self.protein_pointer + self.window_size):
-            state.append(encoded_proteins[self.protein_sequence[i]])
+            if(encoded_proteins.get(self.protein_sequence[i]) is None):
+                state.append(encoded_proteins["*"])
+            else:
+                state.append(encoded_proteins[self.protein_sequence[i]])
 
         # Convert to np array with Float Type
         state = np.vstack(state).astype(np.float32)
@@ -276,11 +288,13 @@ class Environment:
                 reward = -2
                 self.dna_pointer += 3
                 self.dna_pointer += 1
+
             elif(curr_protein in curr_frames):
                 score += 0
                 reward = -2
                 self.dna_pointer += 3
                 self.dna_pointer += 1
+
             else:
                 cond = max(scores_1) <= max(scores_2)
                 
@@ -298,14 +312,15 @@ class Environment:
                     prev_protein == self.table[frame_3]
                 )
                 
-                # Move Down if Insertion
-                self.protein_pointer += 1 if (action == 3) else 0
-                
-                # Move Right if Deletion
-                self.dna_pointer += (2 + np.argmax(scores_2)) if (action == 4) else 0
+                # Move Right if Insertion
+                self.dna_pointer += (2 + np.argmax(scores_2)) if (action == 3) else 0
+
+                # Move Down if Deletion
+                self.protein_pointer += 1 if (action == 4) else 0
                 
                 score += max(scores_1) if (cond and cond_2) else max(scores_2)
-                reward += 2 if (
+                
+                reward += 1 if (
                     (action == 3 and not cond and cond_3) or        # Insertion is correct
                     (action == 4 and cond and cond_2)               # Deletion is correct
                 ) else -2
@@ -371,6 +386,8 @@ class Environment:
 
         next_state = np.zeros(shape=PARAMS['input_shape']) if done else self.get_state()
 
+        # print(self.dna_pointer, ", ", self.protein_pointer, "\n")
+
         if record:
             self.alignment_history[-1]["reward"] = reward
 
@@ -427,7 +444,8 @@ class Environment:
                 "prev_protein": prev_protein,
                 "curr_frames": curr_frames,
                 "curr_protein": curr_proteins,
-                "action": action
+                "action": action,
+                "pointers": (self.dna_pointer, self.protein_pointer),
             }
         )
 

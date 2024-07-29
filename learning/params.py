@@ -10,8 +10,8 @@ PARAMS = {
     'batch_size' : 64,              # Batch size for training
     'train_freq' : 100,             # How Many Steps before Updating Main Q-Network
     'tau': 0.01,                    # Discount Factor for Updating Target Q-Network
-    'window_size' : 2,              # Window Size for Input
-    'input_shape' : (12, 23, 1),    # Input Shape is (4 + (w*4), 23, 1) where w is the window size
+    'window_size' : 1,              # Window Size for Input
+    'input_shape' : (8, 23, 1),    # Input Shape is (4 + (w*4), 23, 1) where w is the window size
     'lr' : 0.001,
     'actions' : [
         Action.MATCH.value, 
