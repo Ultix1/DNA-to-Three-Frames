@@ -1,0 +1,23 @@
+Origin: fasta_tests/test_2/protein.txt
+Protein ID: tr|A1ZB49|A1ZB49_DROME
+
+-199.0	40	fasta_tests/test_0/protein.txt	tr|A0A0B4KFH2|A0A0B4KFH2_DROME
+-212.0	54	fasta_tests/test_1/protein.txt	tr|A1Z8I0|A1Z8I0_DROME
+-217.0	34	fasta_tests/test_10/protein.txt	tr|Q8IPG2|Q8IPG2_DROME
+-303.0	56	fasta_tests/test_11/protein.txt	tr|Q8MZ06|Q8MZ06_DROME
+-219.0	42	fasta_tests/test_12/protein.txt	sp|Q8SXY6|TMEDA_DROME
+-238.0	42	fasta_tests/test_13/protein.txt	sp|Q9V412|STEEP_DROME
+-270.0	38	fasta_tests/test_14/protein.txt	tr|Q9VDI5|Q9VDI5_DROME
+-196.0	18	fasta_tests/test_15/protein.txt	tr|Q9VFT9|Q9VFT9_DROME
+-254.0	36	fasta_tests/test_16/protein.txt	tr|Q9VGB8|Q9VGB8_DROME
+-292.0	30	fasta_tests/test_17/protein.txt	tr|Q9VK61|Q9VK61_DROME
+-194.0	46	fasta_tests/test_18/protein.txt	tr|Q9VKR1|Q9VKR1_DROME
+-249.0	42	fasta_tests/test_19/protein.txt	sp|Q9VN50|EI3F1_DROME
+577.0	0	fasta_tests/test_2/protein.txt	tr|A1ZB49|A1ZB49_DROME
+-231.0	12	fasta_tests/test_20/protein.txt	tr|Q9VQR2|Q9VQR2_DROME
+-287.0	40	fasta_tests/test_21/protein.txt	tr|Q9VSG0|Q9VSG0_DROME
+-302.0	40	fasta_tests/test_22/protein.txt	tr|Q9VVH8|Q9VVH8_DROME
+-222.0	34	fasta_tests/test_23/protein.txt	tr|Q9VXT3|Q9VXT3_DROME
+-194.0	32	fasta_tests/test_24/protein.txt	tr|Q9VXT6|Q9VXT6_DROME
+-256.0	36	fasta_tests/test_25/protein.txt	tr|Q9VZ72|Q9VZ72_DROME
+-231.0	46	fasta_tests/test_26/protein.txt	sp|Q9W0I5|BFC_DROME
