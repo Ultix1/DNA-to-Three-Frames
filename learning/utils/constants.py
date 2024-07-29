@@ -4,9 +4,10 @@ class Action(Enum):
     MATCH = 1
     FRAMESHIFT_1 = 2
     FRAMESHIFT_3 = 3
-    MISMATCH = 4
-    DELETE = -1
-    INSERT = -2
+    INSERT = 3
+    DELETE = 4
+    MISMATCH = 5
+    
     INDEL = 4
     NONE = 0
 
