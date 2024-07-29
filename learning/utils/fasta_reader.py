@@ -7,8 +7,9 @@ def read_fasta(filename: str, max_size:int = 0, protein_len:int = 100, protein_l
     with open(filename, "r") as handle:
         for record in SeqIO.parse(handle, "fasta"):
             if(protein_len_range != (0, 0)):
-                if len(record) >= protein_len_range[0] and len(record) <= protein_len_range[1]:
-                    test_sequences[record.id] = record.seq
+                seq = str(record.seq)
+                if len(seq) >= protein_len_range[0] and len(seq) <= protein_len_range[1]:
+                    test_sequences[record.id] = seq  
                     if len(test_sequences) == max_size:
                         break
 
