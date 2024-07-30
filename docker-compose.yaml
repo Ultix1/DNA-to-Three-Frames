@@ -11,6 +11,6 @@ services:
           devices:
             - driver: nvidia
               count: 1
-              capabilities: [gpu, utility, compute, video]
+              capabilities: [gpu]
     tty: true
     stdin_open: true

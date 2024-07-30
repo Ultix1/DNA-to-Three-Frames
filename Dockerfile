@@ -20,4 +20,7 @@ RUN python3.9 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 RUN python -m pip install -r requirements.txt
 
+ENV NVIDIA_DRIVER_CAPABILITIES=all
+ENV NVIDIA_VISIBLE_DEVICES=all
+
 CMD ["python", "-c", "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"]
