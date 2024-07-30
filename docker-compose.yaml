@@ -1,0 +1,16 @@
+services:
+  devel:
+    build:
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/app
+    entrypoint: nvidia-smi -l 1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    tty: true
+    stdin_open: true
