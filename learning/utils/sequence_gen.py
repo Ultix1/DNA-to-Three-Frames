@@ -89,27 +89,17 @@ class SeqGen:
             with open(filename, 'w') as f:
                 f.write(f">Test Protein Sequence length={self.lseqs}\n{protein}")
 
-    def save_sequences_to_fasta(self):
-        for i, seq in enumerate(self.sequences, start=1):
-            filename = f"DNA{i}.fasta"
-            with open(filename, 'w') as f:
-                f.write(f">Test DNA Sequence length={self.lseqs}\n{''.join([self.BP[nuc] for nuc in seq])}")
-                
-        for i, protein in enumerate(self.proteins, start=1):
-            filename = f"AA{i}.fasta"
-            with open(filename, 'w') as f:
-                f.write(f">Test Protein Sequence length={self.lseqs}\n{protein}")
-
     def save_sequences_to_fastq(self):
+        seq_id = "@FRAMERL-TEST-DATA;mate1:1081-1180;mate2:1268-1367"
         for i, seq in enumerate(self.sequences, start=1):
             filename = f"DNA{i}.fastq"
             with open(filename, 'w') as f:
-                f.write(f"@Test DNA Sequence length={self.lseqs}\n{''.join([self.BP[nuc] for nuc in seq])}\n+\n{''.join('?' for _ in seq)}")
+                f.write(f"{seq_id}\n{''.join([self.BP[nuc] for nuc in seq])}\n+\n{''.join('?' for _ in seq)}")
                 
         for i, protein in enumerate(self.proteins, start=1):
             filename = f"AA{i}.fastq"
             with open(filename, 'w') as f:
-                f.write(f"@Test Protein Sequence length={self.lseqs}\n{protein}\n+\n{''.join('?' for _ in protein)}")
+                f.write(f"{seq_id}\n{protein}\n+\n{''.join('?' for _ in protein)}")
 
 
 if __name__ == '__main__':
