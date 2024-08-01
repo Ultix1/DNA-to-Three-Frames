@@ -89,6 +89,28 @@ class SeqGen:
             with open(filename, 'w') as f:
                 f.write(f">Test Protein Sequence length={self.lseqs}\n{protein}")
 
+    def save_sequences_to_fasta(self):
+        for i, seq in enumerate(self.sequences, start=1):
+            filename = f"DNA{i}.fasta"
+            with open(filename, 'w') as f:
+                f.write(f">Test DNA Sequence length={self.lseqs}\n{''.join([self.BP[nuc] for nuc in seq])}")
+                
+        for i, protein in enumerate(self.proteins, start=1):
+            filename = f"AA{i}.fasta"
+            with open(filename, 'w') as f:
+                f.write(f">Test Protein Sequence length={self.lseqs}\n{protein}")
+
+    def save_sequences_to_fastq(self):
+        for i, seq in enumerate(self.sequences, start=1):
+            filename = f"DNA{i}.fastq"
+            with open(filename, 'w') as f:
+                f.write(f"@Test DNA Sequence length={self.lseqs}\n{''.join([self.BP[nuc] for nuc in seq])}\n+\n{''.join('?' for _ in seq)}")
+                
+        for i, protein in enumerate(self.proteins, start=1):
+            filename = f"AA{i}.fastq"
+            with open(filename, 'w') as f:
+                f.write(f"@Test Protein Sequence length={self.lseqs}\n{protein}\n+\n{''.join('?' for _ in protein)}")
+
 
 if __name__ == '__main__':
     lseqs = int(input("Enter the length of DNA string: "))
@@ -98,4 +120,5 @@ if __name__ == '__main__':
     gen.generate_sequences_and_proteins()
     gen.save_sequences_to_files()
     gen.save_sequences_to_fasta()
+    gen.save_sequences_to_fastq()
     print(f"Generated {num_sets} sets of DNA and protein sequences.")
