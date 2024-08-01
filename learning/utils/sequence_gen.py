@@ -77,6 +77,18 @@ class SeqGen:
             filename = f"AA{i}.txt"
             with open(filename, 'w') as f:
                 f.write(protein)
+    
+    def save_sequences_to_fasta(self):
+        for i, seq in enumerate(self.sequences, start=1):
+            filename = f"DNA{i}.fasta"
+            with open(filename, 'w') as f:
+                f.write(f">Test DNA Sequence length={self.lseqs}\n{''.join([self.BP[nuc] for nuc in seq])}")
+                
+        for i, protein in enumerate(self.proteins, start=1):
+            filename = f"AA{i}.fasta"
+            with open(filename, 'w') as f:
+                f.write(f">Test Protein Sequence length={self.lseqs}\n{protein}")
+
 
 if __name__ == '__main__':
     lseqs = int(input("Enter the length of DNA string: "))
@@ -85,4 +97,5 @@ if __name__ == '__main__':
     gen = SeqGen(lseqs=lseqs, num_sets=num_sets)
     gen.generate_sequences_and_proteins()
     gen.save_sequences_to_files()
+    gen.save_sequences_to_fasta()
     print(f"Generated {num_sets} sets of DNA and protein sequences.")
