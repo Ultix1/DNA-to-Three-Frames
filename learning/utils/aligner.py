@@ -16,14 +16,15 @@ class ThreeFrameAligner():
                  table=CODON_TABLE,
                  substition=None,
                  backtrace: Backtrace = Backtrace.GLOBAL):
+        self.process = psutil.Process()
+        self.init_mem = self.process.memory_info().rss
+        self.ave_mem_usage = 0
         self.gep = gep
         self.gop = gop
         self.frameshift = frameshift
         self.table = table
         self.substitution = substition or bl.BLOSUM(62)
         self.backtrace = backtrace
-        self.process = psutil.Process()
-        self.ave_mem_usage = 0
 
     def _translate_codon(self, codon):
         return self.table.get(codon, 'FAIL')
@@ -148,11 +149,11 @@ class ThreeFrameAligner():
                 ])), key=lambda x: x[0])
 
         # Matrix filling
+        ave_mem_usage = 0
         num_samples = 0
         for i in range(N):
             for j in range(1, M+1):
-
-                self.ave_mem_usage = (self.ave_mem_usage * num_samples + self.process.memory_info().rss) / (num_samples + 1)
+                ave_mem_usage = (ave_mem_usage * num_samples + self.process.memory_info().rss) / (num_samples + 1)
                 num_samples += 1
 
                 I[i][j] = max(I[i][j-1] - self.gep, C[i][j-1] - self.gop - self.gep)
@@ -184,6 +185,8 @@ class ThreeFrameAligner():
                         ], [
                             Action.DELETE.value, Action.FRAMESHIFT_3.value, Action.FRAMESHIFT_1.value, Action.MATCH.value
                         ])), key=lambda x: x[0])
+
+        self.ave_mem_usage = ave_mem_usage - self.init_mem
 
         if debug:
             self._matrix_printer([I, D, C, T])
