@@ -19,6 +19,7 @@ RUN apt update && add-apt-repository ppa:deadsnakes/ppa && apt install -y \
 
 RUN curl -Lo /tmp/blast.tgz https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.16.0+-x64-linux.tar.gz && \
     tar -xzvf /tmp/blast.tgz -C /usr/local/
+RUN curl -Lo /usr/local/bin/clustalo http://www.clustal.org/omega/clustalo-1.2.4-Ubuntu-x86_64 && chmod u+x /usr/local/bin/clustalo
 ENV PATH="/usr/local/ncbi-blast-2.16.0+/bin:$PATH"
 
 RUN python3.9 -m venv /opt/venv
