@@ -1,0 +1,313 @@
+
++===================================+
+            BLASTX Test
++===================================+
+BLASTX 2.16.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: /app/learning/AA1.fasta
+           1 sequences; 100 total letters
+
+
+
+Query= Test DNA Sequence length=300
+
+Length=300
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+Test Protein Sequence length=300                                      187     1e-68
+
+
+>Test Protein Sequence length=300
+Length=100
+
+ Score = 187 bits (475),  Expect = 1e-68, Method: Compositional matrix adjust.
+ Identities = 100/100 (100%), Positives = 100/100 (100%), Gaps = 0/100 (0%)
+ Frame = +1
+
+Query  1    PADETHSHP*KQVVTLRKTLAAMLYWI*MQ**QGQLRFRKL*ITQSEAMMKWML*RRSG*  180
+            PADETHSHP*KQVVTLRKTLAAMLYWI*MQ**QGQLRFRKL*ITQSEAMMKWML*RRSG*
+Sbjct  1    PADETHSHP*KQVVTLRKTLAAMLYWI*MQ**QGQLRFRKL*ITQSEAMMKWML*RRSG*  60
+
+Query  181  LKF*CLRVPI*RDLQLHFP*RILSQLIHMRVVTVS*CIPY  300
+            LKF*CLRVPI*RDLQLHFP*RILSQLIHMRVVTVS*CIPY
+Sbjct  61   LKF*CLRVPI*RDLQLHFP*RILSQLIHMRVVTVS*CIPY  100
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.134    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 7921
+
+
+  Database: /app/learning/AA1.fasta
+    Posted date:  Aug 5, 2024  3:04 PM
+  Number of letters in database: 100
+  Number of sequences in database:  1
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 12
+Window for multiple hits: 40
+execution_time=2.461404800415039	ave_mem_usage=43666982
++===================================+
+         Clustal Omega Test
++===================================+
+>Test DNA Sequence length=300
+CCTGCCGATGAAACACATTCCCATCCTTGAAAACAGGTCGTAACTCTACGAAAAACGTTA
+GCAGCCATGCTATACTGGATCTGAATGCAGTAGTAACAAGGCCAGCTCCGGTTTCGCAAG
+CTTTAAATCACTCAATCGGAAGCAATGATGAAGTGGATGCTTTAGAGGCGTAGCGGATAA
+CTCAAGTTCTGATGTCTAAGAGTGCCAATATAACGAGACTTACAATTGCATTTTCCATAG
+CGGATCCTTTCACAACTGATACATATGAGGGTCGTGACTGTATCGTGATGCATTCCCTAT
+>Test DNA Sequence length=300
+CCTGCCGATGAAACACATTCCCATCCTTGAAAACAGGTCGTAACTCTACGAAAAACGTTA
+GCAGCCATGCTATACTGGATCTGAATGCAGTAGTAACAAGGCCAGCTCCGGTTTCGCAAG
+CTTTAAATCACTCAATCGGAAGCAATGATGAAGTGGATGCTTTAGAGGCGTAGCGGATAA
+CTCAAGTTCTGATGTCTAAGAGTGCCAATATAACGAGACTTACAATTGCATTTTCCATAG
+CGGATCCTTTCACAACTGATACATATGAGGGTCGTGACTGTATCGTGATGCATTCCCTAT
+execution_time=0.021184206008911133	ave_mem_usage=7063568
++===================================+
+            FrameRL Test
++===================================+
+0000CTAAGATCATTATCCTAACTGT___CCAGGGGGAATATGCTTACCATTATCAGACCTCTGTATCGACGG___TGAACTAATCTGTACACTTATTTACATTCGTGCTAGTCTGAACTACATCTGCGC________ATCGCAAACTAGGGTCAAAATATGCGTACCTAGCGTTATGAGCTACCTGGGAGGTCAG___A___ACCCA___CACTCGTAGAAAGTAGCATTATACTGGGTGAGGACCATGG_____GTAGCCTCTTGGGAATAAAAGATACGTCGGTTGACCGACACAAACGAGCAC000
+     |  |  |  |  |  | |   |   |  | |  |   |  |  |  ||  |  |  |  |  |  |  |  |  |   |  |  |  |  |  |  |  ||  ||  |  | |  | |  | |  | |  |  | || | | |  |   | |   |  |  |  ||  |  |  |   |  |   |  |  |   | |  |  | | || |  |  |  |  |  | |  |  |  |   |  |  | |  |  |  |  |  |  |  |  |  |   |  |  |  |  |  |  |                                                                                                           
+     L  R  S  L  A  V -   *   *  K G  V   S  F  R  -Y  Q  T  S  V  S  G  C  C  S   N  L  E  T  Y  L  H  -R  -L  V  W N  I H  G N  C C  C  C S- H N L  G   Q K   M  R  K  -S  V  M  T   T  W   R  S  R   R R  Q  S S H- K  P  P  V  E  S I  P  G  -   *  D  P P  P  D  M  R  T  V  L  N  K   R  Y  F  G  *  P  Q                                                                                                           
+                                                    *                              *                     *   *       *    *                 *    * *      * *   *         *            *      *                     *                   *                                                   *                                                                                                                             
+
+
+DNA: CTAAGATCATTATCCTAACTGTAGACCAGGGGGAATATGCTTACCATTATCAGACCTCTGTATCGACGGGGCTGAACTAATCTGTACACTTATTTACATTCGTGCTAGTCTGAACTACATCTGCGCAACTGAATATCGCAAACTAGGGTCAAAATATGCGTACCTAGCGTTATGAGCTACCTGGGAGGTCAGCCTATCGACCCAAACCACTCGTAGAAAGTAGCATTATACTGGGTGAGGACCATGGGATGCGTAGCCTCTTGGGAATAAAAGATACGTCGGTTGACCGACACAAACGAGCAC
+Protein LRSLAV*KGVSFRHYQTSVSGCSNLETYLHIRVLVWNIHGNCISHNLGQKMRKPSVMTTWRSRQSPHKPPVESSIPG*DPDMRTVLNKRYFG*PTQTS
+
+Action: 0, Occured at: (4, 1), Reward: 0
+Action: 0, Occured at: (7, 2), Reward: 0
+Action: 0, Occured at: (10, 3), Reward: 0
+Action: 0, Occured at: (13, 4), Reward: 0
+Action: 5, Occured at: (16, 5), Reward: 0
+Action: 5, Occured at: (19, 6), Reward: 0
+Action: 4, Occured at: (21, 7), Reward: -2
+Action: 3, Occured at: (25, 7), Reward: -2
+Action: 5, Occured at: (29, 7), Reward: -2
+Action: 5, Occured at: (32, 8), Reward: 0
+Action: 0, Occured at: (34, 9), Reward: 0
+Action: 5, Occured at: (37, 10), Reward: 0
+Action: 5, Occured at: (41, 11), Reward: 0
+Action: 5, Occured at: (44, 12), Reward: 0
+Action: 5, Occured at: (47, 13), Reward: 0
+Action: 4, Occured at: (50, 14), Reward: 1
+Action: 2, Occured at: (50, 15), Reward: 0
+Action: 0, Occured at: (54, 16), Reward: 0
+Action: 0, Occured at: (57, 17), Reward: 0
+Action: 0, Occured at: (60, 18), Reward: 0
+Action: 0, Occured at: (63, 19), Reward: 0
+Action: 0, Occured at: (66, 20), Reward: 0
+Action: 5, Occured at: (69, 21), Reward: 0
+Action: 3, Occured at: (72, 22), Reward: 1
+Action: 5, Occured at: (75, 22), Reward: 0
+Action: 5, Occured at: (78, 23), Reward: 0
+Action: 2, Occured at: (81, 24), Reward: 0
+Action: 0, Occured at: (85, 25), Reward: 0
+Action: 5, Occured at: (88, 26), Reward: 0
+Action: 0, Occured at: (91, 27), Reward: 0
+Action: 0, Occured at: (94, 28), Reward: 0
+Action: 0, Occured at: (97, 29), Reward: 0
+Action: 0, Occured at: (100, 30), Reward: 0
+Action: 4, Occured at: (103, 31), Reward: 1
+Action: 2, Occured at: (103, 32), Reward: 0
+Action: 4, Occured at: (107, 33), Reward: 1
+Action: 2, Occured at: (107, 34), Reward: 0
+Action: 0, Occured at: (111, 35), Reward: 0
+Action: 5, Occured at: (114, 36), Reward: 0
+Action: 1, Occured at: (117, 37), Reward: 0
+Action: 5, Occured at: (119, 38), Reward: 0
+Action: 1, Occured at: (122, 39), Reward: 0
+Action: 5, Occured at: (124, 40), Reward: 0
+Action: 5, Occured at: (126, 41), Reward: 0
+Action: 3, Occured at: (129, 42), Reward: -2
+Action: 3, Occured at: (131, 42), Reward: 1
+Action: 3, Occured at: (134, 42), Reward: 1
+Action: 5, Occured at: (137, 42), Reward: 0
+Action: 4, Occured at: (140, 43), Reward: 1
+Action: 1, Occured at: (140, 44), Reward: 0
+Action: 5, Occured at: (142, 45), Reward: 0
+Action: 1, Occured at: (145, 46), Reward: 0
+Action: 1, Occured at: (147, 47), Reward: 0
+Action: 0, Occured at: (149, 48), Reward: 0
+Action: 2, Occured at: (152, 49), Reward: 0
+Action: 1, Occured at: (156, 50), Reward: 0
+Action: 2, Occured at: (158, 51), Reward: 0
+Action: 0, Occured at: (162, 52), Reward: 0
+Action: 5, Occured at: (165, 53), Reward: 0
+Action: 4, Occured at: (168, 54), Reward: 1
+Action: 2, Occured at: (168, 55), Reward: 0
+Action: 0, Occured at: (172, 56), Reward: 0
+Action: 0, Occured at: (175, 57), Reward: 0
+Action: 5, Occured at: (178, 58), Reward: 0
+Action: 2, Occured at: (181, 59), Reward: 0
+Action: 0, Occured at: (185, 60), Reward: 0
+Action: 2, Occured at: (188, 61), Reward: 0
+Action: 0, Occured at: (192, 62), Reward: 0
+Action: 3, Occured at: (195, 63), Reward: 1
+Action: 3, Occured at: (199, 63), Reward: 1
+Action: 0, Occured at: (201, 63), Reward: 0
+Action: 5, Occured at: (204, 64), Reward: 0
+Action: 3, Occured at: (207, 65), Reward: 1
+Action: 5, Occured at: (209, 65), Reward: 0
+Action: 4, Occured at: (212, 66), Reward: 1
+Action: 1, Occured at: (212, 67), Reward: 0
+Action: 5, Occured at: (214, 68), Reward: 0
+Action: 5, Occured at: (217, 69), Reward: 0
+Action: 5, Occured at: (220, 70), Reward: 0
+Action: 0, Occured at: (223, 71), Reward: 0
+Action: 5, Occured at: (226, 72), Reward: 0
+Action: 4, Occured at: (229, 73), Reward: 1
+Action: 5, Occured at: (229, 74), Reward: -2
+Action: 1, Occured at: (232, 75), Reward: 0
+Action: 5, Occured at: (234, 76), Reward: 0
+Action: 0, Occured at: (237, 77), Reward: 0
+Action: 4, Occured at: (240, 78), Reward: -2
+Action: 5, Occured at: (244, 78), Reward: 0
+Action: 5, Occured at: (247, 79), Reward: -2
+Action: 3, Occured at: (250, 80), Reward: 1
+Action: 3, Occured at: (252, 80), Reward: 1
+Action: 5, Occured at: (255, 80), Reward: 0
+Action: 5, Occured at: (258, 81), Reward: 0
+Action: 5, Occured at: (261, 82), Reward: 0
+Action: 5, Occured at: (264, 83), Reward: 0
+Action: 5, Occured at: (267, 84), Reward: 0
+Action: 5, Occured at: (270, 85), Reward: 0
+Action: 5, Occured at: (273, 86), Reward: 0
+Action: 5, Occured at: (276, 87), Reward: 0
+Action: 5, Occured at: (279, 88), Reward: 0
+Action: 2, Occured at: (282, 89), Reward: 0
+Action: 5, Occured at: (286, 90), Reward: 0
+Action: 5, Occured at: (289, 91), Reward: 0
+Action: 5, Occured at: (292, 92), Reward: 0
+Action: 5, Occured at: (295, 93), Reward: 0
+Action: 5, Occured at: (298, 94), Reward: 0
+Action: 4, Occured at: (301, 95), Reward: 1
+Action: 5, Occured at: (301, 96), Reward: 0
+score=-29.0	align_history_len=108	execution_time=2.5362226963043213	ave_mem_usage=438067200
++===================================+
+        Sequential Zhang Test
++===================================+
+Query:      CTAAGATCATTATCCTAACTGTAGACCAGGGGGAATATGCTTACCATTATCAGACCTCTGTATCGACGGGGCTGAACTAATCTGTACACTTATTTACATTCGTGCTAGTCTGAACTACATCTGCGCAACTGAATATCGCAAACTAGGGTCAAAATATGCGTACCTAGCGTTATGAGCTACCTGGGAGGTCAGCCTATCGACCCAAACCACTCGTAGAAAGTAGCATTATACTGGGTGAGGACCATGGGATGCGTAGCCTCTTGGGAATAAAAGATACGTCGGTTGACCGACACAAACGAGCAC
+Reference:  LRSLAV*KGVSFRHYQTSVSGCSNLETYLHIRVLVWNIHGNCISHNLGQKMRKPSVMTTWRSRQSPHKPPVESSIPG*DPDMRTVLNKRYFG*PTQTS
+[0]     Action.MATCH         ---> ('CTA', 'L')
+[1]     Action.MATCH         ---> ('AGA', 'R')
+[2]     Action.MATCH         ---> ('TCA', 'S')
+[3]     Action.MATCH         ---> ('TTA', 'L')
+[4]     Action.MISMATCH      ---> ('TCC', 'A')
+[5]     Action.DELETE        ---> ('TAA', '-')
+[6]     Action.MISMATCH      ---> ('CTG', 'V')
+[7]     Action.MATCH         ---> ('TAG', '*')
+[8]     Action.DELETE        ---> ('ACC', '-')
+[9]     Action.MISMATCH      ---> ('AGG', 'K')
+[10]    Action.MATCH         ---> ('GGG', 'G')
+[11]    Action.MISMATCH      ---> ('AAT', 'V')
+[12]    Action.MISMATCH      ---> ('ATG', 'S')
+[13]    Action.MISMATCH      ---> ('CTT', 'F')
+[14]    Action.FRAMESHIFT_3  ---> ('---', '')
+[15]    Action.MATCH         ---> ('AC', 'R')
+[16]    Action.MATCH         ---> ('CAT', 'H')
+[17]    Action.MATCH         ---> ('TAT', 'Y')
+[18]    Action.MATCH         ---> ('CAG', 'Q')
+[19]    Action.MATCH         ---> ('ACC', 'T')
+[20]    Action.MATCH         ---> ('TCT', 'S')
+[21]    Action.MATCH         ---> ('GTA', 'V')
+[22]    Action.DELETE        ---> ('TCG', 'S')
+[23]    Action.MATCH         ---> ('ACG', '-')
+[24]    Action.MISMATCH      ---> ('GGG', 'G')
+[25]    Action.MISMATCH      ---> ('CTG', 'C')
+[26]    Action.FRAMESHIFT_1  ---> ('AAC', 'S')
+[27]    Action.MATCH         ---> ('TAAT', 'N')
+[28]    Action.MISMATCH      ---> ('CTG', 'L')
+[29]    Action.MATCH         ---> ('TAC', 'E')
+[30]    Action.MATCH         ---> ('ACT', 'T')
+[31]    Action.MATCH         ---> ('TAT', 'Y')
+[32]    Action.MATCH         ---> ('TTA', 'L')
+[33]    Action.FRAMESHIFT_3  ---> ('CAT', 'H')
+[34]    Action.MATCH         ---> ('---', 'I')
+[35]    Action.MATCH         ---> ('TC', 'R')
+[36]    Action.MATCH         ---> ('GTG', 'V')
+[37]    Action.FRAMESHIFT_3  ---> ('CTA', 'L')
+[38]    Action.MATCH         ---> ('GTC', 'V')
+[39]    Action.FRAMESHIFT_3  ---> ('---', '')
+[40]    Action.MATCH         ---> ('TG', 'W')
+[41]    Action.DELETE        ---> ('AAC', 'N')
+[42]    Action.MISMATCH      ---> ('---', '')
+[43]    Action.MATCH         ---> ('TA', 'I')
+[44]    Action.FRAMESHIFT_3  ---> ('CAT', 'H')
+[45]    Action.DELETE        ---> ('CTG', '-')
+[46]    Action.MATCH         ---> ('CGC', 'G')
+[47]    Action.MISMATCH      ---> ('AAC', 'N')
+[48]    Action.MISMATCH      ---> ('---', '')
+[49]    Action.FRAMESHIFT_3  ---> ('TG', 'C')
+[50]    Action.MATCH         ---> ('AAT', '-')
+[51]    Action.MISMATCH      ---> ('ATC', 'I')
+[52]    Action.FRAMESHIFT_3  ---> ('GCA', 'S')
+[53]    Action.MISMATCH      ---> ('AAC', 'H')
+[54]    Action.MISMATCH      ---> ('---', 'N')
+[55]    Action.FRAMESHIFT_3  ---> ('TA', 'L')
+[56]    Action.FRAMESHIFT_1  ---> ('GGG', 'G')
+[57]    Action.MATCH         ---> ('TCA', 'Q')
+[58]    Action.MATCH         ---> ('---', '')
+[59]    Action.MATCH         ---> ('AA', 'K')
+[60]    Action.MISMATCH      ---> ('ATA', 'M')
+[61]    Action.FRAMESHIFT_1  ---> ('TGC', 'R')
+[62]    Action.MATCH         ---> ('---', '')
+[63]    Action.FRAMESHIFT_1  ---> ('GT', 'K')
+[64]    Action.MATCH         ---> ('ACCT', 'P')
+[65]    Action.MISMATCH      ---> ('AGC', 'S')
+[66]    Action.MISMATCH      ---> ('GTT', 'V')
+[67]    Action.FRAMESHIFT_1  ---> ('ATG', 'M')
+[68]    Action.FRAMESHIFT_3  ---> ('AGC', 'T')
+[69]    Action.MATCH         ---> ('TACC', 'T')
+[70]    Action.MATCH         ---> ('TGG', 'W')
+[71]    Action.MISMATCH      ---> ('GAGG', 'R')
+[72]    Action.MATCH         ---> ('TCA', 'S')
+[73]    Action.MATCH         ---> ('GCC', 'R')
+[74]    Action.MATCH         ---> ('TAT', 'Q')
+[75]    Action.MATCH         ---> ('CGAC', 'S')
+[76]    Action.DELETE        ---> ('---', 'P')
+[77]    Action.MATCH         ---> ('CC', 'H')
+[78]    Action.FRAMESHIFT_3  ---> ('AAA', 'K')
+[79]    Action.MATCH         ---> ('CCA', 'P')
+[80]    Action.MATCH         ---> ('CTC', 'P')
+[81]    Action.MISMATCH      ---> ('GTA', 'V')
+[82]    Action.MATCH         ---> ('GAA', 'E')
+[83]    Action.FRAMESHIFT_1  ---> ('AGT', 'S')
+[84]    Action.MATCH         ---> ('AGC', 'S')
+[85]    Action.MATCH         ---> ('ATT', '-')
+[86]    Action.MISMATCH      ---> ('ATA', 'I')
+[87]    Action.MISMATCH      ---> ('---', '')
+[88]    Action.FRAMESHIFT_3  ---> ('CT', 'P')
+[89]    Action.DELETE        ---> ('GGG', 'G')
+[90]    Action.MATCH         ---> ('TGA', '*')
+[91]    Action.MATCH         ---> ('GGA', 'D')
+[92]    Action.MATCH         ---> ('CCA', 'P')
+[93]    Action.MATCH         ---> ('TGGG', 'D')
+[94]    Action.MISMATCH      ---> ('ATG', 'M')
+[95]    Action.MATCH         ---> ('CGT', 'R')
+[96]    Action.MATCH         ---> ('AGC', 'T')
+[97]    Action.MATCH         ---> ('CTC', 'V')
+[98]    Action.MATCH         ---> ('---', '')
+[99]    Action.MATCH         ---> ('TT', 'L')
+[100]   Action.DELETE        ---> ('GGG', '-')
+[101]   Action.FRAMESHIFT_1  ---> ('AAT', 'N')
+[102]   Action.FRAMESHIFT_3  ---> ('AAA', 'K')
+score=218.0	action_len=103	align_len=115	execution_time=0.7189974784851074	ave_mem_usage=2433705

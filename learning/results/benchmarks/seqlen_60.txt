@@ -1,0 +1,133 @@
+
++===================================+
+            BLASTX Test
++===================================+
+BLASTX 2.16.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: /app/learning/AA1.fasta
+           1 sequences; 20 total letters
+
+
+
+Query= Test DNA Sequence length=60
+
+Length=60
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+Test Protein Sequence length=60                                       41.6    8e-14
+
+
+>Test Protein Sequence length=60
+Length=20
+
+ Score = 41.6 bits (96),  Expect = 8e-14, Method: Compositional matrix adjust.
+ Identities = 20/20 (100%), Positives = 20/20 (100%), Gaps = 0/20 (0%)
+ Frame = +1
+
+Query  1   CRAYWFLRLYAFSRRVLAGL  60
+           CRAYWFLRLYAFSRRVLAGL
+Sbjct  1   CRAYWFLRLYAFSRRVLAGL  20
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.134    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 400
+
+
+  Database: /app/learning/AA1.fasta
+    Posted date:  Aug 5, 2024  3:04 PM
+  Number of letters in database: 20
+  Number of sequences in database:  1
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 12
+Window for multiple hits: 40
+execution_time=2.8541831970214844	ave_mem_usage=43534183
++===================================+
+         Clustal Omega Test
++===================================+
+>Test DNA Sequence length=60
+TGTCGGGCCTATTGGTTTCTAAGGTTGTACGCTTTTAGTCGTCGGGTTCTCGCAGGTTTG
+>Test DNA Sequence length=60
+TGTCGGGCCTATTGGTTTCTAAGGTTGTACGCTTTTAGTCGTCGGGTTCTCGCAGGTTTG
+execution_time=0.008530855178833008	ave_mem_usage=2275100
++===================================+
+            FrameRL Test
++===================================+
+0000TCTGCCG_____AAAATCAG___AAGAGGAAA___CTCATACAAAGCACCCT___AGACCCG000
+     |  |  | |   |  ||| | | | |  |  |   |  ||  |  |  |  | |                                                                                                              
+     S  F  C C   C  DS- F F K E  E  M   M  -Y  K  A  L  R R                                                                                                              
+                     *        *             *                                                                                                                            
+
+
+DNA: TCTGCCGTTTGGAAAATCAGTTAAAGAGGAAAGAGCTCATACAAAGCACCCTGCAAGACCCG
+Protein SFCDISFKEEMSSYKALRT
+
+Action: 0, Occured at: (4, 1), Reward: 0
+Action: 5, Occured at: (7, 2), Reward: 0
+Action: 3, Occured at: (10, 3), Reward: -2
+Action: 3, Occured at: (12, 3), Reward: 1
+Action: 5, Occured at: (16, 3), Reward: 0
+Action: 5, Occured at: (19, 4), Reward: 0
+Action: 4, Occured at: (21, 5), Reward: 1
+Action: 1, Occured at: (21, 6), Reward: 0
+Action: 3, Occured at: (23, 7), Reward: 1
+Action: 5, Occured at: (25, 7), Reward: 0
+Action: 0, Occured at: (27, 8), Reward: 0
+Action: 1, Occured at: (30, 9), Reward: 0
+Action: 0, Occured at: (32, 10), Reward: 0
+Action: 3, Occured at: (35, 11), Reward: 1
+Action: 5, Occured at: (39, 11), Reward: 0
+Action: 4, Occured at: (42, 12), Reward: 1
+Action: 4, Occured at: (42, 13), Reward: 1
+Action: 2, Occured at: (42, 14), Reward: 0
+Action: 0, Occured at: (46, 15), Reward: 0
+Action: 0, Occured at: (49, 16), Reward: 0
+Action: 5, Occured at: (52, 17), Reward: 0
+Action: 3, Occured at: (55, 18), Reward: 1
+Action: 5, Occured at: (57, 18), Reward: 0
+score=-28.0	align_history_len=23	execution_time=0.38124799728393555	ave_mem_usage=443416576
++===================================+
+        Sequential Zhang Test
++===================================+
+Query:      TCTGCCGTTTGGAAAATCAGTTAAAGAGGAAAGAGCTCATACAAAGCACCCTGCAAGACCCG
+Reference:  SFCDISFKEEMSSYKALRT
+[0]     Action.FRAMESHIFT_1  ---> ('CTGC', 'C')
+[1]     Action.MISMATCH      ---> ('CGT', 'D')
+[2]     Action.MISMATCH      ---> ('TTG', 'I')
+[3]     Action.DELETE        ---> ('GAAAAT', '-')
+[4]     Action.FRAMESHIFT_3  ---> ('---', '')
+[5]     Action.MISMATCH      ---> ('CA', 'S')
+[6]     Action.MATCH         ---> ('GTT', 'F')
+[7]     Action.MATCH         ---> ('AAA', 'K')
+[8]     Action.MATCH         ---> ('GAG', 'E')
+[9]     Action.FRAMESHIFT_3  ---> ('GAA', 'E')
+[10]    Action.MATCH         ---> ('---', '')
+[11]    Action.MATCH         ---> ('AG', 'M')
+[12]    Action.MATCH         ---> ('AGC', 'S')
+[13]    Action.MATCH         ---> ('TCA', 'S')
+[14]    Action.MATCH         ---> ('TAC', 'Y')
+[15]    Action.DELETE        ---> ('AAA', 'K')
+[16]    Action.MISMATCH      ---> ('GCA', 'A')
+[17]    Action.FRAMESHIFT_1  ---> ('CCC', '-')
+[18]    Action.DELETE        ---> ('TGC', 'L')
+[19]    Action.FRAMESHIFT_3  ---> ('AAGA', 'R')
+score=23.0	action_len=20	align_len=23	execution_time=0.028733253479003906	ave_mem_usage=266240
