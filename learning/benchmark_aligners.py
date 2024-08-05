@@ -6,19 +6,18 @@ from utils.sequence_gen import SeqGen
 from pathlib import Path
 from textwrap import dedent
 from params import PARAMS
-from multiprocessing import Process, Value
+from multiprocessing import Process
 import subprocess as sp
 import psutil
 import time
 import glob
-import gc
 
-def gen_seqs():
+def gen_seqs(bp_len, mutated=True):
     retries = 10
     while True:
-        seq_gen = SeqGen(lseqs=base_pair_len, num_sets=1)
+        seq_gen = SeqGen(lseqs=bp_len, num_sets=1)
         try:
-            seq_gen.generate_sequences_and_proteins()
+            seq_gen.generate_sequences_and_proteins(mutated=mutated)
             seq_gen.save_sequences_to_files()
             seq_gen.save_sequences_to_fasta()
             break
@@ -144,18 +143,33 @@ def framerl_agent(dna, protein, result: Path):
 
 
 def blastx(dna_fasta: Path, protein_fasta: Path, result: Path):
-    proc = psutil.Process()
-    init_mem = proc.memory_info().rss
     start = time.time()
     try:
-        sp.run(["makeblastdb", "-in", str(protein_fasta.resolve()), "-dbtype", "prot", "-out", "db.blast"], check=True)
+        cmd = sp.Popen(["makeblastdb", "-in", str(protein_fasta.resolve()), "-dbtype", "prot", "-out", "db.blast"], stdout=sp.DEVNULL)
+        proc = psutil.Process(cmd.pid)
+        mem_usage_db = 0
+        num_samples = 0
+        while cmd.poll() is None:
+            mem_usage_db = (mem_usage_db * num_samples + proc.memory_info().rss) / (num_samples + 1)
+            num_samples += 1
+        cmd.wait()
+        if cmd.returncode != 0:
+            raise sp.SubprocessError()
         print("Database created successfully.")
-    except sp.CalledProcessError as e:
+    except Exception as e:
         print(f"Failed to create database. Error: {e}")
         raise e
     try:
-        output = sp.run(["blastx", "-query", str(dna_fasta.resolve()), "-db", "db.blast"], check=True, capture_output=True, text=True)
-        final_mem = proc.memory_info().rss
+        cmd = sp.Popen(["blastx", "-query", str(dna_fasta.resolve()), "-db", "db.blast"], text=True, stdout=sp.PIPE)
+        proc = psutil.Process(cmd.pid)
+        mem_usage_align = 0
+        num_samples = 0
+        while cmd.poll() is None:
+            mem_usage_align = (mem_usage_align * num_samples + proc.memory_info().rss) / (num_samples + 1)
+            num_samples += 1
+        cmd.wait()
+        if cmd.returncode != 0:
+            raise sp.SubprocessError()
         end = time.time()
         for path in glob.glob("./db.blast.*"):
             Path(path).unlink()
@@ -165,40 +179,75 @@ def blastx(dna_fasta: Path, protein_fasta: Path, result: Path):
                         BLASTX Test
             +===================================+
             """))
-            out.writelines(output.stdout)
-            # print(output.stdout)
-            out.writelines(f'execution_time={end - start}\tave_mem_usage={final_mem - init_mem}')
-    except sp.CalledProcessError as e:
+            stdout, _ = cmd.communicate()
+            out.writelines(stdout)
+            out.writelines(f'execution_time={end - start}\tave_mem_usage={int(mem_usage_align + mem_usage_db)}')
+    except Exception as e:
         print(f"Failed to execute BLASTX. Error: {e}")
         raise e
 
+def clustal(dna_fasta: Path, protein_fasta: Path, result: Path):
+    start = time.time()
+    clustal_file = Path("clustal.fasta")
+    with clustal_file.open("w") as o:
+        with dna_fasta.open("r") as i:
+            dna = i.readlines()
+            for _ in range(2):
+                o.writelines(dna)
+                o.writelines("\n")
+    try:
+        cmd = sp.Popen(["clustalo", "-i", str(clustal_file)], text=True, stdout=sp.PIPE)
+        proc = psutil.Process(cmd.pid)
+        mem_usage = 0
+        num_samples = 0
+        while cmd.poll() is None:
+            mem_usage = (mem_usage * num_samples + proc.memory_info().rss) / (num_samples + 1)
+            num_samples += 1
+        cmd.wait()
+        if cmd.returncode != 0:
+            raise sp.SubprocessError()
+        end = time.time()
+        clustal_file.unlink()
+        with result.open("a") as out:
+            out.writelines(dedent("""
+            +===================================+
+                     Clustal Omega Test
+            +===================================+
+            """))
+            stdout, _ = cmd.communicate()
+            out.writelines(stdout)
+            out.writelines(f'execution_time={end - start}\tave_mem_usage={int(mem_usage)}')
+    except Exception as e:
+        print(f"Failed to execute Clustal Omega. Error: {e}")
+        raise e
+
+def spawn_proc(target, args):
+    p = Process(target=target, args=args)
+    p.start()
+    p.join()
 
 if __name__ == '__main__':
     base_pairs = [10, 30, 60, 100, 300, 500, 800, 1000, 1500, 3000, 4500, 6000, 7500, 9000, 13500]
 
     for base_pair_len in base_pairs:
-        print(f"Running benchmarks for seq_len={base_pair_len}")
+        print(f"\nRunning benchmarks for seq_len={base_pair_len}")
         Path('./results/benchmarks').mkdir(parents=True, exist_ok=True)
-        gen_seqs()
-
         result = Path(f"./results/benchmarks/seqlen_{base_pair_len}.txt")
         result.unlink(missing_ok=True) # Remove older result log
+
+        gen_seqs(base_pair_len, mutated=False)
         prot_fasta, dna_fasta = Path("AA1.fasta"), Path("DNA1.fasta")
         with prot_fasta.open("r") as a, dna_fasta.open("r") as b :
-            p = Process(target=blastx, args=(dna_fasta, prot_fasta, result))
-            p.start()
-            p.join()
+            spawn_proc(blastx, (dna_fasta, prot_fasta, result))
+            spawn_proc(clustal, (dna_fasta, prot_fasta, result))
 
+        gen_seqs(base_pair_len, mutated=True)
         prot_seq, dna_seq = Path("AA1.txt"), Path("DNA1.txt")
         with prot_seq.open("r") as a, dna_seq.open("r") as b :
             dna = b.read().strip()
             protein = a.read().strip()
-            p = Process(target=framerl_agent, args=(dna, protein, result))
-            p.start()
-            p.join()
-            p = Process(target=seq_zhang, args=(dna, protein, result))
-            p.start()
-            p.join()
+            spawn_proc(framerl_agent, (dna, protein, result))
+            spawn_proc(seq_zhang, (dna, protein, result))
 
         dna_fasta.unlink()
         prot_fasta.unlink()
