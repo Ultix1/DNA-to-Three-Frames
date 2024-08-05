@@ -1,0 +1,108 @@
+
++===================================+
+            BLASTX Test
++===================================+
+BLASTX 2.16.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: /app/learning/AA1.fasta
+           1 sequences; 10 total letters
+
+
+
+Query= Test DNA Sequence length=30
+
+Length=30
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+Test Protein Sequence length=30                                       19.6    1e-05
+
+
+>Test Protein Sequence length=30
+Length=10
+
+ Score = 19.6 bits (39),  Expect = 1e-05, Method: Compositional matrix adjust.
+ Identities = 10/10 (100%), Positives = 10/10 (100%), Gaps = 0/10 (0%)
+ Frame = +1
+
+Query  1   SKL*PVAP*E  30
+           SKL*PVAP*E
+Sbjct  1   SKL*PVAP*E  10
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.134    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 100
+
+
+  Database: /app/learning/AA1.fasta
+    Posted date:  Aug 5, 2024  3:04 PM
+  Number of letters in database: 10
+  Number of sequences in database:  1
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 12
+Window for multiple hits: 40
+execution_time=3.1257383823394775	ave_mem_usage=43849071
++===================================+
+         Clustal Omega Test
++===================================+
+>Test DNA Sequence length=30
+TCCAAGCTATGACCTGTGGCTCCCTAGGAG
+>Test DNA Sequence length=30
+TCCAAGCTATGACCTGTGGCTCCCTAGGAG
+execution_time=0.008018255233764648	ave_mem_usage=1953557
++===================================+
+            FrameRL Test
++===================================+
+0000TGTAATATATGGGCATAGGACACCCAGGCA000
+     |  |  |  |  |  |  |  |                                                                                                              
+     C  N  I  W  A  *  D  T                                                                                                              
+                                                                                                                                         
+
+
+DNA: TGTAATATATGGGCATAGGACACCCAGGCA
+Protein CNIWA*DTR
+
+Action: 0, Occured at: (4, 1), Reward: 0
+Action: 0, Occured at: (7, 2), Reward: 0
+Action: 0, Occured at: (10, 3), Reward: 0
+Action: 0, Occured at: (13, 4), Reward: 0
+Action: 0, Occured at: (16, 5), Reward: 0
+Action: 0, Occured at: (19, 6), Reward: -2
+Action: 0, Occured at: (22, 7), Reward: 0
+Action: 0, Occured at: (25, 8), Reward: 0
+score=45.0	align_history_len=8	execution_time=0.13966655731201172	ave_mem_usage=449478656
++===================================+
+        Sequential Zhang Test
++===================================+
+Query:      TGTAATATATGGGCATAGGACACCCAGGCA
+Reference:  CNIWA*DTR
+[0]     Action.MATCH         ---> ('TGT', 'C')
+[1]     Action.MATCH         ---> ('AAT', 'N')
+[2]     Action.MATCH         ---> ('ATA', 'I')
+[3]     Action.MATCH         ---> ('TGG', 'W')
+[4]     Action.MATCH         ---> ('GCA', 'A')
+[5]     Action.MATCH         ---> ('TAG', '*')
+[6]     Action.MATCH         ---> ('GAC', 'D')
+[7]     Action.MATCH         ---> ('ACC', 'T')
+[8]     Action.MISMATCH      ---> ('CAG', 'R')
+[9]     Action.DELETE        ---> ('GCA', '-')
+score=42.0	action_len=10	align_len=10	execution_time=0.006441831588745117	ave_mem_usage=94208

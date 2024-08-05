@@ -1,0 +1,82 @@
+
++===================================+
+            BLASTX Test
++===================================+
+BLASTX 2.16.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: /app/learning/AA1.fasta
+           1 sequences; 3 total letters
+
+
+
+Query= Test DNA Sequence length=10
+
+Length=10
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.134    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 9
+
+
+  Database: /app/learning/AA1.fasta
+    Posted date:  Aug 5, 2024  3:04 PM
+  Number of letters in database: 3
+  Number of sequences in database:  1
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 12
+Window for multiple hits: 40
+execution_time=2.9647305011749268	ave_mem_usage=43022786
++===================================+
+         Clustal Omega Test
++===================================+
+>Test DNA Sequence length=10
+CTAATATGCT
+>Test DNA Sequence length=10
+CTAATATGCT
+execution_time=0.007611513137817383	ave_mem_usage=1857290
++===================================+
+            FrameRL Test
++===================================+
+0000AGACATGTCT000
+     |  |                                                                                                            
+     R  H                                                                                                            
+                                                                                                                     
+
+
+DNA: AGACATGTCT
+Protein RHV
+
+Action: 0, Occured at: (4, 1), Reward: 0
+Action: 0, Occured at: (7, 2), Reward: 0
+score=13.0	align_history_len=2	execution_time=0.0548248291015625	ave_mem_usage=455577600
++===================================+
+        Sequential Zhang Test
++===================================+
+Query:      AGACATGTCT
+Reference:  RHV
+[0]     Action.MATCH         ---> ('AGA', 'R')
+[1]     Action.FRAMESHIFT_1  ---> ('CATG', 'H')
+[2]     Action.FRAMESHIFT_1  ---> ('TCT', 'V')
+score=13.0	action_len=3	align_len=3	execution_time=0.0009479522705078125	ave_mem_usage=94208
