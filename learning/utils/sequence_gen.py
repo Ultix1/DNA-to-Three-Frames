@@ -53,7 +53,7 @@ class SeqGen:
         protein_seq = str(dna_seq_obj.translate())
         return protein_seq
 
-    def generate_sequences_and_proteins(self):
+    def generate_sequences_and_proteins(self, mutated=True):
         for _ in range(self.num_sets):
             original_seq = self.generate_sequence()
             mutated_seq = self.mutate_sequence(original_seq.copy())
@@ -61,9 +61,9 @@ class SeqGen:
             original_seq_with_indels = self.introduce_indels(original_seq)
             mutated_seq_with_indels = self.introduce_indels(mutated_seq)
             
-            protein_seq = self.dna_to_protein(mutated_seq_with_indels)
+            protein_seq = self.dna_to_protein(mutated_seq_with_indels if mutated else original_seq)
             
-            self.sequences.append(original_seq_with_indels)
+            self.sequences.append(original_seq_with_indels if mutated else original_seq)
             self.mutated_sequences.append(mutated_seq_with_indels)
             self.proteins.append(protein_seq)
 
